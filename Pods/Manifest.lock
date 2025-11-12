@@ -149,6 +149,7 @@ PODS:
   - MJRefresh (3.7.5)
   - Reachability (3.7.6)
   - SnapKit (5.7.1)
+  - SwiftyUserDefaults (5.3.0)
   - Toast (4.1.1)
   - TZImagePickerController (3.8.8):
     - TZImagePickerController/Basic (= 3.8.8)
@@ -167,6 +168,7 @@ DEPENDENCIES:
   - FBSDKCoreKit (= 18.0.0)
   - FDFullscreenPopGesture (= 1.1)
   - IQKeyboardManagerSwift (= 8.0.0)
+  - SwiftyUserDefaults (= 5.3.0)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -190,6 +192,7 @@ SPEC REPOS:
     - MJRefresh
     - Reachability
     - SnapKit
+    - SwiftyUserDefaults
     - Toast
     - TZImagePickerController
     - YYKit
@@ -225,10 +228,11 @@ SPEC CHECKSUMS:
   MJRefresh: fdf5e979eb406a0341468932d1dfc8b7f9fce961
   Reachability: fd0ecd23705e2599e4cceeb943222ae02296cbc6
   SnapKit: d612e99e678a2d3b95bf60b0705ed0a35c03484a
+  SwiftyUserDefaults: 63f80248cf5bfb3458825d9a78f2eb7e1293a040
   Toast: 1f5ea13423a1e6674c4abdac5be53587ae481c4e
   TZImagePickerController: d084a7b97c82d387e7669dd86dc9a9057500aacf
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: ddee301956b91ba990874943ccc337a9012dee94
+PODFILE CHECKSUM: fd090efd859c724e80cb9aa2a7846826510f7625
 
 COCOAPODS: 1.16.2

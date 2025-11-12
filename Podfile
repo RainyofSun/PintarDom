@@ -9,6 +9,7 @@ def CommonPods
   pod 'EmptyDataSet-Swift', '5.0.0'
   pod 'FDFullscreenPopGesture', '1.1'
   pod 'IQKeyboardManagerSwift', '8.0.0'
+  pod 'SwiftyUserDefaults', '5.3.0'
 end
 
 def OCFrameworks
