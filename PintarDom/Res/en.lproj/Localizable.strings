@@ -5,3 +5,10 @@
   Created by Yu Chen  on 2025/11/13.
   
 */
+
+/// Login
+"login_title" = "LOGIN";
+"login_phone" = "Phone number";
+"login_phone_place" = "Please enter your phone number";
+"login_code" = "Verification code";
+"login_code_place" = "Verification code";
