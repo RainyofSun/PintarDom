@@ -1,7 +1,118 @@
-/* 
+/*
   Localizable.strings
   PintarDom
 
   Created by Yu Chen  on 2025/11/13.
   
 */
+
+"tab_home" = "Beranda";
+"tab_order" = "Pesanan";
+"tab_me" = "Saya";
+
+"lunch_try" = "Coba lagi";
+
+"login_title" = "MASUK";
+"login_phone" = "Nomor telepon";
+"login_phone_place" = "Silakan masukkan nomor telepon Anda.";
+"login_code" = "Kode verifikasi";
+"login_code_place" = "Kode verifikasi";
+"login_voice" = "Verifikasi suara";
+"login_sms_code" = "Dapatkan Kode";
+"login_xie_yi_pre" = "Saya setuju dengan ";
+"login_xie_yi" = "Kebijakan Privasi";
+"login_login" = "Masuk";
+
+"home_tip" = "Selamat datang di %@!";
+"home_safe" = "100% aman";
+"home_fast" = "Persetujuan cepat";
+"home_simple" = "Sederhana";
+"home_apply" = "Daftar sekarang";
+"home_p_p" = "Kebijakan Privasi";
+"home_cal" = "Calculator";
+
+"home_tip1" = "Masalah umum dalam peminjaman";
+"home_tip2" = "1.Bagaimana cara mengajukan pinjaman?";
+"home_tip3" = "2.Mengapa saya tidak bisa menerima kode verifikasi?";
+"home_tip4" = "3.Berapa lama proses persetujuan pinjaman?";
+"home_tip5" = "4.Jika pinjaman saya tidak disetujui, apakah saya bisa mengajukan lagi?";
+"home_tip6" = "5.Apakah saya bisa membatalkan pinjaman saya setelah mengajukan permohonan?";
+
+"order_nav" = "Daftar Pesanan";
+"order_repay" = "Pelunasan";
+"order_applying" = "Menerapkan";
+"order_finish" = "Selesai";
+"order_all" = "Sem";
+"order_empty" = "Belum ada pesanan yang masuk, silakan ajukan permohonan sekarang.";
+"order_empty_btn" = "Klik Terapkan";
+
+"me_nav" = "Pusat Pribadi";
+"me_tip1" = "Peminjam harus berusia minimal 18 tahun.";
+"me_tip2" = "Identitas dan verifikasi nama asli";
+"me_tip3" = "Sumber penghasilan yang stabil";
+
+"setting_version" = "Nomor versi：V1.0.0";
+"setting_cancel" = "Pembatalan akun";
+"setting_cancel_pop_title" = "Harap diperhatikan";
+"setting_cancel_pop_tip1" = "Silakan baca perjanjian pembatalan berikut ini dengan seksama:";
+"setting_cancel_pop_tip2" = "Semua informasi pribadi akan dihapus secara permanen dan tidak dapat dipulihkan.";
+"setting_cancel_pop_tip3" = "Pinjaman yang belum dilunasi harus dilunasi sebelum pembatalan.";
+"setting_cancel_pop_tip4" = "Setelah pembatalan, kami akan menghentikan pengiriman pemberitahuan dan informasi pemasaran kepada Anda.";
+"setting_cancel_pop_tip5" = "Saya setuju dengan yang di atas.";
+"setting_signout" = "Keluar";
+"setting_signout_pop_title" = "Keluar";
+"setting_signout_pop_tip1" = "Apakah Anda yakin ingin keluar?";
+"setting_signout_pop_tip2" = "Jumlah pinjaman maksimum(Rp)";
+"setting_signout_pop_tip3" = "9,800,000";
+"setting_signout_pop_tip4" = "Suku bunga: 0,06% per hari";
+"setting_signout_pop_btn" = "Saya akan melihatnya!";
+
+"calcular_nav" = "Calculator";
+"calcular_tip1" = "EMI";
+"calcular_tip2" = "Accurately calculate your funding interest rate";
+"calcular_tip3" = "Principal Amount（₹）";
+"calcular_tip3_place" = "Principal Amount";
+"calcular_tip4" = "Interest Rate（₹）";
+"calcular_tip4_place" = "Interest Rate";
+"calcular_tip5" = "Loan Term";
+"calcular_tip5_place" = "Loan Term";
+"calcular_year" = "Years";
+"calcular_month" = "Months";
+"calcular_btn" = "Calculate";
+"calcular_reset" = "Reset";
+
+"problems_nav" = "Masalah umum";
+"problems_title1" = "1.Bagaimana cara mengajukan pinjaman?";
+"problems_title2" = "2.Mengapa saya tidak bisa menerima kode verifikasi?";
+"problems_title3" = "3.Berapa lama proses persetujuan pinjaman?";
+"problems_title4" = "4.Jika pinjaman saya tidak disetujui, apakah saya bisa mengajukan lagi?";
+"problems_title5" = "5.Apakah saya bisa membatalkan pinjaman saya setelah mengajukan permohonan?";
+"problems_content1" = "Silakan ikuti tahapan pengajuan pinjaman dan pastikan semua informasi Anda valid saat mengajukan permohonan.";
+"problems_content2" = "Pastikan ponsel Anda berfungsi dengan normal. Jika server operator sedang sibuk, mungkin akan terjadi penundaan. Silakan coba lagi nanti.";
+"problems_content3" = "Setelah mengisi semua informasi yang diperlukan, permohonan pinjaman Anda akan diproses dalam waktu sesingkat 3 menit namun tidak lebih dari 1-24 jam.";
+"problems_content4" = "Kami mohon maaf atas ketidaknyamanan ini, tetapi jika pinjaman Anda tidak disetujui, hal ini berarti Anda tidak akan dapat mengajukan permohonan kembali ke platform kami.";
+"problems_content5" = "Setelah permohonan pinjaman diajukan, permohonan tersebut akan diproses secara otomatis oleh sistem dan tidak dapat dibatalkan.";
+
+"details_nav" = "Detail Produk";
+"details_step" = "Melangkah";
+"details_agree" = "Saya sudah membaca dan setuju %@";
+
+"auth_upload" = "Unggah";
+"auth_uploaded" = "Diunggah";
+"auth_next" = "Berikutnya";
+"auth_card_pop_title" = "Demonstrasi yang Benar";
+"auth_card_pop_tip" = "Silakan ambil foto yang lengkap, jelas, terang, dan tidak terhalang.";
+"auth_card_pop_left" = "Kabur";
+"auth_card_pop_mid" = "Menyumbat";
+"auth_card_pop_right" = "Kekurangan";
+"auth_card_pop_year" = "Hari";
+"auth_card_pop_month" = "Bulan";
+"auth_card_pop_ri" = "Tahun";
+"auth_pop_confirm" = "Silakan konfirmasi";
+"auth_pop_confirm_btn" = "Konfirmasi";
+"auth_pop_select" = "Silakan pilih";
+"auth_pop_choose" = "Silakan pilih";
+"auth_pop_confirm_name" = "Nama";
+"auth_pop_confirm_birth" = "Tanggal lahir";
+"auth_pop_confirm_number" = "Nomor ID";
+"auth_pop_confirm_tip1" = "Silakan periksa informasi berikut dan pastikan keakuratannya agar proses review dapat berjalan lancar.";

@@ -6,9 +6,113 @@
   
 */
 
-/// Login
+"tab_home" = "Home";
+"tab_order" = "Orders";
+"tab_me" = "Me";
+
+"lunch_try" = "Try again";
+
 "login_title" = "LOGIN";
 "login_phone" = "Phone number";
 "login_phone_place" = "Please enter your phone number";
 "login_code" = "Verification code";
 "login_code_place" = "Verification code";
+"login_voice" = "Voice verification";
+"login_sms_code" = "Get Code";
+"login_xie_yi_pre" = "I agree to the ";
+"login_xie_yi" = "<Privacy Policy>";
+"login_login" = "Login";
+
+"home_tip" = "Welcome to %@!";
+"home_safe" = "100% safe";
+"home_fast" = "Fast approval";
+"home_simple" = "Simple";
+"home_apply" = "Apply now";
+"home_p_p" = "Privacy Policy";
+"home_cal" = "Calculator";
+
+"home_tip1" = "Common problems in borrowing";
+"home_tip2" = "1.How do I apply for a loan?";
+"home_tip3" = "2.Why can't l receive the verifcation code?";
+"home_tip4" = "3.How long is the loan approval process?";
+"home_tip5" = "4.If my loan is not approved, can l apply again?";
+"home_tip6" = "5.Can l cancel my loan after submitting it?";
+
+"order_nav" = "Order List";
+"order_repay" = "Repayment";
+"order_applying" = "Applying";
+"order_finish" = "Finished";
+"order_all" = "All";
+"order_empty" = "Here is no order yet, please apply now";
+"order_empty_btn" = "Go to Apply";
+
+"me_nav" = "Personal center";
+"me_tip1" = "The borrower must be at least 18 years old";
+"me_tip2" = "Identity and real name authentication";
+"me_tip3" = "Stable source of income";
+
+"setting_version" = "Version number：V1.0.0";
+"setting_cancel" = "Account cancellation";
+"setting_cancel_pop_title" = "Please note";
+"setting_cancel_pop_tip1" = "Please read the following cancellation agreement carefully:";
+"setting_cancel_pop_tip2" = "All personal information will be deleted permanently and cannot be restored.";
+"setting_cancel_pop_tip3" = "Unclated loans must be repaid before canceling.";
+"setting_cancel_pop_tip4" = "After canceling, we will stop sending you any notification and marketing information.";
+"setting_cancel_pop_tip5" = "I agree with the above.";
+"setting_signout" = "Sign out";
+"setting_signout_pop_title" = "Logout";
+"setting_signout_pop_tip1" = "Are you sure you want to leave?";
+"setting_signout_pop_tip2" = "Maximum loan amount(₹)";
+"setting_signout_pop_tip3" = "9,800,000";
+"setting_signout_pop_tip4" = "Interest rates: 0.06% / days";
+"setting_signout_pop_btn" = "I'll take a look!";
+
+"calcular_nav" = "Calculator";
+"calcular_tip1" = "EMI";
+"calcular_tip2" = "Accurately calculate your funding interest rate";
+"calcular_tip3" = "Principal Amount（₹）";
+"calcular_tip3_place" = "Principal Amount";
+"calcular_tip4" = "Interest Rate（₹）";
+"calcular_tip4_place" = "Interest Rate";
+"calcular_tip5" = "Loan Term";
+"calcular_tip5_place" = "Loan Term";
+"calcular_year" = "Years";
+"calcular_month" = "Months";
+"calcular_btn" = "Calculate";
+"calcular_reset" = "Reset";
+
+"problems_nav" = "Common problems";
+"problems_title1" = "1.How do I apply for a loan?";
+"problems_title2" = "2.Why can't l receive the verifcation code?";
+"problems_title3" = "3.How long is the loan approval process?";
+"problems_title4" = "4.If my loan is not approved, can l apply again?";
+"problems_title5" = "5.Can l cancel my loan after submitting it?";
+"problems_content1" = "Please follow the stages of applying for a loan and make sure that all your information is valid when you apply.";
+"problems_content2" = "Please make sure your mobile phone is running normally, there may be a delay when the operator's server is busy, please try again later.";
+"problems_content3" = "After completing all the required information, your loan application will be processed in as early as 3 minutes but no later than 1-24 hours.";
+"problems_content4" = "We're sorry for the inconvenience, but if your loan is not approved, this means you will not be able to apply to our platform again.";
+"problems_content5" = "Once a loan application is issued, it will be processed automatically by the system and cannot be cancelled.";
+
+"details_nav" = "Product Details";
+"details_step" = "Step";
+"details_agree" = "I have read and agree %@";
+
+"auth_upload" = "Upload";
+"auth_uploaded" = "Uploaded";
+"auth_next" = "Next";
+"auth_card_pop_title" = "Correct Demonstration";
+"auth_card_pop_tip" = "Please take complete, clear, well-lit, and unobstructed photos.";
+"auth_card_pop_left" = "Blurred";
+"auth_card_pop_mid" = "Shelter";
+"auth_card_pop_right" = "Deficiencies";
+"auth_card_pop_year" = "Year";
+"auth_card_pop_month" = "Month";
+"auth_card_pop_ri" = "Day";
+"auth_pop_confirm" = "Please confirm";
+"auth_pop_confirm_btn" = "Confirm";
+"auth_pop_select" = "Please select";
+"auth_pop_choose" = "Please choose";
+"auth_pop_confirm_name" = "Name";
+"auth_pop_confirm_birth" = "Date of birth";
+"auth_pop_confirm_number" = "ID number";
+"auth_pop_confirm_tip1" = "Please check the following information and confirm the accurate correctness in order to pass the review smoothly";

@@ -14,7 +14,7 @@ end
 
 def OCFrameworks
  pod 'AFNetworking', :git => 'https://github.com/crasowas/AFNetworking.git'
- pod 'CYSwiftExtension', '1.7.2'
+ pod 'CYSwiftExtension', '1.7.6'
 end
 
 def HostPods

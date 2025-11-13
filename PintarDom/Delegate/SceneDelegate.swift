@@ -6,6 +6,9 @@
 //
 
 import UIKit
+@_exported import CYSwiftExtension
+@_exported import Toast
+@_exported import YYKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -17,6 +20,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
+        APPNetRequestURLConfig.setNetworkDebugRequestURL("http://149.129.233.8:5010/asutf", releaseUrl: "http://149.129.233.8:5010/asutf")
+        APPNetResponseParsingConfig.setParsingConfig("fainter", service: "sounds", data: "bade")
+        setServiwComskwCnsParams()
+        #if DEBUG
+        APPCocoaLog.shared.registe(with: EnvType.other)
+        #else
+        APPCocoaLog.shared.registe(with: EnvType.prod)
+        #endif
+        DeviceNetObserver.shared.StartNetworkStatusListener()
+        DeviceAuthorizationTool.authorization()
+        APPLanguageInsTool.setLocalLanguage(InterbationalLanguage.English)
+        GLoskwCommenskwmodls.shared.unencodeuasdwyruenyws()
+        showAllFonts()
+        setServiwComskwCnsParams()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -47,6 +64,45 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
     }
 
+    func showAllFonts(){
+        let familyNames = UIFont.familyNames
+        
+        var index:Int = 0
+        
+        for familyName in familyNames {
+            
+            let fontNames = UIFont.fontNames(forFamilyName: familyName as String)
+            print("------- 字体家族 -------- \(familyName)")
+            for fontName in fontNames
+            {
+                index += 1
+                
+                print("第 \(index) 个字体，字体font名称：\(fontName)")
+            }
+        }
+    }
 
+    func setServiwComskwCnsParams() {
+        let ppParams: APPPublicParamsKey = APPPublicParamsKey()
+        ppParams.appVersionKey = "lamenting"
+        ppParams.countryCodeKey = "oppressed"
+        ppParams.deviceNameKey = "meeting"
+        ppParams.idfaKey = "struggle"
+        ppParams.idfvKey = "assertion"
+        ppParams.loginTokenKey = "powerfully"
+        ppParams.systemVersionKey = "support"
+        
+        APPPublicParams.request().appCommonParamsKeyModel(ppParams)
+    }
 }
 
+extension SceneDelegate {
+    func setWindowksRootSjwjvCOntrols() {
+        CSToastManager.setDefaultPosition(CSToastPositionCenter)
+        
+        self.window?.backgroundColor = .white
+        let lasn = WinsLanscusherViewController()
+        self.window?.rootViewController = lasn
+        self.window?.makeKeyAndVisible()
+    }
+}
