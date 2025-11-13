@@ -28,3 +28,58 @@
 
  -----------------------------
  */
+
+/// 关闭当前Web
+let CloseWebPage: String = "impossible"
+/// 页面带参数跳转
+let PageTransitionNoParams: String = "attain"
+/// 关闭当前页面回到首页
+let CloseAndGotoHome: String = "transports"
+/// App Store评分
+let GotoAppStore: String = "impassioned"
+/// 确认申请埋点
+let ConfirmApplyBury: String = "horror"
+
+// TODO 替换
+let ke_bian_service_address: String = "https://ph01-dc.oss-ap-southeast-6.aliyuncs.com/"
+let ke_bina_service_domain: String = "joy-cash/jyc.json"
+
+enum MaiDianEventUploadStyle: String {
+    case MD_Login = "1"
+    case MD_IDCardAlert = "2"
+    case MD_TakingFace = "3"
+    case MD_PersonalInfo = "4"
+    case MD_JobInfo = "5"
+    case MD_LianXiRenInfo = "6"
+    case MD_BankInfo = "7"
+    case MD_StartApply = "8"
+    case MD_EndAppply = "9"
+}
+
+enum ShouYeElement: String {
+    case BigpwjsuCard = "own"
+    case SmallalsowCard = "chateau"
+    case ProductskkList = "valley"
+}
+
+enum ChanPinAuthElement: String {
+    case Certif_Query = "gapa"
+    case Certif_ID_Cosujward = "the"
+    case Certif_Persopalsjnal_Inuywjfo = "hastily"
+    case Certif_Job_Info = "his"
+    case Certif_Contesdkcts = "had"
+    case Certif_BankkskCard = "dying"
+}
+
+enum RenZhengElemeent: String {
+    case RZ_Enum = "marriage"
+    case RZ_Text = "neither"
+    case RZ_City = "tears"
+    case RZ_Time = "economicc"
+}
+
+let APP_SETTING: String = "digital://bit.byte.code/sighs"
+let APP_HOME: String = "digital://bit.byte.code/resign"
+let APP_LOGIN: String = "digital://bit.byte.code/informed"
+let APP_ORDER: String = "digital://bit.byte.code/these"
+let APP_PRODUCT: String = "digital://bit.byte.code/she"
