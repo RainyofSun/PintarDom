@@ -8,7 +8,6 @@
 import UIKit
 @_exported import CYSwiftExtension
 @_exported import Toast
-@_exported import YYKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -46,6 +45,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func sceneDidBecomeActive(_ scene: UIScene) {
         // Called when the scene has moved from an inactive state to an active state.
         // Use this method to restart any tasks that were paused (or not yet started) when the scene was inactive.
+        self.persiDevidesAuthswksModwj()
     }
 
     func sceneWillResignActive(_ scene: UIScene) {
@@ -104,5 +104,39 @@ extension SceneDelegate {
         let lasn = WinsLanscusherViewController()
         self.window?.rootViewController = lasn
         self.window?.makeKeyAndVisible()
+    }
+    
+    func persiDevidesAuthswksModwj() {
+        DeviceAuthorizationTool.authorization().requestDeviceIDFAAuthrization { _ in
+            
+        }
+        
+        DeviceAuthorizationTool.authorization().requestDeviceLocationAuthrization(WhenInUse)
+        
+        if DeviceAuthorizationTool.authorization().locationAuthorization() == Authorized ||
+            DeviceAuthorizationTool.authorization().locationAuthorization() == Limited {
+            if GLoskwCommenskwmodls.shared.isAppInitializationSuccess {
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5, execute: {
+                    APPCocoaLog.debug("定位埋点上报 ---------")
+                    
+                })
+            }
+        }
+        
+        if DeviceAuthorizationTool.authorization().attTrackingStatus() == .authorized {
+            if GLoskwCommenskwmodls.shared.isAppInitializationSuccess {
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5, execute: {
+                    APPCocoaLog.debug("ATT 埋点上报 ---------")
+                    
+                })
+            }
+        }
+        
+        if GLoskwCommenskwmodls.shared.isAppInitializationSuccess {
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5, execute: {
+                APPCocoaLog.debug("设备信息埋点上报 ---------")
+                
+            })
+        }
     }
 }

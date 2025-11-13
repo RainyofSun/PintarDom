@@ -23,10 +23,6 @@ class EsensilledTabBarViewController: APPBasicTabBarViewController {
             }
         }
     }
-    
-    override func setTabControllerElements(controllers vcArray: [UIViewController.Type], barImages images: [[String]]) {
-        
-    }
 }
 
 @objc extension EsensilledTabBarViewController {
