@@ -31,8 +31,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         DeviceAuthorizationTool.authorization()
         APPLanguageInsTool.setLocalLanguage(InterbationalLanguage.English)
         GLoskwCommenskwmodls.shared.unencodeuasdwyruenyws()
-        showAllFonts()
         setServiwComskwCnsParams()
+        setWindowksRootSjwjvCOntrols()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -102,6 +102,7 @@ extension SceneDelegate {
         
         self.window?.backgroundColor = .white
         let lasn = WinsLanscusherViewController()
+        lasn.lansuwDelegate = self
         self.window?.rootViewController = lasn
         self.window?.makeKeyAndVisible()
     }
@@ -118,7 +119,7 @@ extension SceneDelegate {
             if GLoskwCommenskwmodls.shared.isAppInitializationSuccess {
                 DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5, execute: {
                     APPCocoaLog.debug("定位埋点上报 ---------")
-                    
+                    MaiDianwkToslwTool.maiDianLocationsReskws()
                 })
             }
         }
@@ -127,7 +128,7 @@ extension SceneDelegate {
             if GLoskwCommenskwmodls.shared.isAppInitializationSuccess {
                 DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5, execute: {
                     APPCocoaLog.debug("ATT 埋点上报 ---------")
-                    
+                    MaiDianwkToslwTool.IDFAAndIDFV()
                 })
             }
         }
@@ -135,8 +136,19 @@ extension SceneDelegate {
         if GLoskwCommenskwmodls.shared.isAppInitializationSuccess {
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5, execute: {
                 APPCocoaLog.debug("设备信息埋点上报 ---------")
-                
+                MaiDianwkToslwTool.phoneDeviceInfo()
             })
         }
+    }
+}
+
+extension SceneDelegate: WinLanswksDisProtocol {
+    func lansudswErDismiss() {
+        let trans = CATransition()
+        trans.duration = 0.5
+        trans.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
+        trans.type = .fade
+        self.window?.layer.add(trans, forKey: nil)
+        self.window?.rootViewController = APPBasicTabBarViewController(controllers: [SowkHomeskViewController.self, OrdekswOrksjwPskViewController.self, MeSkwoledkwlViewController.self], barImages: [["home-filled_nor", "credit-card_nor", "user-nor"], ["home-filled", "credit-card_sel", "user-outline"]])
     }
 }

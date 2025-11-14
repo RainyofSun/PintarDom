@@ -17,6 +17,10 @@ class LoaskwmDetasilwViewController: EsensiilsadwsiwViewController {
         self.chans_number = num
     }
     
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

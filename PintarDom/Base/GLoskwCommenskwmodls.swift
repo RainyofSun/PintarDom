@@ -16,7 +16,7 @@ let LOGIN_OBERVER_KEY: String = "userHasLogin"
             self.userHasLogin = appLoginInfo != nil
         }
     }
-    /// 国家代码 1=默认印度(审核面)   2=墨西哥(用户面)
+    /// 国家代码 1=默认英语   2=印尼
     open var countryCode: Int = .zero
     /// 隐私协议
     open var privacyURL: String?

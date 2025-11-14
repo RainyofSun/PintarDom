@@ -18,7 +18,7 @@ class LuyouswkMakswTool: NSObject {
             return
         }
         
-        let _t_skw_viewcon = _r_w_c.jk.topViewController
+        let _t_skw_viewcon = _r_w_c.jk.topViewController()
         
         if url.hasPrefix("http") {
             _t_skw_viewcon?.navigationController?.pushViewController(h5WebskwCoskwViewController(withWebLinkURL: APPPublicParams.request().splicingPublicParams(url), backToRoot: root, webFuncScriptHandler: webLuYousCallbakcMethods,), animated: true)
@@ -49,6 +49,6 @@ class LuyouswkMakswTool: NSObject {
 
 private extension LuyouswkMakswTool {
     func spesParamsw(url: String) -> String {
-        return url.components(separatedBy: "?").last?.components(separatedBy: "=").last
+        return url.components(separatedBy: "?").last?.components(separatedBy: "=").last ?? ""
     }
 }

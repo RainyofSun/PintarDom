@@ -116,3 +116,5 @@
 "auth_pop_confirm_birth" = "Date of birth";
 "auth_pop_confirm_number" = "ID number";
 "auth_pop_confirm_tip1" = "Please check the following information and confirm the accurate correctness in order to pass the review smoothly";
+
+"neiw_tswp"="Network error, please check";

@@ -23,7 +23,7 @@ class MaiDianPhoneDeviceInfo: BasicsmNetResModel, YYModel {
 }
 
 // MARK: - another
-class StorageInfo: Codable {
+class StorageInfo: BasicsmNetResModel {
     var speaking: String?        // 可用存储大小（Byte）
     var accident: String?        // 总存储（Byte）
     var gathered: String?        // 总内存（Byte）
@@ -31,26 +31,26 @@ class StorageInfo: Codable {
 }
 
 // MARK: - imperfect
-class BatteryInfo: Codable {
-    var judging: Int?    // 剩余电量（百分比）
-    var alarm: Int?      // 是否充电 0/1
+class BatteryInfo: BasicsmNetResModel {
+    var judging: String?    // 剩余电量（百分比）
+    var alarm: String?      // 是否充电 0/1
 }
 
 // MARK: - appears
-class DeviceInfo: Codable {
+class DeviceInfo: BasicsmNetResModel {
     var quesnel: String?   // 系统版本
     var hints: String?     // 设备品牌
     var strange: String?   // 原始设备型号
 }
 
 // MARK: - follows
-class DeviceStatus: Codable {
-    var walked: Int?   // 是否模拟器
-    var late: Int?     // 是否越狱
+class DeviceStatus: BasicsmNetResModel {
+    var walked: String?   // 是否模拟器
+    var late: String?     // 是否越狱
 }
 
 // MARK: - compliance
-class SystemInfo: Codable {
+class SystemInfo: BasicsmNetResModel {
     var ungenerous: String?  // 时区 ID
     var understood: String?  // IDFV
     var wretchedness: String?// 语言
@@ -59,8 +59,12 @@ class SystemInfo: Codable {
 }
 
 // MARK: - importance
-class WifiWrapper: Codable {
+class WifiWrapper: BasicsmNetResModel, YYModel {
     var forborne: WifiInfo?  // 当前 wifi 信息（可能为空对象）
+
+    static func modelContainerPropertyGenericClass() -> [String : Any]? {
+        return ["forborne": WifiInfo.self]
+    }
 }
 
 class WifiInfo: Codable {
