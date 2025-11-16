@@ -13,6 +13,13 @@ import UIKit
 
 class EsensiilsadwsiwViewController: APPBasicViewController {
 
+    private(set) var bgImgView: UIImageView = UIImageView(frame: CGRectZero)
+    
+    override func buildPageUI() {
+        super.buildPageUI()
+        
+    }
+    
     open var comsejDityID: String {
         return GLoskwCommenskwmodls.shared.productID ?? ""
     }
