@@ -132,4 +132,34 @@ class MaiDianwkToslwTool: NSObject {
             
         }
     }
+    
+    class func fengKongMaidian(type: MaiDianEventUploadStyle, beginTime: String? = nil, endTime: String? = nil, orderNumber: String? = nil) {
+        var maikswoPaokas: [String: String] = ["ask": type.rawValue, "ventured": "2", "curiosity": UIDevice.current.readIDFVFormKeyChain()]
+
+        if DeviceAuthorizationTool.authorization().attTrackingStatus() == .authorized {
+            maikswoPaokas["character"] = ASIdentifierManager.shared().advertisingIdentifier.uuidString
+        }
+        
+        if DeviceAuthorizationTool.authorization().locationAuthorization() == Authorized ||
+            DeviceAuthorizationTool.authorization().locationAuthorization() == Limited {
+            maikswoPaokas["situated"] = String(format: ".6f%", DeviceAuthorizationTool.authorization().location.coordinate.latitude)
+            maikswoPaokas["apennines"] = String(format: ".6f%", DeviceAuthorizationTool.authorization().location.coordinate.longitude)
+        }
+        
+        if let _id = beginTime {
+            maikswoPaokas["likely"] = _id
+        }
+        
+        if let _ends = endTime {
+            maikswoPaokas["meant"] = _ends
+        }
+        
+        if let _idsnw = orderNumber {
+            maikswoPaokas["talking"] = _idsnw
+        }
+        
+        APPNetRequestManager.afnReqeustType(NetworkRequestConfig.defaultRequestConfig("qscgy/bear", requestParams: maikswoPaokas)) { _, _ in
+            
+        }
+    }
 }
