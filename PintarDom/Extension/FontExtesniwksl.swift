@@ -12,6 +12,8 @@ enum FontStyle: String {
     case Inter_Regular = "Inter-Regular"
     case Inter_Medium = "Inter-Medium"
     case Inter_Bold = "Inter-Bold"
+    case Inter_SemiBold = "Inter-SemiBold"
+    case Inter_ExtraBold = "Inter-ExtraBold"
 }
 
 extension UIFont {
