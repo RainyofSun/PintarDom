@@ -19,18 +19,20 @@ open class APPBasicTabBar: UITabBar {
 
     weak open var barDelegate: BasicTabbarProtocol?
     
+    private var tBarStyle: APPBasicTabBarStyleConfig?
     private var original_size: CGSize?
     private let _top_y = 15
     private let _item_padding = 15
     
-    private(set) var itemContentView: UIView = {
+    open var itemContentView: UIView = {
         let view = UIView(frame: CGRectZero)
         view.backgroundColor = UIColor.hexStringColor(hexString: "#3D000A")
         return view
     }()
     
-    override init(frame: CGRect) {
+    init(frame: CGRect, barConfig config: APPBasicTabBarStyleConfig?) {
         super.init(frame: frame)
+        self.tBarStyle = config ?? APPBasicTabBarStyleConfig()
         self.backgroundColor = .clear
         self.backgroundColor = UIColor.white
         self.original_size = frame.size
@@ -56,25 +58,25 @@ open class APPBasicTabBar: UITabBar {
         return super.sizeThatFits(size)
     }
     
-    open func setItemContentViewUIStyle(IPhoneNotchCornerRadius cornerRadius: CGFloat = -1) {
-        
-        if cornerRadius != -1 {
+    private func setItemContentViewUIStyle() {
+        self.itemContentView.backgroundColor = self.tBarStyle?.barBackgroubColor
+        if self.tBarStyle?.setCorner == true {
             if jk_isIPhoneNotch {
-                self.itemContentView.corner(cornerRadius)
+                self.itemContentView.corner(30)
             } else {
                 self.itemContentView.corner((frame.height - 4.0 * 2) * 0.5)
             }
         }
     }
     
-    open func layoutItemContent() {
+    private func layoutItemContent() {
         self.itemContentView.snp.makeConstraints { make in
-            make.horizontalEdges.equalToSuperview().inset(4.0 * 6)
+            make.horizontalEdges.equalToSuperview().inset(self.tBarStyle?.horizationSpacing ?? 0 * 6)
             if jk_isIPhoneNotch {
                 make.top.equalToSuperview().offset(4.0 * 1.5)
                 make.height.equalTo(60)
             } else {
-                make.verticalEdges.equalToSuperview().inset(4.0)
+                make.verticalEdges.equalToSuperview().inset(self.tBarStyle?.verticalSpacing ?? 0)
             }
         }
     }

@@ -149,6 +149,6 @@ extension SceneDelegate: WinLanswksDisProtocol {
         trans.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
         trans.type = .fade
         self.window?.layer.add(trans, forKey: nil)
-        self.window?.rootViewController = APPBasicTabBarViewController(controllers: [SowkHomeskViewController.self, OrdekswOrksjwPskViewController.self, MeSkwoledkwlViewController.self], barImages: [["home-filled_nor", "credit-card_nor", "user-nor"], ["home-filled", "credit-card_sel", "user-outline"]])
+        self.window?.rootViewController = APPBasicTabBarViewController(controllers: [SowkHomeskViewController.self, OrdekswOrksjwPskViewController.self, MeSkwoledkwlViewController.self], barImages: [["home-filled_nor", "credit-card_nor", "user-nor"], ["home-filled", "credit-card_sel", "user-outline"]], barStyle: APPBasicTabBarStyleConfig())
     }
 }

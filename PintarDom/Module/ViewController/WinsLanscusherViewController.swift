@@ -16,28 +16,26 @@ class WinsLanscusherViewController: EsensiilsadwsiwViewController {
 
     weak open var lansuwDelegate: WinLanswksDisProtocol?
     
-    private lazy var bgImgView = UIImageView(image: UIImage(named: "launcher"))
     private lazy var tryswjBtn = APPActivityButton.buildLoadingAnimationButton(title: APPLanguageInsTool.loadLanguage("lunch_try"))
 
     override func buildPageUI() {
+        super.buildPageUI()
+        
         self.tryswjBtn.corner(25)
         self.tryswjBtn.layer.borderWidth = 1
         self.tryswjBtn.layer.borderColor = UIColor.white.cgColor
         self.tryswjBtn.addTarget(self, action: #selector(cliskwtrysuBuwson(sender: )), for: UIControl.Event.touchUpInside)
         self.tryswjBtn.isHidden = true
         
-        self.bgImgView.isUserInteractionEnabled = true
+        self.bgImgView.image = UIImage(named: "launcher")
         self.view.addSubview(self.bgImgView)
-        self.bgImgView.addSubview(self.tryswjBtn)
+        self.view.addSubview(self.tryswjBtn)
         
         NotificationCenter.default.addObserver(self, selector: #selector(phonesnWksChanges(sender: )), name: NSNotification.Name(APPLICATION_NET_CHANGE), object: nil)
     }
     
     override func layoutPageViews() {
-        
-        self.bgImgView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-        }
+        super.layoutPageViews()
         
         self.tryswjBtn.snp.makeConstraints { make in
             make.horizontalEdges.equalToSuperview().inset(40)
