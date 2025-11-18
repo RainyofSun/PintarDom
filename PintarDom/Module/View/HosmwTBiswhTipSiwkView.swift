@@ -17,17 +17,22 @@ class TispwskCelsliwView: UIView {
         self.corner(22)
         self.backgroundColor = UIColor.init(white: 1, alpha: 0.52)
         
+        self.isUserInteractionEnabled = false
+        
+        self.skwkViwlslw.textAlignment = .left
         self.addSubview(self.skwkViwlslw)
         self.addSubview(self.isamwkduwImsView)
         
         self.skwkViwlslw.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.left.equalToSuperview().offset(16)
+            make.right.lessThanOrEqualTo(self.isamwkduwImsView.snp.left).offset(-8)
         }
         
         self.isamwkduwImsView.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
-            make.right.equalToSuperview().offset(-16)
+            make.right.equalToSuperview().offset(-12)
+            make.size.equalTo(24)
         }
     }
     
@@ -44,6 +49,7 @@ class HosmwTBiswhTipSiwkView: UIControl {
         super.init(frame: frame)
         self.corner(16)
         self.backgroundColor = UIColor.init(white: 1, alpha: 0.3)
+        self.corner(20)
         
         self.addSubview(self.titleLab)
         self.titleLab.snp.makeConstraints { make in
@@ -61,7 +67,7 @@ class HosmwTBiswhTipSiwkView: UIControl {
                 if i == 6 {
                     vieswk.snp.makeConstraints { make in
                         make.height.horizontalEdges.equalTo(_eowk)
-                        make.bottom.equalToSuperview().offset(-12)
+                        make.bottom.equalToSuperview().offset(-16)
                         make.top.equalTo(_eowk.snp.bottom).offset(8)
                     }
                 } else {
@@ -80,11 +86,6 @@ class HosmwTBiswhTipSiwkView: UIControl {
             
             tis_swk = vieswk
         }
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        self.jk.addViewCornerAndShadow(conrners: UIRectCorner.allCorners, shadowColor: UIColor.init(white: 0, alpha: 0.25), shadowOffset: CGSize(width: 0, height: 4), shadowOpacity: 4)
     }
     
     required init?(coder: NSCoder) {

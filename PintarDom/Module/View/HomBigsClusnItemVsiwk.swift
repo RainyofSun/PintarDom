@@ -11,7 +11,7 @@ class HomBigsClusnItemVsiwk: UIControl {
 
     private lazy var gradiensView: GradientColorView = {
         let vew = GradientColorView()
-        vew.buildGradientWithColors(gradientColors: [UIColor.hexStringColor(hexString: "#72FFE4"), UIColor.hexStringColor(hexString: "#3FE2FF")], gradientStyle: GradientDirectionStyle.leftToRight)
+        vew.buildGradientWithColors(gradientColors: [UIColor.hexStringColor(hexString: "#72FFE4", alpha: 0.2), UIColor.hexStringColor(hexString: "#3FE2FF", alpha: 0.2)], gradientStyle: GradientDirectionStyle.leftToRight)
         return vew
     }()
     
@@ -57,6 +57,11 @@ class HomBigsClusnItemVsiwk: UIControl {
     func setLeftskkwiMsgw(_ imasgwaNamw: String, titleSkwks: String) {
         self.leftImgView.image = UIImage(named: imasgwaNamw)
         self.ttleskkLab.text = titleSkwks
+    }
+    
+    func setcalskawColrosStyle() {
+        self.gradiensView.isHidden = true
+        self.backgroundColor = UIColor.hexStringColor(hexString: "#70FFE5", alpha: 0.4)
     }
     
 }

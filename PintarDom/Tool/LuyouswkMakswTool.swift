@@ -14,7 +14,7 @@ class LuyouswkMakswTool: NSObject {
     private var webLuYousCallbakcMethods: [String] = [CloseWebPage, PageTransitionNoParams, CloseAndGotoHome, GotoAppStore, ConfirmApplyBury]
     
     public func tiaoZhuanPage(luyouUrl url: String, needBackRoot root: Bool = false, targetViewController: UIViewController? = nil) {
-        guard let _r_w_c = UIDevice.current.keyWindow().rootViewController as? EsensilledTabBarViewController else {
+        guard let _r_w_c = UIDevice.current.keyWindow().rootViewController as? APPBasicTabBarViewController else {
             return
         }
         
