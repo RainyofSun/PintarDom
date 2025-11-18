@@ -9,12 +9,44 @@ import UIKit
 
 class HomBigskwCakswiView: UIScrollView {
 
+    private lazy var privaViews: HomBigsClusnItemVsiwk = HomBigsClusnItemVsiwk(frame: CGRectZero)
+    private lazy var caslwskViews: HomBigsClusnItemVsiwk = HomBigsClusnItemVsiwk(frame: CGRectZero)
+    private lazy var shwkTipskwView: HosmwTBiswhTipSiwkView = HosmwTBiswhTipSiwkView(frame: CGRectZero)
     
-
     override init(frame: CGRect) {
         super.init(frame: frame)
      
+        self.privaViews.setLeftskkwiMsgw("home_privacy", titleSkwks: APPLanguageInsTool.loadLanguage("home_p_p"))
+        self.caslwskViews.setLeftskkwiMsgw("home_calcu", titleSkwks: APPLanguageInsTool.loadLanguage("home_cal"))
         
+        self.addSubview(self.privaViews)
+        self.addSubview(self.shwkTipskwView)
+        
+        self.privaViews.snp.makeConstraints { make in
+            make.left.equalToSuperview().offset(16)
+            make.width.equalTo(jk_kScreenW - 32)
+            make.top.equalToSuperview()
+        }
+        
+        if GLoskwCommenskwmodls.shared.countryCode == 1 {
+            self.addSubview(self.caslwskViews)
+            self.caslwskViews.snp.makeConstraints { make in
+                make.horizontalEdges.equalTo(self.privaViews)
+                make.top.equalTo(self.privaViews.snp.bottom).offset(12)
+            }
+            
+            self.shwkTipskwView.snp.makeConstraints { make in
+                make.horizontalEdges.equalTo(self.privaViews)
+                make.top.equalTo(self.caslwskViews.snp.bottom).offset(14)
+                make.bottom.equalToSuperview().offset(-8)
+            }
+        } else {
+            self.shwkTipskwView.snp.makeConstraints { make in
+                make.horizontalEdges.equalTo(self.privaViews)
+                make.top.equalTo(self.privaViews.snp.bottom).offset(14)
+                make.bottom.equalToSuperview().offset(-8)
+            }
+        }
     }
     
     required init?(coder: NSCoder) {

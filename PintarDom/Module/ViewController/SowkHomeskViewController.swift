@@ -41,7 +41,6 @@ class SowkHomeskViewController: EsensiilsadwsiwViewController {
         
         self.bigSkwi.snp.makeConstraints { make in
             make.left.top.bottom.equalToSuperview()
-            make.height.equalTo(200)
             make.width.equalTo(self.view)
         }
     }
