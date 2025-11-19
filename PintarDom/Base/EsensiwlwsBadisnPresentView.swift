@@ -34,7 +34,7 @@ class EsensiwlwsBadisnPresentView: UIView {
         super.init(frame: frame)
         
         self.alpha = .zero
-        self.backgroundColor = UIColor.init(white: 0, alpha: 0.3)
+        self.backgroundColor = UIColor.init(white: 0, alpha: 0.6)
         
         self.buildPresentView()
         self.layoutPresentView()

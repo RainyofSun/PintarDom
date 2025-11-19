@@ -8,18 +8,19 @@
 import UIKit
 
 class HomApslwlkControwlView: UIControl {
-
+    
     private lazy var topTip: UILabel = UILabel.normalTextLabel("", t_color: UIColor.ppGray8C, t_f: UIFont.systemFont(ofSize: 14))
     private lazy var amountLas: UILabel = UILabel.normalTextLabel("", t_color: UIColor.pp22115168, t_f: UIFont.loadSpecialFont(size: 40, ftStyle: FontStyle.Inter_ExtraBold))
     private lazy var rasteView: RastwAnsRasyDaysView = RastwAnsRasyDaysView(frame: CGRectZero)
     private lazy var safeView: TopImageAndBottomTextButton = TopImageAndBottomTextButton(frame: CGRectZero)
     private lazy var fastView: TopImageAndBottomTextButton = TopImageAndBottomTextButton(frame: CGRectZero)
     private lazy var simpleView: TopImageAndBottomTextButton = TopImageAndBottomTextButton(frame: CGRectZero)
-    private lazy var appBtn: APPActivityButton = APPActivityButton.buildLoadingAnimationButton(title: "")
+    private(set) lazy var appBtn: APPActivityButton = APPActivityButton.buildLoadingAnimationButton(title: "")
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        self.appBtn.isUserInteractionEnabled = false
         self.appBtn.setTitleColor(UIColor.white, for: UIControl.State.normal)
         self.appBtn.titleLabel?.font = UIFont.loadSpecialFont(size: 20, ftStyle: FontStyle.Inter_ExtraBold)
         self.appBtn.corner(25)

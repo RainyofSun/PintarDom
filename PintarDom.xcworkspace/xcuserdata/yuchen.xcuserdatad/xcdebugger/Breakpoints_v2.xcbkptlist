@@ -3,4 +3,84 @@
    uuid = "35CB3A3C-7FEC-40A8-91F3-C420E6CF753E"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6DB8548C-3B8C-412A-8173-3FBC852EFE2F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PintarDom/Module/ViewController/PerswnsLogiswskViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "buildPageUI()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "39AA9156-02E3-42B0-B7B3-BA7CDDF3C2D6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PintarDom/Module/ViewController/PerswnsLogiswskViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "layoutPageViews()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "39AA9156-02E3-42B0-B7B3-BA7CDDF3C2D6 - 762ca9206e98d68a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PintarDom.PerswnsLogiswskViewController.layoutPageViews() -&gt; ()"
+                  moduleName = "PintarDom.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yuchen/Desktop/%E5%A4%96%E5%8C%85%E9%A1%B9%E7%9B%AE/PintarD/PintarDom/Module/ViewController/PerswnsLogiswskViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19">
+               </Location>
+               <Location
+                  uuid = "39AA9156-02E3-42B0-B7B3-BA7CDDF3C2D6 - a9b73d015cb6ad1d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (SnapKit.ConstraintMaker) -&gt; () in PintarDom.PerswnsLogiswskViewController.layoutPageViews() -&gt; ()"
+                  moduleName = "PintarDom.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yuchen/Desktop/%E5%A4%96%E5%8C%85%E9%A1%B9%E7%9B%AE/PintarD/PintarDom/Module/ViewController/PerswnsLogiswskViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "100D2789-34BA-4364-A0BD-309249B3240F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PintarDom/Base/EsensiwlwsBadisnPresentView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "buildPresentView()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
