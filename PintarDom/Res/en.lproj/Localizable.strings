@@ -51,6 +51,7 @@
 "me_tip2" = "Identity and real name authentication";
 "me_tip3" = "Stable source of income";
 
+"setting_nav" = "Settings";
 "setting_version" = "Version number：V1.0.0";
 "setting_cancel" = "Account cancellation";
 "setting_cancel_pop_title" = "Please note";

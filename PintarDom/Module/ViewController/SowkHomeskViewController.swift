@@ -106,14 +106,42 @@ private extension SowkHomeskViewController {
             InsjwjdCityCalswjCacheModel.saveCsitjwDataToDiskwks(_json)
         }
     }
+    
+    func showChanpInsDetail(_ chanPinswkId: String, sender: ActivityAnimationProtocol) {
+        guard sender.isEnabled else {
+            return
+        }
+        
+        sender.startAnimation()
+        
+        APPNetRequestManager.afnReqeustType(NetworkRequestConfig.defaultRequestConfig("qscgy/oppressed", requestParams: ["nor": chanPinswkId])) { (task: URLSessionDataTask, res: APPSuccessResponse) in
+            sender.stopAnimation()
+            guard let _jsowDis = res.jsonDict, let _ausjw_askkw = ChanPinZhunRuModelskw.model(with: _jsowDis) else {
+                return
+            }
+            
+            guard let _urls = _ausjw_askkw.totally else {
+                return
+            }
+            
+            LuyouswkMakswTool.luYou.tiaoZhuanPage(luyouUrl: _urls, needBackRoot: true)
+            
+        } failure: { _, _ in
+            sender.stopAnimation()
+        }
+    }
 }
 
 @objc private extension SowkHomeskViewController {
     func clickAppslwjsViewsButon(sender: HomApslwlkControwlView) {
+        guard let _idslw = GLoskwCommenskwmodls.shared.productID else {
+            return
+        }
         
+        self.showChanpInsDetail(_idslw, sender: sender.appBtn)
     }
     
     func reswoHomesUiStyle() {
-        
+        self.pageNetRequest()
     }
 }
