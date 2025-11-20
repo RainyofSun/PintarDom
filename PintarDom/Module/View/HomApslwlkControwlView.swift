@@ -12,9 +12,36 @@ class HomApslwlkControwlView: UIControl {
     private lazy var topTip: UILabel = UILabel.normalTextLabel("", t_color: UIColor.ppGray8C, t_f: UIFont.systemFont(ofSize: 14))
     private lazy var amountLas: UILabel = UILabel.normalTextLabel("", t_color: UIColor.pp22115168, t_f: UIFont.loadSpecialFont(size: 40, ftStyle: FontStyle.Inter_ExtraBold))
     private lazy var rasteView: RastwAnsRasyDaysView = RastwAnsRasyDaysView(frame: CGRectZero)
-    private lazy var safeView: TopImageAndBottomTextButton = TopImageAndBottomTextButton(frame: CGRectZero)
-    private lazy var fastView: TopImageAndBottomTextButton = TopImageAndBottomTextButton(frame: CGRectZero)
-    private lazy var simpleView: TopImageAndBottomTextButton = TopImageAndBottomTextButton(frame: CGRectZero)
+    private lazy var safeView: UIButton = {
+        let view = UIButton(type: UIButton.ButtonType.custom)
+        view.setImage(UIImage(named: "home_safe"), for: UIControl.State.normal)
+        view.setTitle(APPLanguageInsTool.loadLanguage("home_safe"), for: UIControl.State.normal)
+        view.titleLabel?.font = UIFont.loadSpecialFont(size: 14, ftStyle: FontStyle.Inter_Medium)
+        view.setTitleColor(UIColor.ppGray8C, for: UIControl.State.normal)
+        view.layoutImageUpTitleDown()
+        return view
+    }()
+    
+    private lazy var fastView: UIButton = {
+        let view = UIButton(type: UIButton.ButtonType.custom)
+        view.setImage(UIImage(named: "home_fast"), for: UIControl.State.normal)
+        view.setTitle(APPLanguageInsTool.loadLanguage("home_fast"), for: UIControl.State.normal)
+        view.titleLabel?.font = UIFont.loadSpecialFont(size: 14, ftStyle: FontStyle.Inter_Medium)
+        view.setTitleColor(UIColor.ppGray8C, for: UIControl.State.normal)
+        view.layoutImageUpTitleDown()
+        return view
+    }()
+    
+    private lazy var simpleView: UIButton = {
+        let view = UIButton(type: UIButton.ButtonType.custom)
+        view.setImage(UIImage(named: "home_rate"), for: UIControl.State.normal)
+        view.setTitle(APPLanguageInsTool.loadLanguage("home_rate"), for: UIControl.State.normal)
+        view.titleLabel?.font = UIFont.loadSpecialFont(size: 14, ftStyle: FontStyle.Inter_Medium)
+        view.setTitleColor(UIColor.ppGray8C, for: UIControl.State.normal)
+        view.layoutImageUpTitleDown()
+        return view
+    }()
+    
     private(set) lazy var appBtn: APPActivityButton = APPActivityButton.buildLoadingAnimationButton(title: "")
     
     override init(frame: CGRect) {
@@ -24,15 +51,6 @@ class HomApslwlkControwlView: UIControl {
         self.appBtn.setTitleColor(UIColor.white, for: UIControl.State.normal)
         self.appBtn.titleLabel?.font = UIFont.loadSpecialFont(size: 20, ftStyle: FontStyle.Inter_ExtraBold)
         self.appBtn.corner(25)
-        
-        self.topTip.text = "s1231283923"
-        self.amountLas.text = "129391283"
-        self.rasteView.setLoasTip("akskwa", value: "1212", isDay: true)
-        self.rasteView.setLoasTip("akskwa", value: "1212", isDay: false)
-        
-        self.safeView.setImage("home_safe", title: APPLanguageInsTool.loadLanguage("home_safe"))
-        self.fastView.setImage("home_fast", title: APPLanguageInsTool.loadLanguage("home_fast"))
-        self.simpleView.setImage("home_rate", title: APPLanguageInsTool.loadLanguage("home_simple"))
         
         self.addSubview(self.topTip)
         self.addSubview(self.amountLas)
@@ -77,17 +95,18 @@ class HomApslwlkControwlView: UIControl {
 
                 self.fastView.snp.makeConstraints { make in
                     make.centerX.equalToSuperview()
+                    make.height.equalTo(80)
                     make.top.equalTo(self.rasteView.snp.bottom).offset(14)
                 }
 
                 self.safeView.snp.makeConstraints { make in
                     make.left.equalTo(self.rasteView).offset(8)
-                    make.top.equalTo(self.fastView)
+                    make.centerY.height.equalTo(self.fastView)
                 }
 
                 self.simpleView.snp.makeConstraints { make in
                     make.right.equalTo(self.rasteView).offset(-8)
-                    make.top.equalTo(self.fastView)
+                    make.centerY.height.equalTo(self.fastView)
                 }
 
                 self.appBtn.snp.makeConstraints { make in
