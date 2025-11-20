@@ -68,12 +68,13 @@ class EsensiwlwsBadisnPresentView: UIView {
         
         self.closeBtn.snp.makeConstraints { make in
             make.bottom.equalTo(self.contentView.snp.top)
-            make.right.equalToSuperview().offset(4)
+            make.right.equalTo(self.contentView).offset(4)
             make.size.equalTo(25)
         }
         
         self.confirmBtn.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
+            make.height.equalTo(50)
             make.bottom.equalToSuperview().offset(10)
         }
         

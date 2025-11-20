@@ -62,6 +62,10 @@ class SeskwkTingtingswkViewController: EsensiilsadwsiwViewController {
         return view
     }()
     
+    weak private var _pospwViews: EsensiwlwsBadisnPresentView?
+    private var _res_uels: String?
+    weak private var _aniamssender: APPActivityButton?
+    
     override func buildPageUI() {
         super.buildPageUI()
         self.gradientView.isHidden = false
@@ -126,6 +130,18 @@ class SeskwkTingtingswkViewController: EsensiilsadwsiwViewController {
             make.center.equalToSuperview()
         }
     }
+    
+    override func pageNetRequest() {
+        super.pageNetRequest()
+        APPNetRequestManager.afnReqeustType(NetworkRequestConfig.defaultRequestConfig(self._res_uels ?? "", requestParams: [:])) {[weak self] (task: URLSessionDataTask, res: APPSuccessResponse) in
+            self?._aniamssender?.stopAnimation()
+            GLoskwCommenskwmodls.shared.deleteexsawpersowInfoFamwjromDiskk()
+            self?._pospwViews?.dismissPop()
+            self?.navigationController?.popToRootViewController(animated: true)
+        } failure: {[weak self] _, _ in
+            self?._aniamssender?.stopAnimation()
+        }
+    }
 }
 
 @objc private extension SeskwkTingtingswkViewController {
@@ -140,6 +156,14 @@ class SeskwkTingtingswkViewController: EsensiilsadwsiwViewController {
             make.edges.equalToSuperview()
         }
         
+        siPopiew.clickLogoutClosure = { [weak self] (popView: SetisnLogouswPopView, sender: APPActivityButton) in
+            sender.startAnimation()
+            self?._res_uels = "qscgy/sounds"
+            self?._aniamssender = sender
+            self?.pageNetRequest()
+        }
+        
         siPopiew.showPresent()
+        self._pospwViews = siPopiew
     }
 }
