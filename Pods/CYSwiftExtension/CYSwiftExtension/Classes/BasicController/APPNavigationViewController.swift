@@ -31,7 +31,12 @@ open class APPNavigationViewController: UINavigationController {
         super.pushViewController(viewController, animated: animated)
     }
     
-    open func navigationAppearanceSetting() {
+    ///  当前控制器是否可以 pop 返回 默认不可以
+    open func viewControllerShouldPop() -> Bool {
+        return false
+    }
+    
+    open func navigationAppearanceSetting(_ style: Style) {
 //        let appearance = UINavigationBarAppearance()
 //        let att = [NSAttributedString.Key.foregroundColor: UIColor.hexStringColor(hexString: "#27272E"),
 //                   NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18)]
@@ -50,7 +55,7 @@ open class APPNavigationViewController: UINavigationController {
 //        self.navigationBar.shadowImage = barShadowImage()
 //        self.navigationBar.titleTextAttributes = att
         
-        UINavigationBar.applyGlobalStyle(Style.opaque(backgroundColor: UIColor.white, titleColor: UIColor.hexStringColor(hexString: "#27272E"), font: UIFont.systemFont(ofSize: 18)))
+        UINavigationBar.applyGlobalStyle(style)
     }
     
     open func buildNavigation() {
@@ -70,29 +75,6 @@ extension APPNavigationViewController: UINavigationControllerDelegate {
 
 extension APPNavigationViewController: UINavigationBarDelegate {
     open func navigationBar(_ navigationBar: UINavigationBar, shouldPop item: UINavigationItem) -> Bool {
-        if self.viewControllers.count < navigationBar.items?.count ?? 1 {
-            return true
-        }
-        
-        var canPopCsuePage = true
-        if let _c_v = self.topViewController, _c_v.conforms(to: CurrentControllerShouldPopProtocol.self) {
-            canPopCsuePage = _c_v.shouldPop()
-        }
-        
-        if canPopCsuePage {
-            DispatchQueue.main.async {
-                self.popViewController(animated: true)
-            }
-        } else {
-            for item in navigationBar.subviews {
-                if 0.0 < item.alpha && item.alpha < 1.0 {
-                    UIView.animate(withDuration: 0.25) {
-                        item.alpha = 1.0
-                    }
-                }
-            }
-        }
-    
-        return false
+        return self.viewControllerShouldPop()
     }
 }

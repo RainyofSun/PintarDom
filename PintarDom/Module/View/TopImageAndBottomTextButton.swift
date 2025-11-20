@@ -15,6 +15,8 @@ class TopImageAndBottomTextButton: UIControl {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        self.isHidden = true
+        
         self.addSubview(self.topImgView)
         self.addSubview(self.textLab)
         

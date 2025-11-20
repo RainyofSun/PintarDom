@@ -54,27 +54,6 @@ class HomApslwlkControwlView: UIControl {
         self.rasteView.snp.makeConstraints { make in
             make.horizontalEdges.equalToSuperview().inset(24)
             make.top.equalTo(self.amountLas.snp.bottom).offset(10)
-        }
-        
-        self.fastView.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.top.equalTo(self.rasteView.snp.bottom).offset(14)
-        }
-        
-        self.safeView.snp.makeConstraints { make in
-            make.left.equalTo(self.rasteView).offset(8)
-            make.top.equalTo(self.fastView)
-        }
-        
-        self.simpleView.snp.makeConstraints { make in
-            make.right.equalTo(self.rasteView).offset(-8)
-            make.top.equalTo(self.fastView)
-        }
-        
-        self.appBtn.snp.makeConstraints { make in
-            make.top.equalTo(self.fastView.snp.bottom).offset(10)
-            make.horizontalEdges.equalTo(self.rasteView)
-            make.height.equalTo(50)
             make.bottom.equalToSuperview().offset(-18)
         }
     }
@@ -83,4 +62,67 @@ class HomApslwlkControwlView: UIControl {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func animationBigOrSamll(isBig: Bool) {
+        self.fastView.isHidden = !isBig
+        self.safeView.isHidden = self.fastView.isHidden
+        self.simpleView.isHidden = self.safeView.isHidden
+        
+        if isBig {
+            UIView.animate(withDuration: 0.3) {
+                self.rasteView.snp.remakeConstraints { make in
+                    make.horizontalEdges.equalToSuperview().inset(24)
+                    make.top.equalTo(self.amountLas.snp.bottom).offset(10)
+                }
+
+                self.fastView.snp.makeConstraints { make in
+                    make.centerX.equalToSuperview()
+                    make.top.equalTo(self.rasteView.snp.bottom).offset(14)
+                }
+
+                self.safeView.snp.makeConstraints { make in
+                    make.left.equalTo(self.rasteView).offset(8)
+                    make.top.equalTo(self.fastView)
+                }
+
+                self.simpleView.snp.makeConstraints { make in
+                    make.right.equalTo(self.rasteView).offset(-8)
+                    make.top.equalTo(self.fastView)
+                }
+
+                self.appBtn.snp.makeConstraints { make in
+                    make.top.equalTo(self.fastView.snp.bottom).offset(10)
+                    make.horizontalEdges.equalTo(self.rasteView)
+                    make.height.equalTo(50)
+                    make.bottom.equalToSuperview().offset(-18)
+                }
+
+                self.layoutIfNeeded()
+            }
+        } else {
+            UIView.animate(withDuration: 0.3) {
+                self.rasteView.snp.remakeConstraints { make in
+                    make.horizontalEdges.equalToSuperview().inset(24)
+                    make.top.equalTo(self.amountLas.snp.bottom).offset(10)
+                }
+
+                self.appBtn.snp.makeConstraints { make in
+                    make.top.equalTo(self.rasteView.snp.bottom).offset(10)
+                    make.horizontalEdges.equalTo(self.rasteView)
+                    make.height.equalTo(50)
+                    make.bottom.equalToSuperview().offset(-18)
+                }
+
+                self.layoutIfNeeded()
+            }
+        }
+    }
+    
+    func reloadSowksInfp(model: UnaffectedListItem) {
+        self.topTip.text = model.care
+        self.amountLas.text = model.prolong
+        self.rasteView.setLoasTip(model.worthy ?? "", value: model.distraction ?? "", isDay: true)
+        self.rasteView.setLoasTip(model.shewn ?? "", value: model.repeats ?? "", isDay: false)
+        
+        self.appBtn.setTitle(model.protect, for: UIControl.State.normal)
+    }
 }

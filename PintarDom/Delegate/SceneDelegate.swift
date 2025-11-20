@@ -149,6 +149,16 @@ extension SceneDelegate: WinLanswksDisProtocol {
         trans.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
         trans.type = .fade
         self.window?.layer.add(trans, forKey: nil)
-        self.window?.rootViewController = APPBasicTabBarViewController(controllers: [SowkHomeskViewController.self, OrdekswOrksjwPskViewController.self, MeSkwoledkwlViewController.self], barImages: [["home-filled_nor", "credit-card_nor", "user-nor"], ["home-filled", "credit-card_sel", "user-outline"]], barStyle: APPBasicTabBarStyleConfig())
+        
+        let config: APPBasicTabBarStyleConfig = APPBasicTabBarStyleConfig()
+        config.navClassName = "EsensiilsaaJawwsNavViewController"
+        config.subControllerArray = [SowkHomeskViewController.self, OrdekswOrksjwPskViewController.self, MeSkwoledkwlViewController.self]
+        config.barSelectedImagesArray = [UIImage(named: "home-filled")!, UIImage(named: "credit-card_sel")!, UIImage(named: "user-outline")!]
+        config.barNormalImagesArray = [UIImage(named: "home-filled_nor")!, UIImage(named: "credit-card_nor")!, UIImage(named: "user-nor")!]
+        config.barTitlesArray = [APPLanguageInsTool.loadLanguage("tab_home"), APPLanguageInsTool.loadLanguage("tab_order"), APPLanguageInsTool.loadLanguage("tab_me")]
+        config.barSelectedColor = UIColor.hexStringColor(hexString: "#0972A4")
+        config.barNormalColor = UIColor.hexStringColor(hexString: "#6B7280")
+        
+        self.window?.rootViewController = APPBasicTabBarViewController(barStyle: config)
     }
 }

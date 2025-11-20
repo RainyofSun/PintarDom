@@ -18,9 +18,10 @@ class HomBigsTospCaPProskwView: UIView {
     
     private lazy var srviewBrrns: UIButton = {
         let view = UIButton(type: UIButton.ButtonType.custom)
-        view.setImage(UIImage(named: "service"), for: UIControl.State.normal)
         return view
     }()
+    
+    private var _seskw_url: String?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -56,20 +57,25 @@ class HomBigsTospCaPProskwView: UIView {
     }
     
     @objc private func clickSewisbtns(sender: UIButton) {
-        if let _uurl = GLoskwCommenskwmodls.shared.privacyURL {
+        if let _uurl = _seskw_url {
             LuyouswkMakswTool.luYou.tiaoZhuanPage(luyouUrl: _uurl, needBackRoot: true)
         }
     }
     
-    func setPPimage(_ imswUrl: String, ppname: String) {
+    func setPPimage(_ imswUrl: String, ppname: String?, serviceLosdkw: String, serviweUrl: String) {
+        _seskw_url = serviweUrl
         if let _iwls = URL(string: imswUrl) {
             self.productImsgwView.setImageWith(_iwls, options: [YYWebImageOptions.setImageWithFadeAnimation])
         }
         
+        if let _iwls = URL(string: serviceLosdkw) {
+            self.srviewBrrns.setImageWith(_iwls, for: UIControl.State.normal, options: [YYWebImageOptions.setImageWithFadeAnimation])
+        }
+        
         let parasStywl: NSMutableParagraphStyle = NSMutableParagraphStyle()
         parasStywl.paragraphSpacing = 4
-        let ppNamswiStr: NSMutableAttributedString = NSMutableAttributedString(string: "\(ppname)\n", attributes: [.font: UIFont.loadSpecialFont(size: 20, ftStyle: FontStyle.Inter_SemiBold), .foregroundColor: UIColor.ppBlue3D5, .paragraphStyle: parasStywl])
-        ppNamswiStr.append(NSAttributedString(string: String(format: APPLanguageInsTool.loadLanguage("home_tip"), ppname), attributes: [.font: UIFont.systemFont(ofSize: 12), .foregroundColor: UIColor.ppGray8C]))
+        let ppNamswiStr: NSMutableAttributedString = NSMutableAttributedString(string: "\(ppname ?? "")\n", attributes: [.font: UIFont.loadSpecialFont(size: 20, ftStyle: FontStyle.Inter_SemiBold), .foregroundColor: UIColor.ppBlue3D5, .paragraphStyle: parasStywl])
+        ppNamswiStr.append(NSAttributedString(string: String(format: APPLanguageInsTool.loadLanguage("home_tip"), ppname ?? ""), attributes: [.font: UIFont.systemFont(ofSize: 12), .foregroundColor: UIColor.ppGray8C]))
         self.textLasjwiLab.attributedText = ppNamswiStr
     }
 }

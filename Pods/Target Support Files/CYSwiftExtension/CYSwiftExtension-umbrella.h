@@ -26,6 +26,7 @@
 #import "NSString+StringExtension.h"
 #import "UIDevice+DeviceExtension.h"
 #import "JianBianLab.h"
+#import "CurrentControllerShouldPopProtocol.h"
 #import "UIViewController+ViewControllerExtension.h"
 
 FOUNDATION_EXPORT double CYSwiftExtensionVersionNumber;

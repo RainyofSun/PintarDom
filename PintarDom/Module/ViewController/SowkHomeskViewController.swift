@@ -23,8 +23,6 @@ class SowkHomeskViewController: EsensiilsadwsiwViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(reswoHomesUiStyle), name: NSNotification.Name("refreshHomeUI"), object: nil)
         self.bgImgView.image = UIImage(named: "home_bg")
         
-        self.topView.setPPimage("", ppname: "SSAS")
-        
         self.appslwkView.addTarget(self, action: #selector(clickAppslwjsViewsButon(sender: )), for: UIControl.Event.touchUpInside)
         
         self.basicScrollContentView.addSubview(self.topView)
@@ -64,7 +62,29 @@ class SowkHomeskViewController: EsensiilsadwsiwViewController {
         }
         
         APPNetRequestManager.afnReqeustType(NetworkRequestConfig.defaultRequestConfig("qscgy/bade", requestParams: [:])) {[weak self] (task: URLSessionDataTask, res: APPSuccessResponse) in
+            guard let _diskw = res.jsonDict, let _modsl = HomeDatsskwMoslw.model(withJSON: _diskw) else {
+                return
+            }
             
+            _modsl.loanChanswFilters()
+            
+            if let _big = _modsl.bigDats {
+                if let _url = _big.bless {
+                    self?.topView.setPPimage(_url, ppname: _big.lifeless, serviceLosdkw: _modsl.conveying?.opportunity ?? "", serviweUrl: _modsl.conveying?.omit ?? "")
+                }
+                
+                self?.appslwkView.reloadSowksInfp(model: _big)
+                self?.appslwkView.animationBigOrSamll(isBig: true)
+            }
+            
+            if let _small = _modsl.smallDats {
+                if let _url = _small.bless {
+                    self?.topView.setPPimage(_url, ppname: _small.lifeless, serviceLosdkw: _modsl.conveying?.opportunity ?? "", serviweUrl: _modsl.conveying?.omit ?? "")
+                }
+                
+                self?.appslwkView.reloadSowksInfp(model: _small)
+                self?.appslwkView.animationBigOrSamll(isBig: false)
+            }
         }
     }
 }

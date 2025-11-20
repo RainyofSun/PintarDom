@@ -32,7 +32,17 @@ class HomeDatsskwMoslw: BasicsmNetResModel, YYModel {
         
         for item in _ppskw {
             if let _tspw = item.fainted {
+                if _tspw == ShouYeElement.BigpwjsuCard.rawValue {
+                    self.bigDats = item.unaffected?.first
+                }
                 
+                if _tspw == ShouYeElement.SmallalsowCard.rawValue {
+                    self.smallDats = item.unaffected?.first
+                }
+                
+                if _tspw == ShouYeElement.ProductskkList.rawValue {
+                    self.loadLis = item.unaffected
+                }
             }
         }
     }
@@ -65,7 +75,7 @@ class SlowlyItem: BasicsmNetResModel, YYModel {
 }
 
 // MARK: - list item (BANNER / PRODUCT_LIST)
-class UnaffectedListItem: BasicsmNetResModel {
+class UnaffectedListItem: BasicsmNetResModel, YYModel {
     var totally: String?
     var assure: String?
     var commanding: String?
@@ -81,8 +91,13 @@ class UnaffectedListItem: BasicsmNetResModel {
     var prolong: String?
     var shewn: String?
     var oblige: String?
+    var repeats: String?
     var worthy: String?
     var distraction: String?
     var spare: String?
     var unnecessary: [String]?
+    
+    static func modelCustomPropertyMapper() -> [String : Any]? {
+        return ["repeats": "repeat"]
+    }
 }
