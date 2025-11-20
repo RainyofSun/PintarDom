@@ -38,9 +38,9 @@ class MeSkwoledkwlViewController: EsensiilsadwsiwViewController {
         
         self.contakswView.jk.addCorner(conrners: [.topLeft, .topRight], radius: 16)
         
-        self.tip1lans.attributedText = crekskTipwattiskw(APPLanguageInsTool.loadLanguage("me_tip1"), imasgwName: "login_sel")
-        self.tip2lans.attributedText = crekskTipwattiskw(APPLanguageInsTool.loadLanguage("me_tip2"), imasgwName: "login_sel")
-        self.tip3lans.attributedText = crekskTipwattiskw(APPLanguageInsTool.loadLanguage("me_tip3"), imasgwName: "login_sel")
+        self.tip1lans.attributedText = crekskTipwattiskw(APPLanguageInsTool.loadLanguage("me_tip1"), imasgwName: "min_rifht")
+        self.tip2lans.attributedText = crekskTipwattiskw(APPLanguageInsTool.loadLanguage("me_tip2"), imasgwName: "min_rifht")
+        self.tip3lans.attributedText = crekskTipwattiskw(APPLanguageInsTool.loadLanguage("me_tip3"), imasgwName: "min_rifht")
         
         self.basicScrollContentView.addSubview(self.gradiensView)
         self.gradiensView.addSubview(self.phoneLabsse)
@@ -186,7 +186,7 @@ class MeSkwoledkwlViewController: EsensiilsadwsiwViewController {
         let attswks: NSMutableAttributedString = NSMutableAttributedString(string: " \(text)", attributes: [.font: UIFont.systemFont(ofSize: 13, weight: UIFont.Weight.medium), .foregroundColor: UIColor.hexStringColor(hexString: "#0972A4")])
         if let _im = UIImage(named: imasgwName) {
             let attmens: NSTextAttachment = NSTextAttachment(image: _im)
-            attmens.bounds = CGRect(origin: CGPoint(x: 0, y: -3), size: _im.size)
+            attmens.bounds = CGRect(origin: CGPoint(x: 0, y: -7), size: _im.size)
             attswks.insert(NSAttributedString(attachment: attmens), at: 0)
         }
         

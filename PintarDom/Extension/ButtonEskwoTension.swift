@@ -17,6 +17,14 @@ extension UIButton {
         return btn
     }
     
+    static func buildLoadingAnimationNoColorButton(title: String, titleColor: UIColor = .white) -> APPActivityButton {
+        let btn: APPActivityButton = APPActivityButton(type: UIButton.ButtonType.custom)
+        btn.setTitle(title, for: UIControl.State.normal)
+        btn.setTitleColor(titleColor, for: UIControl.State.normal)
+        btn.titleLabel?.font = UIFont.loadSpecialFont(size: 18, ftStyle: FontStyle.Inter_Medium)
+        return btn
+    }
+    
     func layoutImageUpTitleDown(spacing: CGFloat = 4) {
         guard let imageSize = self.imageView?.image?.size,
               let title = self.titleLabel?.text,

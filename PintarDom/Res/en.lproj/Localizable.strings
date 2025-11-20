@@ -53,7 +53,7 @@
 
 "setting_nav" = "Settings";
 "setting_version" = "Version number：V1.0.0";
-"setting_cancel" = "Account cancellation";
+"setting_cancel" = "Account\ncancellation";
 "setting_cancel_pop_title" = "Please note";
 "setting_cancel_pop_tip1" = "Please read the following cancellation agreement carefully:";
 "setting_cancel_pop_tip2" = "All personal information will be deleted permanently and cannot be restored.";

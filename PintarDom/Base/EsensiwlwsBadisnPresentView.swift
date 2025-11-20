@@ -26,9 +26,13 @@ class EsensiwlwsBadisnPresentView: UIView {
         return btn
     }()
     
-    private(set) lazy var confirmBtn: APPActivityButton = APPActivityButton.buildLoadingAnimationButton(title:APPLanguageInsTool.loadLanguage("auth_pop_confirm_btn"))
+    private(set) lazy var confirmBtn: APPActivityButton = {
+        let view = APPActivityButton.buildLoadingAnimationNoColorButton(title:APPLanguageInsTool.loadLanguage("auth_pop_confirm_btn"))
+        view.setBackgroundImage(UIImage(named: "login_btn_bg"), for: UIControl.State.normal)
+        return view
+    }()
     
-    private(set) lazy var titleLab: UILabel = UILabel.normalTextLabel("", t_color: UIColor.ppBlack33, t_f: UIFont.loadSpecialFont(size: 18, ftStyle: FontStyle.Arial_BoldMT))
+    private(set) lazy var titleLab: UILabel = UILabel.normalTextLabel("", t_color: UIColor.ppBlack33, t_f: UIFont.loadSpecialFont(size: 24, ftStyle: FontStyle.Arial_BoldMT))
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -57,25 +61,25 @@ class EsensiwlwsBadisnPresentView: UIView {
     
     func layoutPresentView() {
         self.contentView.snp.makeConstraints { make in
-            make.left.right.bottom.equalToSuperview()
+            make.horizontalEdges.equalToSuperview().inset(50)
+            make.centerY.equalToSuperview()
             make.height.greaterThanOrEqualTo(200)
         }
         
         self.closeBtn.snp.makeConstraints { make in
-            make.bottom.equalTo(self.contentView.snp.top).offset(-20)
-            make.right.equalToSuperview().offset(-25)
+            make.bottom.equalTo(self.contentView.snp.top)
+            make.right.equalToSuperview().offset(4)
             make.size.equalTo(25)
         }
         
         self.confirmBtn.snp.makeConstraints { make in
-            make.horizontalEdges.equalToSuperview().inset(50)
-            make.height.equalTo(50)
-            make.bottom.equalToSuperview().offset(jk_isIPhoneNotch ? -(10 + jk_kTabbarBottom) : -20)
+            make.centerX.equalToSuperview()
+            make.bottom.equalToSuperview().offset(10)
         }
         
         self.titleLab.snp.makeConstraints { make in
-            make.left.equalToSuperview().offset(16)
-            make.top.equalToSuperview().offset(18)
+            make.centerX.equalToSuperview()
+            make.top.equalToSuperview().offset(30)
         }
     }
     
