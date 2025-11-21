@@ -19,6 +19,7 @@ class HomApslwlkControwlView: UIControl {
         view.titleLabel?.font = UIFont.loadSpecialFont(size: 14, ftStyle: FontStyle.Inter_Medium)
         view.setTitleColor(UIColor.ppGray8C, for: UIControl.State.normal)
         view.layoutImageUpTitleDown()
+        view.isUserInteractionEnabled = false
         return view
     }()
     
@@ -29,6 +30,7 @@ class HomApslwlkControwlView: UIControl {
         view.titleLabel?.font = UIFont.loadSpecialFont(size: 14, ftStyle: FontStyle.Inter_Medium)
         view.setTitleColor(UIColor.ppGray8C, for: UIControl.State.normal)
         view.layoutImageUpTitleDown()
+        view.isUserInteractionEnabled = false
         return view
     }()
     
@@ -39,6 +41,7 @@ class HomApslwlkControwlView: UIControl {
         view.titleLabel?.font = UIFont.loadSpecialFont(size: 14, ftStyle: FontStyle.Inter_Medium)
         view.setTitleColor(UIColor.ppGray8C, for: UIControl.State.normal)
         view.layoutImageUpTitleDown()
+        view.isUserInteractionEnabled = false
         return view
     }()
     

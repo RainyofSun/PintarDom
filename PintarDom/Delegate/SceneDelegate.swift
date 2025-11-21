@@ -158,6 +158,7 @@ extension SceneDelegate: WinLanswksDisProtocol {
         config.barTitlesArray = [APPLanguageInsTool.loadLanguage("tab_home"), APPLanguageInsTool.loadLanguage("tab_order"), APPLanguageInsTool.loadLanguage("tab_me")]
         config.barSelectedColor = UIColor.hexStringColor(hexString: "#0972A4")
         config.barNormalColor = UIColor.hexStringColor(hexString: "#6B7280")
+        config.verticalSpacing = 4
         
         self.window?.rootViewController = APPBasicTabBarViewController(barStyle: config)
     }

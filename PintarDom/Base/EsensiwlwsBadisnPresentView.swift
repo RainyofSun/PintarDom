@@ -29,6 +29,8 @@ class EsensiwlwsBadisnPresentView: UIView {
     private(set) lazy var confirmBtn: APPActivityButton = {
         let view = APPActivityButton.buildLoadingAnimationNoColorButton(title:APPLanguageInsTool.loadLanguage("auth_pop_confirm_btn"))
         view.setBackgroundImage(UIImage(named: "login_btn_bg"), for: UIControl.State.normal)
+        view.setBackgroundImage(UIImage(named: "login_btn_bg"), for: UIControl.State.highlighted)
+        view.setBackgroundImage(UIImage(named: "login_btn_bg"), for: UIControl.State.disabled)
         return view
     }()
     

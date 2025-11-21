@@ -33,6 +33,7 @@ class RastwAnsRasyDaysView: UIView {
         super.init(frame: frame)
         self.corner(20)
         self.backgroundColor = UIColor.white.withAlphaComponent(0.43)
+        self.isUserInteractionEnabled = false
         
         self.addSubview(self.centerLine)
         self.addSubview(self.termLab)

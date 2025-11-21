@@ -25,79 +25,79 @@ PODS:
   - CocoaLumberjack/Core (3.8.5)
   - CocoaLumberjack/Swift (3.8.5):
     - CocoaLumberjack/Core
-  - CYSwiftExtension (1.8.3):
-    - CYSwiftExtension/Auth (= 1.8.3)
-    - CYSwiftExtension/BasicController (= 1.8.3)
-    - CYSwiftExtension/BuryPoint (= 1.8.3)
-    - CYSwiftExtension/Cache (= 1.8.3)
-    - CYSwiftExtension/CocoaLog (= 1.8.3)
-    - CYSwiftExtension/ContactManager (= 1.8.3)
-    - CYSwiftExtension/GradientView (= 1.8.3)
-    - CYSwiftExtension/Language (= 1.8.3)
-    - CYSwiftExtension/MarqueeView (= 1.8.3)
-    - CYSwiftExtension/NetOberver (= 1.8.3)
-    - CYSwiftExtension/NetWork (= 1.8.3)
-    - CYSwiftExtension/PhotoCamera (= 1.8.3)
-    - CYSwiftExtension/ProtocolView (= 1.8.3)
-    - CYSwiftExtension/ScrollView (= 1.8.3)
-    - CYSwiftExtension/String (= 1.8.3)
-    - CYSwiftExtension/TextView (= 1.8.3)
-    - CYSwiftExtension/UIButton (= 1.8.3)
-    - CYSwiftExtension/UIDevice (= 1.8.3)
-    - CYSwiftExtension/UILabel (= 1.8.3)
-    - CYSwiftExtension/UITextFiled (= 1.8.3)
-    - CYSwiftExtension/ViewController (= 1.8.3)
-    - CYSwiftExtension/Web (= 1.8.3)
-  - CYSwiftExtension/Auth (1.8.3):
+  - CYSwiftExtension (1.8.4):
+    - CYSwiftExtension/Auth (= 1.8.4)
+    - CYSwiftExtension/BasicController (= 1.8.4)
+    - CYSwiftExtension/BuryPoint (= 1.8.4)
+    - CYSwiftExtension/Cache (= 1.8.4)
+    - CYSwiftExtension/CocoaLog (= 1.8.4)
+    - CYSwiftExtension/ContactManager (= 1.8.4)
+    - CYSwiftExtension/GradientView (= 1.8.4)
+    - CYSwiftExtension/Language (= 1.8.4)
+    - CYSwiftExtension/MarqueeView (= 1.8.4)
+    - CYSwiftExtension/NetOberver (= 1.8.4)
+    - CYSwiftExtension/NetWork (= 1.8.4)
+    - CYSwiftExtension/PhotoCamera (= 1.8.4)
+    - CYSwiftExtension/ProtocolView (= 1.8.4)
+    - CYSwiftExtension/ScrollView (= 1.8.4)
+    - CYSwiftExtension/String (= 1.8.4)
+    - CYSwiftExtension/TextView (= 1.8.4)
+    - CYSwiftExtension/UIButton (= 1.8.4)
+    - CYSwiftExtension/UIDevice (= 1.8.4)
+    - CYSwiftExtension/UILabel (= 1.8.4)
+    - CYSwiftExtension/UITextFiled (= 1.8.4)
+    - CYSwiftExtension/ViewController (= 1.8.4)
+    - CYSwiftExtension/Web (= 1.8.4)
+  - CYSwiftExtension/Auth (1.8.4):
     - CYSwiftExtension/UIDevice
     - CYSwiftExtension/ViewController
-  - CYSwiftExtension/BasicController (1.8.3):
+  - CYSwiftExtension/BasicController (1.8.4):
     - CYSwiftExtension/Cache
     - CYSwiftExtension/GradientView
     - FDFullscreenPopGesture (= 1.1)
     - JKSwiftExtension (= 2.7.1)
     - SnapKit (= 5.7.1)
-  - CYSwiftExtension/BuryPoint (1.8.3)
-  - CYSwiftExtension/Cache (1.8.3):
+  - CYSwiftExtension/BuryPoint (1.8.4)
+  - CYSwiftExtension/Cache (1.8.4):
     - CYSwiftExtension/Language
-  - CYSwiftExtension/CocoaLog (1.8.3):
+  - CYSwiftExtension/CocoaLog (1.8.4):
     - CocoaLumberjack/Swift (= 3.8.5)
-  - CYSwiftExtension/ContactManager (1.8.3)
-  - CYSwiftExtension/GradientView (1.8.3)
-  - CYSwiftExtension/Language (1.8.3)
-  - CYSwiftExtension/MarqueeView (1.8.3)
-  - CYSwiftExtension/NetOberver (1.8.3):
+  - CYSwiftExtension/ContactManager (1.8.4)
+  - CYSwiftExtension/GradientView (1.8.4)
+  - CYSwiftExtension/Language (1.8.4)
+  - CYSwiftExtension/MarqueeView (1.8.4)
+  - CYSwiftExtension/NetOberver (1.8.4):
     - Reachability (= 3.7.6)
-  - CYSwiftExtension/NetWork (1.8.3):
+  - CYSwiftExtension/NetWork (1.8.4):
     - AFNetworking
     - CYSwiftExtension/Auth
     - CYSwiftExtension/String
     - CYSwiftExtension/UIDevice
     - Toast (= 4.1.1)
     - YYKit (= 1.0.9)
-  - CYSwiftExtension/PhotoCamera (1.8.3):
+  - CYSwiftExtension/PhotoCamera (1.8.4):
     - JKSwiftExtension (= 2.7.1)
     - TZImagePickerController (= 3.8.8)
     - YYKit (= 1.0.9)
-  - CYSwiftExtension/ProtocolView (1.8.3):
+  - CYSwiftExtension/ProtocolView (1.8.4):
     - SnapKit (= 5.7.1)
-  - CYSwiftExtension/ScrollView (1.8.3):
+  - CYSwiftExtension/ScrollView (1.8.4):
     - MJRefresh (= 3.7.5)
     - SnapKit (= 5.7.1)
-  - CYSwiftExtension/String (1.8.3)
-  - CYSwiftExtension/TextView (1.8.3)
-  - CYSwiftExtension/UIButton (1.8.3):
+  - CYSwiftExtension/String (1.8.4)
+  - CYSwiftExtension/TextView (1.8.4)
+  - CYSwiftExtension/UIButton (1.8.4):
     - CYSwiftExtension/GradientView
     - SnapKit (= 5.7.1)
-  - CYSwiftExtension/UIDevice (1.8.3):
+  - CYSwiftExtension/UIDevice (1.8.4):
     - CYSwiftExtension/String
     - Reachability (= 3.7.6)
     - YYKit (= 1.0.9)
-  - CYSwiftExtension/UILabel (1.8.3)
-  - CYSwiftExtension/UITextFiled (1.8.3)
-  - CYSwiftExtension/ViewController (1.8.3):
+  - CYSwiftExtension/UILabel (1.8.4)
+  - CYSwiftExtension/UITextFiled (1.8.4)
+  - CYSwiftExtension/ViewController (1.8.4):
     - CYSwiftExtension/String
-  - CYSwiftExtension/Web (1.8.3):
+  - CYSwiftExtension/Web (1.8.4):
     - JKSwiftExtension (= 2.7.1)
     - SnapKit (= 5.7.1)
   - EmptyDataSet-Swift (5.0.0)
@@ -164,7 +164,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (from `https://github.com/crasowas/AFNetworking.git`)
   - BRPickerView/Default (= 2.9.1)
-  - CYSwiftExtension (= 1.8.3)
+  - CYSwiftExtension (= 1.8.4)
   - EmptyDataSet-Swift (= 5.0.0)
   - FBSDKCoreKit (= 18.0.0)
   - FDFullscreenPopGesture (= 1.1)
@@ -211,7 +211,7 @@ SPEC CHECKSUMS:
   AFNetworking: 07fdd55e08bfc815311d558d62b0f9660ef83d1e
   BRPickerView: 6dd69ea2c48e0a0abf1d197a705050e13143ee63
   CocoaLumberjack: 6a459bc897d6d80bd1b8c78482ec7ad05dffc3f0
-  CYSwiftExtension: 689d8e08a5e150728609b452f708cd6eacbc1f6d
+  CYSwiftExtension: 62e691a41dc059574e10bc5d8523bf5976d546b0
   EmptyDataSet-Swift: eb382c0c87a2d9c678077385a595cec52da38171
   FBAEMKit: e34530df538b8eb8aeb53c35867715ba6c63ef0c
   FBSDKCoreKit: d3f479a69127acebb1c6aad91c1a33907bcf6c2f
@@ -234,6 +234,6 @@ SPEC CHECKSUMS:
   TZImagePickerController: d084a7b97c82d387e7669dd86dc9a9057500aacf
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: af6398d5858c3ef4afaa1dca589fc18b25ad353a
+PODFILE CHECKSUM: 784e4cba8bb5f576910be995d540cd01fefb1bbf
 
 COCOAPODS: 1.16.2

@@ -22,6 +22,9 @@
 "login_xie_yi_pre" = "I agree to the ";
 "login_xie_yi" = "<Privacy Policy>";
 "login_login" = "Login";
+"login_yinsi"="Please read and agree to the Privacy Policy";
+"login_phone_p"="Please enter your phone number";
+"login_v_code_t"="Please enter the verification code";
 
 "home_tip" = "Welcome to %@!";
 "home_safe" = "100% safe";
@@ -60,6 +63,7 @@
 "setting_cancel_pop_tip3" = "Unclated loans must be repaid before canceling.";
 "setting_cancel_pop_tip4" = "After canceling, we will stop sending you any notification and marketing information.";
 "setting_cancel_pop_tip5" = "I agree with the above.";
+"setting_cancel_pop_btn" = "Account cancellation";
 "setting_signout" = "Sign out";
 "setting_signout_pop_title" = "Logout";
 "setting_signout_pop_tip1" = "Are you sure you want to leave?";
@@ -119,3 +123,4 @@
 "auth_pop_confirm_tip1" = "Please check the following information and confirm the accurate correctness in order to pass the review smoothly";
 
 "neiw_tswp"="Network error, please check";
+"info_confirm_tip"="Please confirm the information";

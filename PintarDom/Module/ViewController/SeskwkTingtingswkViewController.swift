@@ -146,7 +146,26 @@ class SeskwkTingtingswkViewController: EsensiilsadwsiwViewController {
 
 @objc private extension SeskwkTingtingswkViewController {
     func clickCanskwk() {
+        let siPopiew: UsCancelsApslwkPopView = UsCancelsApslwkPopView(frame: CGRectZero)
+        UIDevice.current.keyWindow().addSubview(siPopiew)
+        siPopiew.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
         
+        siPopiew.clickConfirmClosure = { [weak self] (popView: EsensiwlwsBadisnPresentView, sender: APPActivityButton) in
+            guard let _psopw = popView as? UsCancelsApslwkPopView, _psopw.protcoplView.hasSelected else {
+                popView.makeToast(APPLanguageInsTool.loadLanguage("info_confirm_tip"))
+                return
+            }
+            
+            sender.startAnimation()
+            self?._res_uels = "qscgy/teach"
+            self?._aniamssender = sender
+            self?.pageNetRequest()
+        }
+        
+        siPopiew.showPresent()
+        self._pospwViews = siPopiew
     }
     
     func cliskSiswnskw() {

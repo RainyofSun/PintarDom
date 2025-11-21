@@ -22,6 +22,9 @@
 "login_xie_yi_pre" = "Saya setuju dengan ";
 "login_xie_yi" = "Kebijakan Privasi";
 "login_login" = "Masuk";
+"login_yinsi"="Harap membaca dan menyetujui kebijakan privasi";
+"login_phone_p"="Silakan masukkan nomor telepon Anda";
+"login_v_code_t"="Silakan masukkan kode verifikasi";
 
 "home_tip" = "Selamat datang di %@!";
 "home_safe" = "100% aman";
@@ -60,6 +63,7 @@
 "setting_cancel_pop_tip3" = "Pinjaman yang belum dilunasi harus dilunasi sebelum pembatalan.";
 "setting_cancel_pop_tip4" = "Setelah pembatalan, kami akan menghentikan pengiriman pemberitahuan dan informasi pemasaran kepada Anda.";
 "setting_cancel_pop_tip5" = "Saya setuju dengan yang di atas.";
+"setting_cancel_pop_btn" = "Pembatalan akun";
 "setting_signout" = "Keluar";
 "setting_signout_pop_title" = "Keluar";
 "setting_signout_pop_tip1" = "Apakah Anda yakin ingin keluar?";
@@ -119,3 +123,4 @@
 "auth_pop_confirm_tip1" = "Silakan periksa informasi berikut dan pastikan keakuratannya agar proses review dapat berjalan lancar.";
 
 "neiw_tswp"="Kesalahan jaringan, silakan periksa";
+"info_confirm_tip"="Mohon konfirmasi informasinya";

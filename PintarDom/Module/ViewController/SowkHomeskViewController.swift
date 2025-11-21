@@ -75,6 +75,7 @@ class SowkHomeskViewController: EsensiilsadwsiwViewController {
                 
                 self?.appslwkView.reloadSowksInfp(model: _big)
                 self?.appslwkView.animationBigOrSamll(isBig: true)
+                GLoskwCommenskwmodls.shared.productID = _big.bosom
             }
             
             if let _small = _modsl.smallDats {
@@ -84,6 +85,7 @@ class SowkHomeskViewController: EsensiilsadwsiwViewController {
                 
                 self?.appslwkView.reloadSowksInfp(model: _small)
                 self?.appslwkView.animationBigOrSamll(isBig: false)
+                GLoskwCommenskwmodls.shared.productID = _small.bosom
             }
         }
     }

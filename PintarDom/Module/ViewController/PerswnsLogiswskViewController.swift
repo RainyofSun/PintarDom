@@ -12,6 +12,7 @@ class PerswnsLogiswskViewController: EsensiilsadwsiwViewController, AutoHiddenNa
     private lazy var presendsPopsVIew: UsjekwLodskwkView = UsjekwLodskwkView(frame: CGRectZero)
     
     override func buildPageUI() {
+        self.presendsPopsVIew.alpha = 1
         self.view.addSubview(self.presendsPopsVIew)
     }
 

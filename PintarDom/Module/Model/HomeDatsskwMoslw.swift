@@ -83,7 +83,7 @@ class UnaffectedListItem: BasicsmNetResModel, YYModel {
     var teach: String?
     
     // PRODUCT_LIST extra fields
-    var bosom: Int?
+    var bosom: String?
     var lifeless: String?
     var bless: String?
     var protect: String?
