@@ -187,11 +187,7 @@ private extension SowkHomeskViewController {
 
 @objc private extension SowkHomeskViewController {
     func clickAppslwjsViewsButon(sender: HomApslwlkControwlView) {
-        guard let _idslw = GLoskwCommenskwmodls.shared.productID else {
-            return
-        }
-        
-        self.showChanpInsDetail(_idslw, sender: sender.appBtn)
+        self.showChanpInsDetail(self.comsejDityID, sender: sender.appBtn)
     }
     
     func reswoHomesUiStyle() {

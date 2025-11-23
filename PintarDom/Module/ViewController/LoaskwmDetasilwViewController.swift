@@ -189,13 +189,13 @@ class LoaskwmDetasilwViewController: EsensiilsadwsiwViewController {
             case .Certif_ID_Cosujward:
                 self.navigationController?.pushViewController(IDCardswAuthExtensiwksViewController(cerasauAutheTiel: authTiles, nexjsAujwTheielw: self._titles_map, authStyle: (ChanPinAuthElement.Certif_ID_Cosujward, ChanPinAuthElement.Certif_Persopalsjnal_Inuywjfo)), animated: true)
             case .Certif_Persopalsjnal_Inuywjfo:
-                self.navigationController?.pushViewController(IDCardswAuthExtensiwksViewController(cerasauAutheTiel: authTiles, nexjsAujwTheielw: self._titles_map, authStyle: (ChanPinAuthElement.Certif_Persopalsjnal_Inuywjfo, ChanPinAuthElement.Certif_Job_Info)), animated: true)
+                self.navigationController?.pushViewController(InfoAushPospwViewViewController(cerasauAutheTiel: authTiles, nexjsAujwTheielw: self._titles_map, authStyle: (ChanPinAuthElement.Certif_Persopalsjnal_Inuywjfo, ChanPinAuthElement.Certif_Job_Info)), animated: true)
             case .Certif_Job_Info:
-                self.navigationController?.pushViewController(IDCardswAuthExtensiwksViewController(cerasauAutheTiel: authTiles, nexjsAujwTheielw: self._titles_map, authStyle: (ChanPinAuthElement.Certif_Job_Info, ChanPinAuthElement.Certif_Contesdkcts)), animated: true)
+                self.navigationController?.pushViewController(InfoAushPospwViewViewController(cerasauAutheTiel: authTiles, nexjsAujwTheielw: self._titles_map, authStyle: (ChanPinAuthElement.Certif_Job_Info, ChanPinAuthElement.Certif_Contesdkcts)), animated: true)
             case .Certif_Contesdkcts:
-                self.navigationController?.pushViewController(IDCardswAuthExtensiwksViewController(cerasauAutheTiel: authTiles, nexjsAujwTheielw: self._titles_map, authStyle: (ChanPinAuthElement.Certif_Contesdkcts, ChanPinAuthElement.Certif_BankkskCard)), animated: true)
+                self.navigationController?.pushViewController(ContactswkVosruejdViewController(cerasauAutheTiel: authTiles, nexjsAujwTheielw: self._titles_map, authStyle: (ChanPinAuthElement.Certif_Contesdkcts, ChanPinAuthElement.Certif_BankkskCard)), animated: true)
             case .Certif_BankkskCard:
-                self.navigationController?.pushViewController(IDCardswAuthExtensiwksViewController(cerasauAutheTiel: authTiles, nexjsAujwTheielw: self._titles_map, authStyle: (ChanPinAuthElement.Certif_BankkskCard, ChanPinAuthElement.Certif_BankkskCard)), animated: true)
+                self.navigationController?.pushViewController(InfoAushPospwViewViewController(cerasauAutheTiel: authTiles, nexjsAujwTheielw: self._titles_map, authStyle: (ChanPinAuthElement.Certif_BankkskCard, ChanPinAuthElement.Certif_BankkskCard)), animated: true)
             }
         }
     }

@@ -208,10 +208,10 @@ extension CardAuthwPwekskPopView: InfoAuthCompelwProtocol {
     }
     
     func didEndEditeing(itemsiw: UIView, inputsw: String?) {
-        guard let _view = itemsiw as? ConsiekwItemView, let _key = _view.itenKey else {
+        guard let _view = itemsiw as? ConsiekwItemView, let _key = _view.itenKey, let _tsw = inputsw else {
             return
         }
         
-        self.savepashw[_key] = inputsw
+        self.savepashw[_key] = _tsw
     }
 }

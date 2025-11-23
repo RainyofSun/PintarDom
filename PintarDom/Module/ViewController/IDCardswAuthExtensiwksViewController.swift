@@ -43,11 +43,8 @@ class IDCardswAuthExtensiwksViewController: AuthExtensiwksViewController {
     
     override func pageNetRequest() {
         super.pageNetRequest()
-        guard let _id = GLoskwCommenskwmodls.shared.productID else {
-            return
-        }
         
-        APPNetRequestManager.afnReqeustType(NetworkRequestConfig.defaultRequestConfig("qscgy/held", requestParams: ["nor": _id])) { [weak self] (task: URLSessionDataTask, res: APPSuccessResponse) in
+        APPNetRequestManager.afnReqeustType(NetworkRequestConfig.defaultRequestConfig("qscgy/held", requestParams: ["nor": self.comsejDityID])) { [weak self] (task: URLSessionDataTask, res: APPSuccessResponse) in
             guard let _jsow = res.jsonDict, let _cas_model = CardAushwModel.model(with: _jsow) else {
                 return
             }
@@ -199,7 +196,7 @@ private extension IDCardswAuthExtensiwksViewController {
                         return
                     }
                     sender.startAnimation()
-                    _pwls.savepashw["nor"] = GLoskwCommenskwmodls.shared.productID
+                    _pwls.savepashw["nor"] = self?.comsejDityID
                     
                     APPNetRequestManager.afnReqeustType(NetworkRequestConfig.defaultRequestConfig("qscgy/wanderer", requestParams: _pwls.savepashw)) { (task: URLSessionDataTask, red: APPSuccessResponse) in
                         _self_ss.cardausjwView.uspwTipwslLab.text = APPLanguageInsTool.loadLanguage("auth_uploaded")
