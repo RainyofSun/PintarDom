@@ -81,7 +81,7 @@ class EsensiwlwsBadisnPresentView: UIView {
         }
         
         self.titleLab.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
+            make.centerX.equalToSuperview().offset(-10)
             make.top.equalToSuperview().offset(30)
         }
     }

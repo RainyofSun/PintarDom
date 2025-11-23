@@ -78,7 +78,7 @@ class Protector: BasicsmNetResModel {
     /// 标题
     var teach: String?
     var lawful: String?
-    var recall: Int?
+    var recall: String?
     /// 未完成时的描述
     var conjuring: String?
     /// 认证类型 实际下发值见值映射-产品详情认证项目列表

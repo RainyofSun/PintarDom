@@ -160,7 +160,7 @@ private extension SowkHomeskViewController {
         }
     }
     
-    func showChanpInsDetail(_ chanPinswkId: String, sender: ActivityAnimationProtocol) {        
+    func showChanpInsDetail(_ chanPinswkId: String, sender: ActivityAnimationProtocol) {
         guard sender.isEnabled else {
             return
         }

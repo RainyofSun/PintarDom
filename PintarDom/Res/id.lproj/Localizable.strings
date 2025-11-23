@@ -121,6 +121,7 @@
 "auth_pop_confirm_birth" = "Tanggal lahir";
 "auth_pop_confirm_number" = "Nomor ID";
 "auth_pop_confirm_tip1" = "Silakan periksa informasi berikut dan pastikan keakuratannya agar proses review dapat berjalan lancar.";
+"auth_card_tis"="Harap unggah foto KTP Anda terlebih dahulu";
 
 "neiw_tswp"="Kesalahan jaringan, silakan periksa";
 "info_confirm_tip"="Mohon konfirmasi informasinya";

@@ -76,7 +76,8 @@ class LoaskwmDetasilwViewController: EsensiilsadwsiwViewController {
         super.layoutPageViews()
         
         self.basicScrollContentView.snp.remakeConstraints { make in
-            make.horizontalEdges.top.equalToSuperview()
+            make.horizontalEdges.equalToSuperview()
+            make.top.equalToSuperview().offset(jk_kStatusBarFrameH)
             make.bottom.equalTo(self.bowksiwView.snp.top).offset(-8)
         }
         
@@ -110,7 +111,7 @@ class LoaskwmDetasilwViewController: EsensiilsadwsiwViewController {
             
             self?._isRefresh = false
             guard let self = self else { return }
-            self.authCollwsoView.refresh(begin: false)
+            self.basicScrollContentView.refresh(begin: false)
             
             guard
                 let json = res.jsonDict,
@@ -164,7 +165,7 @@ class LoaskwmDetasilwViewController: EsensiilsadwsiwViewController {
 
         } failure: { [weak self] _, _ in
             self?._isRefresh = false
-            self?.authCollwsoView.refresh(begin: false)
+            self?.basicScrollContentView.refresh(begin: false)
         }
     }
     
@@ -227,7 +228,7 @@ extension LoaskwmDetasilwViewController: UICollectionViewDelegate, UICollectionV
         var title: String? = _doel.teach
         
         // 如果有认证项，优先跳转未认证
-        if _doel.recall == 0, let _nex = self._next_auth {
+        if _doel.recall == "0", let _nex = self._next_auth {
             _c_typw = ChanPinAuthElement(rawValue: _nex.opposing ?? "") ?? ChanPinAuthElement.Certif_ID_Cosujward
             title = _nex.teach
         }

@@ -98,7 +98,7 @@ class AuthskwkCeolllslwCell: UICollectionViewCell {
         self.swkNamskw.text = model.teach
         
         self.authsBnw.setTitle(model.persevere, for: UIControl.State.normal)
-        if model.recall == 1 {
+        if model.recall == "1" {
             self.authsBnw.setGradientColors([UIColor.hexStringColor(hexString: "#CCCCCC"), UIColor.hexStringColor(hexString: "#CCCCCC")], style: GradientDirectionStyle.leftToRight)
         } else {
             self.authsBnw.setGradientColors([UIColor.hexStringColor(hexString: "#0DF5A2"), UIColor.hexStringColor(hexString: "#0DA2F5")], style: GradientDirectionStyle.leftBottomToRightTop)

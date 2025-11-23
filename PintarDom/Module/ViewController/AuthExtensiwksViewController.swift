@@ -28,9 +28,7 @@ class AuthExtensiwksViewController: EsensiilsadwsiwViewController {
     private lazy var topBcosnView: GradientColorView = {
         let view = GradientColorView(frame: CGRectZero)
         view.buildGradientWithColors(gradientColors: [UIColor.hexStringColor(hexString: "#0DA2F5"), UIColor.hexStringColor(hexString: "#0DF5A2", alpha: 0)], gradientStyle: GradientDirectionStyle.leftTopToRightBottom)
-        view.corner(16)
         view.frame = CGRect(origin: CGPointZero, size: CGSizeMake(jk_kScreenW - 32, 90))
-        view.jk.addCorner(conrners: [.topLeft, .topRight], radius: 16)
         return view
     }()
     
@@ -52,6 +50,7 @@ class AuthExtensiwksViewController: EsensiilsadwsiwViewController {
     private(set) var _next_tilskw_map: [ChanPinAuthElement: [String: String]]?
     private(set) var _type: ChanPinAuthElement = ChanPinAuthElement.Certif_ID_Cosujward
     private(set) var _next_type: ChanPinAuthElement = ChanPinAuthElement.Certif_ID_Cosujward
+    open var isCompleteAuth: Bool = false
     
     init(cerasauAutheTiel title: String?, nexjsAujwTheielw next: [ChanPinAuthElement : [String: String]]? = nil, authStyle style: (current: ChanPinAuthElement, next: ChanPinAuthElement)) {
         super.init(nibName: nil, bundle: nil)
@@ -70,6 +69,7 @@ class AuthExtensiwksViewController: EsensiilsadwsiwViewController {
         self.nextBtn.corner(23)
         self.nextBtn.addTarget(self, action: #selector(clickNextButtons(sender: )), for: UIControl.Event.touchUpInside)
     
+        self.basicScrollContentView.backgroundColor = .white
         self.gradientView.isHidden = false
         self.gradientView.buildGradientWithColors(gradientColors: [UIColor.hexStringColor(hexString: "#21F0E8"), UIColor.hexStringColor(hexString: "#3BF8FF", alpha: 0.63)], gradientStyle: GradientDirectionStyle.topToBottom)
         
@@ -80,6 +80,11 @@ class AuthExtensiwksViewController: EsensiilsadwsiwViewController {
             let titleSqqwi: NSMutableAttributedString = NSMutableAttributedString(string: String(format: "%@\n", sewAyyas.first ?? ""), attributes: [.font: UIFont.loadSpecialFont(size: 18, ftStyle: FontStyle.Arial_BoldMT), .foregroundColor: UIColor.white, .paragraphStyle: paysaq])
             titleSqqwi.append(NSAttributedString(string: sewAyyas.last ?? "", attributes: [.font: UIFont.systemFont(ofSize: 14, weight: UIFont.Weight.medium), .foregroundColor: UIColor.white]))
             self.topTilsLab.attributedText = titleSqqwi
+        }
+        
+        if let _des = self._next_tilskw_map?[self._type]?["progress"] {
+            self.badgeView.setTitle(_des, for: UIControl.State.normal)
+            self.badgeView.jk.addCorner(conrners: .bottomLeft, radius: 16)
         }
         
         self.view.addSubview(self.bottomView)
@@ -102,6 +107,7 @@ class AuthExtensiwksViewController: EsensiilsadwsiwViewController {
         
         self.badgeView.snp.makeConstraints { make in
             make.right.top.equalToSuperview()
+            make.size.equalTo(CGSize(width: 80, height: 27))
         }
         
         self.topTilsLab.snp.makeConstraints { make in
@@ -110,8 +116,9 @@ class AuthExtensiwksViewController: EsensiilsadwsiwViewController {
         }
         
         self.basicScrollContentView.snp.remakeConstraints { make in
-            make.top.horizontalEdges.equalToSuperview()
-            make.bottom.equalTo(self.bottomView.snp.top).offset(-8)
+            make.top.equalTo(self.topBcosnView.snp.bottom)
+            make.horizontalEdges.equalTo(self.topBcosnView)
+            make.bottom.equalTo(self.bottomView.snp.top).offset(-8).priority(ConstraintPriority.low)
         }
         
         self.bottomView.snp.makeConstraints { make in
@@ -124,6 +131,12 @@ class AuthExtensiwksViewController: EsensiilsadwsiwViewController {
             make.top.equalToSuperview().offset(12)
             make.bottom.equalToSuperview().offset(-UIDevice.current.keyWindow().safeAreaInsets.bottom - 8)
         }
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.basicScrollContentView.jk.addCorner(conrners: [.bottomLeft, .bottomRight], radius: 16)
+        self.topBcosnView.jk.addCorner(conrners: [.topLeft, .topRight], radius: 16)
     }
     
     @objc func clickNextButtons(sender: APPActivityButton) {
