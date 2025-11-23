@@ -20,6 +20,7 @@ class HomApslwlkControwlView: UIControl {
         view.setTitleColor(UIColor.ppGray8C, for: UIControl.State.normal)
         view.layoutImageUpTitleDown()
         view.isUserInteractionEnabled = false
+        view.isHidden = true
         return view
     }()
     
@@ -31,6 +32,7 @@ class HomApslwlkControwlView: UIControl {
         view.setTitleColor(UIColor.ppGray8C, for: UIControl.State.normal)
         view.layoutImageUpTitleDown()
         view.isUserInteractionEnabled = false
+        view.isHidden = true
         return view
     }()
     
@@ -42,6 +44,7 @@ class HomApslwlkControwlView: UIControl {
         view.setTitleColor(UIColor.ppGray8C, for: UIControl.State.normal)
         view.layoutImageUpTitleDown()
         view.isUserInteractionEnabled = false
+        view.isHidden = true
         return view
     }()
     
@@ -50,10 +53,14 @@ class HomApslwlkControwlView: UIControl {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        self.backgroundColor = UIColor.init(white: 1, alpha: 0.4)
+        self.corner(16)
+        
         self.appBtn.isUserInteractionEnabled = false
         self.appBtn.setTitleColor(UIColor.white, for: UIControl.State.normal)
         self.appBtn.titleLabel?.font = UIFont.loadSpecialFont(size: 20, ftStyle: FontStyle.Inter_ExtraBold)
         self.appBtn.corner(25)
+        self.appBtn.isHidden = true
         
         self.addSubview(self.topTip)
         self.addSubview(self.amountLas)
@@ -85,6 +92,7 @@ class HomApslwlkControwlView: UIControl {
     }
     
     func animationBigOrSamll(isBig: Bool) {
+        self.appBtn.isHidden = false
         self.fastView.isHidden = !isBig
         self.safeView.isHidden = self.fastView.isHidden
         self.simpleView.isHidden = self.safeView.isHidden
@@ -96,23 +104,23 @@ class HomApslwlkControwlView: UIControl {
                     make.top.equalTo(self.amountLas.snp.bottom).offset(10)
                 }
 
-                self.fastView.snp.makeConstraints { make in
+                self.fastView.snp.remakeConstraints { make in
                     make.centerX.equalToSuperview()
                     make.height.equalTo(80)
                     make.top.equalTo(self.rasteView.snp.bottom).offset(14)
                 }
 
-                self.safeView.snp.makeConstraints { make in
+                self.safeView.snp.remakeConstraints { make in
                     make.left.equalTo(self.rasteView).offset(8)
                     make.centerY.height.equalTo(self.fastView)
                 }
 
-                self.simpleView.snp.makeConstraints { make in
+                self.simpleView.snp.remakeConstraints { make in
                     make.right.equalTo(self.rasteView).offset(-8)
                     make.centerY.height.equalTo(self.fastView)
                 }
 
-                self.appBtn.snp.makeConstraints { make in
+                self.appBtn.snp.remakeConstraints { make in
                     make.top.equalTo(self.fastView.snp.bottom).offset(10)
                     make.horizontalEdges.equalTo(self.rasteView)
                     make.height.equalTo(50)
@@ -128,7 +136,7 @@ class HomApslwlkControwlView: UIControl {
                     make.top.equalTo(self.amountLas.snp.bottom).offset(10)
                 }
 
-                self.appBtn.snp.makeConstraints { make in
+                self.appBtn.snp.remakeConstraints { make in
                     make.top.equalTo(self.rasteView.snp.bottom).offset(10)
                     make.horizontalEdges.equalTo(self.rasteView)
                     make.height.equalTo(50)
@@ -147,5 +155,12 @@ class HomApslwlkControwlView: UIControl {
         self.rasteView.setLoasTip(model.shewn ?? "", value: model.repeats ?? "", isDay: false)
         
         self.appBtn.setTitle(model.protect, for: UIControl.State.normal)
+    }
+    
+    func reloadPswDetailsw(modls: Idea) {
+        self.topTip.text = modls.encounter
+        self.amountLas.text = modls.dangers
+        self.rasteView.setLoasTip(modls.weighing?.distinctions?.teach ?? "", value: modls.weighing?.distinctions?.hinted ?? "", isDay: true)
+        self.rasteView.setLoasTip(modls.weighing?.scrupulous?.teach ?? "", value: modls.weighing?.scrupulous?.hinted ?? "", isDay: false)
     }
 }

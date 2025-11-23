@@ -54,12 +54,12 @@ class WinsLanscusherViewController: EsensiilsadwsiwViewController {
         
         if UIDevice.jk.isIpad() {
             let _skwimodel: AppChuShiMwoskModel = AppChuShiMwoskModel()
-            _skwimodel.oppressed = 1
+            _skwimodel.oppressed = "1"
             
             if let _code = _skwimodel.oppressed {
-                GLoskwCommenskwmodls.shared.countryCode = _code
-                APPPublicParams.request().appUpdateLoginToken(nil, withContryCode: "\(_code)")
-                APPLanguageInsTool.setLocalLanguage(InterbationalLanguage.init(rawValue: _code) ?? InterbationalLanguage.English)
+                GLoskwCommenskwmodls.shared.countryCode = Int(_code) ?? 1
+                APPPublicParams.request().appUpdateLoginToken(nil, withContryCode: _code)
+                APPLanguageInsTool.setLocalLanguage(InterbationalLanguage.English)
             }
             self.lansuwDelegate?.lansudswErDismiss()
             return
@@ -76,13 +76,19 @@ class WinsLanscusherViewController: EsensiilsadwsiwViewController {
             GLoskwCommenskwmodls.shared.isAppInitializationSuccess = true
             GLoskwCommenskwmodls.shared.privacyURL = _initModel.privacyPolicyUrl
             
-            if let _code = _initModel.oppressed, _code != -1 {
-                GLoskwCommenskwmodls.shared.countryCode = _initModel.oppressed ?? 1
-                APPPublicParams.request().appUpdateLoginToken(nil, withContryCode: "\(_code)")
-                APPLanguageInsTool.setLocalLanguage(InterbationalLanguage.init(rawValue: _code) ?? InterbationalLanguage.English)
+            if let _codes = _initModel.oppressed, let _code = Int(_codes) {
+                GLoskwCommenskwmodls.shared.countryCode = _code
+                APPPublicParams.request().appUpdateLoginToken(nil, withContryCode: _codes)
+                if _code == 1 {
+                    APPLanguageInsTool.setLocalLanguage(InterbationalLanguage.English)
+                }
                 
-                if _code == 2 && (DeviceAuthorizationTool.authorization().locationAuthorization() != Authorized && DeviceAuthorizationTool.authorization().locationAuthorization() != Limited) {
-                    GLoskwCommenskwmodls.shared.showPositionAlert = true
+                if _code == 2 {
+                    APPLanguageInsTool.setLocalLanguage(InterbationalLanguage.Indonesian)
+                    
+                    if (DeviceAuthorizationTool.authorization().locationAuthorization() != Authorized && DeviceAuthorizationTool.authorization().locationAuthorization() != Limited) {
+                        GLoskwCommenskwmodls.shared.showPositionAlert = true
+                    }
                 }
             }
             

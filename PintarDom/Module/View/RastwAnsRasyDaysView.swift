@@ -47,12 +47,14 @@ class RastwAnsRasyDaysView: UIView {
         
         self.termLab.snp.makeConstraints { make in
             make.centerY.equalTo(self.centerLine)
-            make.right.equalTo(self.centerLine.snp.left).offset(-jk_kScreenW * 0.1)
+            make.left.equalToSuperview().offset(10)
+            make.right.equalTo(self.centerLine.snp.left).offset(-10)
         }
         
         self.timeLab.snp.makeConstraints { make in
             make.centerY.equalTo(self.centerLine)
-            make.left.equalTo(self.centerLine.snp.right).offset(jk_kScreenW * 0.1)
+            make.left.equalTo(self.centerLine.snp.right).offset(10)
+            make.right.equalToSuperview().offset(-10)
         }
     }
     

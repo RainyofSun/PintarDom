@@ -24,7 +24,7 @@ class UsjekwLodskwkView: EsensiwlwsBadisnPresentView {
     private lazy var areaNumsLab: UILabel = UILabel.normalTextLabel("(+91)", t_color: UIColor.ppBlack33, t_f: UIFont.loadSpecialFont(size: 14, ftStyle: FontStyle.Inter_Medium))
     private lazy var lineViws: UIView = {
         let view = UIView(frame: CGRectZero)
-        view.backgroundColor = UIColor.init(white: 1, alpha: 0.3)
+        view.backgroundColor = UIColor.init(white: 0, alpha: 0.12)
         return view
     }()
     
@@ -56,7 +56,7 @@ class UsjekwLodskwkView: EsensiwlwsBadisnPresentView {
     
     private lazy var voiceSkwBtnws: UIButton = {
         let view = UIButton(type: UIButton.ButtonType.custom)
-        let attswjs: NSAttributedString = NSAttributedString(string: APPLanguageInsTool.loadLanguage("login_voice"), attributes: [.font: UIFont.loadSpecialFont(size: 14, ftStyle: FontStyle.Inter_Medium), .foregroundColor: UIColor.hexStringColor(hexString: "#0972A4"), .underlineColor: UIColor.hexStringColor(hexString: "#0972A4"), .underlineStyle: NSUnderlineStyle.single])
+        let attswjs: NSAttributedString = NSAttributedString(string: APPLanguageInsTool.loadLanguage("login_voice"), attributes: [.font: UIFont.loadSpecialFont(size: 14, ftStyle: FontStyle.Inter_Medium), .foregroundColor: UIColor.hexStringColor(hexString: "#0972A4"), .underlineColor: UIColor.hexStringColor(hexString: "#0972A4"), .underlineStyle: NSUnderlineStyle.single.rawValue])
         view.setAttributedTitle(attswjs, for: UIControl.State.normal)
         return view
     }()
@@ -64,6 +64,7 @@ class UsjekwLodskwkView: EsensiwlwsBadisnPresentView {
     private lazy var protcoplView: ProtocolView = {
         let view = ProtocolView(frame: CGRectZero)
         view.setProtocol(NSAttributedString(string: APPLanguageInsTool.loadLanguage("login_xie_yi"), attributes: [.font: UIFont.loadSpecialFont(size: 14, ftStyle: FontStyle.Inter_Medium),.foregroundColor: UIColor.hexStringColor(hexString: "#0972A4")]), protocolPrefix: NSAttributedString(string: APPLanguageInsTool.loadLanguage("login_xie_yi_pre"), attributes: [.font: UIFont.loadSpecialFont(size: 14, ftStyle: FontStyle.Inter_Medium), .foregroundColor: UIColor.hexStringColor(hexString: "#6D6D73")]))
+        view.setAgreeButton(UIImage(named: "login_unsel")!, selectedImg: UIImage(named: "login_sel")!)
         return view
     }()
     
@@ -121,7 +122,7 @@ class UsjekwLodskwkView: EsensiwlwsBadisnPresentView {
         }
         
         self.areaNumsLab.snp.makeConstraints { make in
-            make.left.equalToSuperview().offset(16)
+            make.left.equalToSuperview().offset(8)
             make.centerY.equalToSuperview()
         }
         
@@ -133,7 +134,7 @@ class UsjekwLodskwkView: EsensiwlwsBadisnPresentView {
         
         self.phonestesw.snp.makeConstraints { make in
             make.verticalEdges.equalToSuperview().inset(3)
-            make.left.equalTo(self.lineViws.snp.right).offset(8)
+            make.left.equalTo(self.lineViws.snp.right)
             make.right.equalToSuperview().offset(-8)
         }
         
@@ -150,13 +151,11 @@ class UsjekwLodskwkView: EsensiwlwsBadisnPresentView {
         self.codeTesjwView.snp.makeConstraints { make in
             make.left.equalToSuperview().offset(16)
             make.verticalEdges.equalToSuperview().inset(3)
-            make.right.equalTo(self.codeBtnsw.snp.left).offset(8)
+            make.width.greaterThanOrEqualToSuperview().multipliedBy(0.4)
         }
         
         self.codeBtnsw.snp.makeConstraints { make in
-            make.right.equalToSuperview().offset(-16)
-            make.verticalEdges.equalToSuperview().inset(3)
-            make.width.greaterThanOrEqualTo(80)
+            make.right.centerY.equalToSuperview()
         }
         
         self.voiceSkwBtnws.snp.makeConstraints { make in
@@ -165,12 +164,14 @@ class UsjekwLodskwkView: EsensiwlwsBadisnPresentView {
         }
         
         self.protcoplView.snp.makeConstraints { make in
-            make.horizontalEdges.lessThanOrEqualTo(self.codslwgraisView).inset(40)
+            make.left.equalTo(self.codslwgraisView)
+            make.width.lessThanOrEqualTo(self.codslwgraisView)
             make.top.equalTo(self.voiceSkwBtnws.snp.bottom).offset(50)
         }
         
         self.confirmBtn.snp.remakeConstraints { make in
             make.height.equalTo(50)
+            make.centerX.equalTo(self.codslwgraisView)
             make.top.equalTo(self.protcoplView.snp.bottom).offset(10)
             make.bottom.equalToSuperview().offset(-20)
         }
@@ -178,7 +179,6 @@ class UsjekwLodskwkView: EsensiwlwsBadisnPresentView {
     
     override func closePresentView() {
         self.codeBtnsw.initCodeTimerStatus()
-        NotificationCenter.default.post(name: NSNotification.Name.init("refreshHome"), object: nil)
         self.f_weak_conrolw?.dismiss(animated: true)
     }
     
@@ -211,6 +211,7 @@ class UsjekwLodskwkView: EsensiwlwsBadisnPresentView {
             UserDefaults.standard.synchronize()
             GLoskwCommenskwmodls.shared.encoderukpersinwoinfoToDskkd()
             MaiDianwkToslwTool.fengKongMaidian(type: MaiDianEventUploadStyle.MD_Login, beginTime: self?.f_weak_conrolw?.buryingStartTime, endTime: Date().jk.dateToTimeStamp())
+            NotificationCenter.default.post(name: NSNotification.Name("refreshHomeUI"), object: nil)
             self?.codeBtnsw.stop()
             self?.closePresentView()
         } failure: {[weak self] _, _ in

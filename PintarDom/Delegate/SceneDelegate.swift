@@ -31,7 +31,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         DeviceAuthorizationTool.authorization()
         APPLanguageInsTool.setLocalLanguage(InterbationalLanguage.English)
         GLoskwCommenskwmodls.shared.unencodeuasdwyruenyws()
-        setServiwComskwCnsParams()
         setWindowksRootSjwjvCOntrols()
     }
 
@@ -160,6 +159,6 @@ extension SceneDelegate: WinLanswksDisProtocol {
         config.barNormalColor = UIColor.hexStringColor(hexString: "#6B7280")
         config.verticalSpacing = 4
         
-        self.window?.rootViewController = APPBasicTabBarViewController(barStyle: config)
+        self.window?.rootViewController = EsensilledTabBarViewController(barStyle: config)
     }
 }

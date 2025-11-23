@@ -63,7 +63,6 @@ enum ShouYeElement: String {
 }
 
 enum ChanPinAuthElement: String {
-    case Certif_Query = "gapa"
     case Certif_ID_Cosujward = "the"
     case Certif_Persopalsjnal_Inuywjfo = "hastily"
     case Certif_Job_Info = "his"

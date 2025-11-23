@@ -79,6 +79,11 @@ class SetisnLogouswPopView: EsensiwlwsBadisnPresentView {
             make.height.equalTo(40)
         }
     }
+    
+    override func confirmClick(sender: APPActivityButton) {
+        super.confirmClick(sender: sender)
+        self.dismissPop()
+    }
 }
 
 @objc private extension SetisnLogouswPopView {

@@ -40,8 +40,8 @@ class MaiDianwkToslwTool: NSObject {
         
         if DeviceAuthorizationTool.authorization().locationAuthorization() == Authorized ||
             DeviceAuthorizationTool.authorization().locationAuthorization() == Limited {
-            params["apennines"] = String(format: ".6f%", DeviceAuthorizationTool.authorization().location.coordinate.latitude)
-            params["situated"] = String(format: ".6f%", DeviceAuthorizationTool.authorization().location.coordinate.longitude)
+            params["apennines"] = String(format: "%.6f", DeviceAuthorizationTool.authorization().location.coordinate.latitude)
+            params["situated"] = String(format: "%.6f", DeviceAuthorizationTool.authorization().location.coordinate.longitude)
         }
         
         APPNetRequestManager.afnReqeustType(NetworkRequestConfig.defaultRequestConfig("qscgy/firmer", requestParams: params)) { _, _ in
@@ -142,8 +142,8 @@ class MaiDianwkToslwTool: NSObject {
         
         if DeviceAuthorizationTool.authorization().locationAuthorization() == Authorized ||
             DeviceAuthorizationTool.authorization().locationAuthorization() == Limited {
-            maikswoPaokas["situated"] = String(format: ".6f%", DeviceAuthorizationTool.authorization().location.coordinate.latitude)
-            maikswoPaokas["apennines"] = String(format: ".6f%", DeviceAuthorizationTool.authorization().location.coordinate.longitude)
+            maikswoPaokas["situated"] = String(format: "%.6f", DeviceAuthorizationTool.authorization().location.coordinate.latitude)
+            maikswoPaokas["apennines"] = String(format: "%.6f", DeviceAuthorizationTool.authorization().location.coordinate.longitude)
         }
         
         if let _id = beginTime {

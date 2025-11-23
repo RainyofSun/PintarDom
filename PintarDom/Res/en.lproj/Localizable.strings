@@ -99,8 +99,8 @@
 "problems_content5" = "Once a loan application is issued, it will be processed automatically by the system and cannot be cancelled.";
 
 "details_nav" = "Product Details";
-"details_step" = "Step";
-"details_agree" = "I have read and agree %@";
+"details_step" = "Step %ld";
+"details_agree" = "I have read and agree ";
 
 "auth_upload" = "Upload";
 "auth_uploaded" = "Uploaded";

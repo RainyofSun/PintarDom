@@ -7,23 +7,20 @@
 
 import UIKit
 
-class DengluSkwkVndjsuViewController: UIViewController {
+class DengluSkwkVndjsuViewController: EsensiilsadwsiwViewController, AutoHiddenNavigationBar {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
+    private lazy var presendsPopsVIew: UsjekwLodskwkView = UsjekwLodskwkView(frame: CGRectZero)
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func buildPageUI() {
+        self.presendsPopsVIew.alpha = 1
+        self.presendsPopsVIew.f_weak_conrolw = self
+        self.view.addSubview(self.presendsPopsVIew)
     }
-    */
+
+    override func layoutPageViews() {
+        self.presendsPopsVIew.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+    }
 
 }

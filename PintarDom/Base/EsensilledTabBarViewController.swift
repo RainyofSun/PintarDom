@@ -23,11 +23,30 @@ class EsensilledTabBarViewController: APPBasicTabBarViewController {
             }
         }
     }
+    
+    override func currentBarItemCanSelected(shouldSelectedIndex: Int) -> Bool {
+        guard let _bcsw = self.viewControllers, shouldSelectedIndex < _bcsw.count else {
+            return false
+        }
+        
+        guard let _nav = _bcsw[shouldSelectedIndex] as? EsensiilsaaJawwsNavViewController else {
+            return false
+        }
+        
+        let _topsw_v = _nav.topViewController
+        
+        if (_topsw_v is OrdekswOrksjwPskViewController || _topsw_v is MeSkwoledkwlViewController ) && GLoskwCommenskwmodls.shared.appLoginInfo?.powerfully == nil {
+            self.persownReNeedLogisnw()
+            return false
+        }
+        
+        return super.currentBarItemCanSelected(shouldSelectedIndex: shouldSelectedIndex)
+    }
 }
 
 @objc extension EsensilledTabBarViewController {
     func persownReNeedLogisnw() {
-        let _navskw_conolse: EsensiilsaaJawwsNavViewController = EsensiilsaaJawwsNavViewController(rootViewController: PerswnsLogiswskViewController())
+        let _navskw_conolse: EsensiilsaaJawwsNavViewController = EsensiilsaaJawwsNavViewController(rootViewController: DengluSkwkVndjsuViewController())
         _navskw_conolse.modalPresentationStyle = .overFullScreen
         self.present(_navskw_conolse, animated: true)
     }

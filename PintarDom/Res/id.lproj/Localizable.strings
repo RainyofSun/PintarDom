@@ -99,8 +99,8 @@
 "problems_content5" = "Setelah permohonan pinjaman diajukan, permohonan tersebut akan diproses secara otomatis oleh sistem dan tidak dapat dibatalkan.";
 
 "details_nav" = "Detail Produk";
-"details_step" = "Melangkah";
-"details_agree" = "Saya sudah membaca dan setuju %@";
+"details_step" = "Melangkah %ld";
+"details_agree" = "Saya sudah membaca dan setuju ";
 
 "auth_upload" = "Unggah";
 "auth_uploaded" = "Diunggah";

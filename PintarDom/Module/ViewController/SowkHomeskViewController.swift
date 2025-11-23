@@ -12,6 +12,7 @@ class SowkHomeskViewController: EsensiilsadwsiwViewController {
     private lazy var topView: HomBigsTospCaPProskwView = HomBigsTospCaPProskwView(frame: CGRectZero)
     private lazy var appslwkView: HomApslwlkControwlView = HomApslwlkControwlView(frame: CGRectZero)
     private lazy var bigSkwi: HomBigskwCakswiView = HomBigskwCakswiView(frame: CGRectZero)
+    private lazy var smallSkws: SmallCakswkViwskw = SmallCakswkViwskw(frame: CGRectZero)
     
     override func viewIsAppearing(_ animated: Bool) {
         super.viewIsAppearing(animated)
@@ -25,9 +26,11 @@ class SowkHomeskViewController: EsensiilsadwsiwViewController {
         
         self.appslwkView.addTarget(self, action: #selector(clickAppslwjsViewsButon(sender: )), for: UIControl.Event.touchUpInside)
         
+        self.smallSkws.isHidden = true
+        self.smallSkws.smlaDelegate = self
         self.basicScrollContentView.addSubview(self.topView)
         self.basicScrollContentView.addSubview(self.appslwkView)
-        self.basicScrollContentView.addSubview(self.bigSkwi)
+        
         // 缓存城市列表
         self.cacheLoaskwlCitySiwjd()
     }
@@ -41,13 +44,9 @@ class SowkHomeskViewController: EsensiilsadwsiwViewController {
         }
         
         self.appslwkView.snp.makeConstraints { make in
-            make.left.width.equalToSuperview()
+            make.left.equalToSuperview().offset(16)
+            make.width.equalTo(jk_kScreenW - 32)
             make.top.equalTo(self.topView.snp.bottom)
-        }
-        
-        self.bigSkwi.snp.makeConstraints { make in
-            make.left.width.equalToSuperview()
-            make.top.equalTo(self.appslwkView.snp.bottom).offset(14)
             make.bottom.equalToSuperview().offset(-20)
         }
     }
@@ -73,6 +72,8 @@ class SowkHomeskViewController: EsensiilsadwsiwViewController {
                     self?.topView.setPPimage(_url, ppname: _big.lifeless, serviceLosdkw: _modsl.conveying?.opportunity ?? "", serviweUrl: _modsl.conveying?.omit ?? "")
                 }
                 
+                self?.loadCadedsViews(isBig: true)
+                
                 self?.appslwkView.reloadSowksInfp(model: _big)
                 self?.appslwkView.animationBigOrSamll(isBig: true)
                 GLoskwCommenskwmodls.shared.productID = _big.bosom
@@ -83,9 +84,59 @@ class SowkHomeskViewController: EsensiilsadwsiwViewController {
                     self?.topView.setPPimage(_url, ppname: _small.lifeless, serviceLosdkw: _modsl.conveying?.opportunity ?? "", serviweUrl: _modsl.conveying?.omit ?? "")
                 }
                 
+                self?.loadCadedsViews(isBig: false)
                 self?.appslwkView.reloadSowksInfp(model: _small)
                 self?.appslwkView.animationBigOrSamll(isBig: false)
                 GLoskwCommenskwmodls.shared.productID = _small.bosom
+                if let _dds = _modsl.loadLis {
+                    self?.smallSkws.reloadSamlwslSource(sourve: _dds)
+                }
+            }
+        }
+    }
+    
+    func loadCadedsViews(isBig: Bool) {
+        self.bigSkwi.isHidden = !isBig
+        self.smallSkws.isHidden = isBig
+        
+        if isBig {
+            self.smallSkws.removeFromSuperview()
+            self.basicScrollContentView.addSubview(self.bigSkwi)
+            
+            UIView.animate(withDuration: 0.3) {
+                self.appslwkView.snp.remakeConstraints { make in
+                    make.left.equalToSuperview().offset(16)
+                    make.width.equalTo(jk_kScreenW - 32)
+                    make.top.equalTo(self.topView.snp.bottom)
+                }
+                
+                self.bigSkwi.snp.remakeConstraints { make in
+                    make.left.width.equalToSuperview()
+                    make.top.equalTo(self.appslwkView.snp.bottom).offset(14)
+                    make.bottom.equalToSuperview().offset(-20)
+                }
+                
+                self.basicScrollContentView.layoutIfNeeded()
+            }
+        } else {
+            self.bigSkwi.removeFromSuperview()
+            self.basicScrollContentView.addSubview(self.smallSkws)
+            
+            UIView.animate(withDuration: 0.3) {
+                self.appslwkView.snp.remakeConstraints { make in
+                    make.left.equalToSuperview().offset(16)
+                    make.width.equalTo(jk_kScreenW - 32)
+                    make.top.equalTo(self.topView.snp.bottom)
+                }
+                
+                self.smallSkws.snp.remakeConstraints { make in
+                    make.left.width.equalToSuperview()
+                    make.top.equalTo(self.appslwkView.snp.bottom).offset(14)
+                    make.height.equalTo(jk_kScreenH - 420)
+                    make.bottom.equalToSuperview().offset(-20)
+                }
+                
+                self.basicScrollContentView.layoutIfNeeded()
             }
         }
     }
@@ -109,7 +160,7 @@ private extension SowkHomeskViewController {
         }
     }
     
-    func showChanpInsDetail(_ chanPinswkId: String, sender: ActivityAnimationProtocol) {
+    func showChanpInsDetail(_ chanPinswkId: String, sender: ActivityAnimationProtocol) {        
         guard sender.isEnabled else {
             return
         }
@@ -145,5 +196,11 @@ private extension SowkHomeskViewController {
     
     func reswoHomesUiStyle() {
         self.pageNetRequest()
+    }
+}
+
+extension SowkHomeskViewController: SmalwlsCardPowksProtocol {
+    func didSlskwkProdyctItem(sender: APPActivityButton, chanpinId: String) {
+        self.showChanpInsDetail(chanpinId, sender: sender)
     }
 }
