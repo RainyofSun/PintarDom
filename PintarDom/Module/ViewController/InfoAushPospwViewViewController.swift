@@ -58,7 +58,7 @@ class InfoAushPospwViewViewController: AuthExtensiwksViewController {
         
         APPCocoaLog.debug("------ \n ---------\(self.info_key_cahce) \n----------")
         
-        APPNetRequestManager.afnReqeustType(NetworkRequestConfig.defaultRequestConfig(_tupw.requesUrl, requestParams: self.info_key_cahce)) { [weak self] (task: URLSessionDataTask, res: APPSuccessResponse) in
+        APPNetRequestManager.afnReqeustType(NetworkRequestConfig.defaultRequestConfig(_tupw.saveUrl, requestParams: self.info_key_cahce)) { [weak self] (task: URLSessionDataTask, res: APPSuccessResponse) in
             sender.stopAnimation()
             guard let __sselfw = self else {
                 return
@@ -95,6 +95,15 @@ private extension InfoAushPospwViewViewController {
                     view.tesjwtextFiedwView.text = _text
                     self.info_key_cahce[_key] = _text
                 }
+            }
+            
+            view.titlesljdlab.text = element.teach
+            if let _pws = element.conjuring {
+                view.tesjwtextFiedwView.attributedPlaceholder = NSAttributedString(string: _pws, attributes: [.font: UIFont.systemFont(ofSize: 14, weight: UIFont.Weight.medium), .foregroundColor: UIColor.hexStringColor(hexString: "#738570")])
+            }
+            
+            if element.observations == "1" {
+                view.tesjwtextFiedwView.keyboardType = .numberPad
             }
             
             view.inputDelesjuw = self
@@ -177,7 +186,20 @@ extension InfoAushPospwViewViewController: InfoAuthCompelwProtocol {
         }
         
         if _info_view.renzhenSylesk == .RZ_City {
+            let picker: CitySinfslwChoosePopView = CitySinfslwChoosePopView(frame: UIScreen.main.bounds)
+            UIDevice.current.keyWindow().addSubview(picker)
+            picker.showPresent()
             
+            picker.clickConfirmClosure = { [weak self] (pospwView: EsensiwlwsBadisnPresentView, sender: APPActivityButton) in
+                guard let _pp = pospwView as? CitySinfslwChoosePopView, !_pp.selectedDate.isEmpty else {
+                    return
+                }
+                
+                self?.info_key_cahce[_key] = _pp.selectedDate.replacingOccurrences(of: " | ", with: "-")
+                _info_view.tesjwtextFiedwView.text = _pp.selectedDate
+                
+                _pp.dismissPop()
+            }
         }
     }
     

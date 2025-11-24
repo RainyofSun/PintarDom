@@ -25,6 +25,12 @@ class AuthExtensiwksViewController: EsensiilsadwsiwViewController {
         return btn
     }()
     
+    private lazy var whiteBgView: UIView = {
+        let view = UIView(frame: CGRectZero)
+        view.backgroundColor = .white
+        return view
+    }()
+    
     private lazy var topBcosnView: GradientColorView = {
         let view = GradientColorView(frame: CGRectZero)
         view.buildGradientWithColors(gradientColors: [UIColor.hexStringColor(hexString: "#0DA2F5"), UIColor.hexStringColor(hexString: "#0DF5A2", alpha: 0)], gradientStyle: GradientDirectionStyle.leftTopToRightBottom)
@@ -69,7 +75,6 @@ class AuthExtensiwksViewController: EsensiilsadwsiwViewController {
         self.nextBtn.corner(23)
         self.nextBtn.addTarget(self, action: #selector(clickNextButtons(sender: )), for: UIControl.Event.touchUpInside)
     
-        self.basicScrollContentView.backgroundColor = .white
         self.gradientView.isHidden = false
         self.gradientView.buildGradientWithColors(gradientColors: [UIColor.hexStringColor(hexString: "#21F0E8"), UIColor.hexStringColor(hexString: "#3BF8FF", alpha: 0.63)], gradientStyle: GradientDirectionStyle.topToBottom)
         
@@ -90,6 +95,7 @@ class AuthExtensiwksViewController: EsensiilsadwsiwViewController {
         self.view.addSubview(self.bottomView)
         self.bottomView.addSubview(self.nextBtn)
         self.view.addSubview(self.topBcosnView)
+        self.view.insertSubview(self.whiteBgView, belowSubview: self.basicScrollContentView)
         self.topBcosnView.addSubview(self.badgeView)
         self.topBcosnView.addSubview(self.topTilsLab)
         
@@ -115,10 +121,14 @@ class AuthExtensiwksViewController: EsensiilsadwsiwViewController {
             make.top.equalToSuperview().offset(20)
         }
         
-        self.basicScrollContentView.snp.remakeConstraints { make in
+        self.whiteBgView.snp.makeConstraints { make in
             make.top.equalTo(self.topBcosnView.snp.bottom)
             make.horizontalEdges.equalTo(self.topBcosnView)
             make.bottom.equalTo(self.bottomView.snp.top).offset(-8).priority(ConstraintPriority.low)
+        }
+        
+        self.basicScrollContentView.snp.remakeConstraints { make in
+            make.edges.equalTo(self.whiteBgView)
         }
         
         self.bottomView.snp.makeConstraints { make in
@@ -135,7 +145,7 @@ class AuthExtensiwksViewController: EsensiilsadwsiwViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        self.basicScrollContentView.jk.addCorner(conrners: [.bottomLeft, .bottomRight], radius: 16)
+        self.whiteBgView.jk.addCorner(conrners: [.bottomLeft, .bottomRight], radius: 16)
         self.topBcosnView.jk.addCorner(conrners: [.topLeft, .topRight], radius: 16)
     }
     

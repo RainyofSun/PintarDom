@@ -37,7 +37,7 @@ class InfoAuthItemSinglePickerView: EsensiwlwsBadisnPresentView {
         return _pickView
     }()
     
-    private lazy var pickerContentView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: jk_kScreenW - 108, height: 305))
+    private lazy var pickerContentView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: jk_kScreenW - 138, height: 305))
     
     override func buildPresentView() {
         super.buildPresentView()
@@ -65,26 +65,20 @@ class InfoAuthItemSinglePickerView: EsensiwlwsBadisnPresentView {
         self.pickerContentView.snp.makeConstraints { make in
             make.top.equalTo(self.titleLab.snp.bottom).offset(50)
             make.left.equalToSuperview().offset(12)
-            make.size.equalTo(CGSize(width: jk_kScreenW - 108, height: 250))
+            make.size.equalTo(CGSize(width: jk_kScreenW - 138, height: 250))
+            make.right.equalToSuperview().offset(-26)
         }
         
-//        self.suwjeypickerView.snp.makeConstraints { make in
-//            make.top.equalTo(self.titleLab.snp.bottom).offset(50)
-//            make.left.equalToSuperview().offset(12)
-//            make.right.equalToSuperview().offset(-25)
-//            make.height.equalTo(250)
-//        }
-        
         self.gradiensView.snp.makeConstraints { make in
-            make.horizontalEdges.equalTo(self.suwjeypickerView)
+            make.horizontalEdges.equalTo(self.pickerContentView)
             make.height.equalTo(40)
-            make.centerY.equalTo(self.suwjeypickerView)
+            make.centerY.equalTo(self.pickerContentView)
         }
         
         self.confirmBtn.snp.remakeConstraints { make in
             make.height.equalTo(50)
             make.centerX.equalTo(self.titleLab)
-            make.top.equalTo(self.suwjeypickerView.snp.bottom).offset(12)
+            make.top.equalTo(self.pickerContentView.snp.bottom).offset(12)
             make.bottom.equalToSuperview().offset(-27)
         }
     }
