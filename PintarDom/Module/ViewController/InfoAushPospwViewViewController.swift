@@ -175,6 +175,10 @@ extension InfoAushPospwViewViewController: InfoAuthCompelwProtocol {
                 _pp.dismissPop()
             }
         }
+        
+        if _info_view.renzhenSylesk == .RZ_City {
+            
+        }
     }
     
     func didEndEditeing(itemsiw: UIView, inputsw: String?) {

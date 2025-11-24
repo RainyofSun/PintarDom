@@ -31,6 +31,30 @@ class ContactswkVosruejdViewController: AuthExtensiwksViewController {
             self?.buildContactsitemsw(modlw: _sowk)
         }
     }
+    
+    override func clickNextButtons(sender: APPActivityButton) {
+        super.clickNextButtons(sender: sender)
+        
+        guard let _jsowns = NSArray(array: self.constactsInfo).modelToJSONString() else {
+            return
+        }
+        
+        sender.startAnimation()
+        APPNetRequestManager.afnReqeustType(NetworkRequestConfig.defaultRequestConfig("qscgy/exactness", requestParams: ["nor": self.comsejDityID, "bade": _jsowns])) { [weak self] (task: URLSessionDataTask, res: APPSuccessResponse) in
+            sender.stopAnimation()
+            
+            guard let _self = self else {
+                return
+            }
+            
+            MaiDianwkToslwTool.fengKongMaidian(type: MaiDianEventUploadStyle.MD_LianXiRenInfo, beginTime: _self.buryingStartTime, endTime: Date().jk.dateToTimeStamp())
+            if let _title = _self._next_tilskw_map?[_self._next_type]?["title"] {
+                _self.navigationController?.pushViewController(InfoAushPospwViewViewController(cerasauAutheTiel: _title, nexjsAujwTheielw: _self._next_tilskw_map, authStyle: (_self._next_type, ChanPinAuthElement.Certif_BankkskCard)), animated: true)
+            }
+        } failure: { _, _ in
+            sender.stopAnimation()
+        }
+    }
 }
 
 private extension ContactswkVosruejdViewController {
@@ -139,7 +163,45 @@ extension ContactswkVosruejdViewController: InfoAuthCompelwProtocol {
             return
         }
         
-        
+        if infoView.isReleation {
+            guard let _chsow = infoView.itenChose?.chosse else {
+                return
+            }
+            
+            let view: InfoAuthItemSinglePickerView = InfoAuthItemSinglePickerView(frame: UIScreen.main.bounds)
+            view.reloadSindlwPickerViews(moelsw: _chsow)
+            UIDevice.current.keyWindow().addSubview(view)
+            view.clickConfirmClosure = {[weak self] (psowp: EsensiwlwsBadisnPresentView, sender: APPActivityButton) in
+                guard let _psow = psowp as? InfoAuthItemSinglePickerView else {
+                    return
+                }
+                
+                if let _codes = _psow.selcjesGosw?.able {
+                    infoView.reloadRelationship(shaip: _codes)
+                }
+                
+                self?.saveEmergeswjdInfo(persowntag: infoView.tag, relesk: _psow.selcjesGosw?.fainted)
+                
+                psowp.dismissPop()
+            }
+            
+            view.showPresent()
+        } else {
+            APPContactManager.sharedInstance().requestAddressBookAuthorization { [weak self] (suqjs: Bool) in
+                guard suqjs else {
+                    self?.showSystemStyleSettingAlert(APPLanguageInsTool.loadLanguage("const_tip"), okTitle: nil, cancelTitle: nil)
+                    return
+                }
+                
+                self?.catchAllContacts()
+                APPContactManager.sharedInstance().selectContact(at: self!) { (name: String?, phone: String?) in
+                    if let _namw = name, let _pspw = phone {
+                        infoView.reloadRelationship(phone: "\(_namw)-\(_pspw)")
+                        self?.saveEmergeswjdInfo(persowntag: infoView.tag, name: _namw, phone: _pspw)
+                    }
+                }
+            }
+        }
     }
     
     func didEndEditeing(itemsiw: UIView, inputsw: String?) {
