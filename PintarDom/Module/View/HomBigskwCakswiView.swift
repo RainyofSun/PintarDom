@@ -9,6 +9,8 @@ import UIKit
 
 class HomBigskwCakswiView: UIView {
 
+    open var priswhUrl: String?
+    
     private lazy var privaViews: HomBigsClusnItemVsiwk = HomBigsClusnItemVsiwk(frame: CGRectZero)
     private lazy var caslwskViews: HomBigsClusnItemVsiwk = HomBigsClusnItemVsiwk(frame: CGRectZero)
     private lazy var shwkTipskwView: HosmwTBiswhTipSiwkView = HosmwTBiswhTipSiwkView(frame: CGRectZero)
@@ -80,10 +82,14 @@ class HomBigskwCakswiView: UIView {
     }
     
     func clickskwRosmwCiws() {
-        LuyouswkMakswTool.luYou.tiaoZhuanPage(luyouUrl: "", targetViewController: ComskwkProslwViewController())
+        if self.priswhUrl?.isEmpty == true {
+            return
+        }
+        
+        LuyouswkMakswTool.luYou.tiaoZhuanPage(luyouUrl: self.priswhUrl ?? "", targetViewController: ComskwkProslwViewController())
     }
     
     func clicksCaskwkVolows() {
-        LuyouswkMakswTool.luYou.tiaoZhuanPage(luyouUrl: "", targetViewController: ComskwkProslwViewController())
+        LuyouswkMakswTool.luYou.tiaoZhuanPage(luyouUrl: APP_CALCULATE, targetViewController: ComskwkProslwViewController())
     }
 }

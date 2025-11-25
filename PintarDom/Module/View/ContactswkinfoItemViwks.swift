@@ -56,6 +56,9 @@ class ContactswkinfoItemViwks: UIView {
     init(frame: CGRect, inputStyle: RenZhengElemeent) {
         super.init(frame: frame)
         
+        self.secondTitlesljdlab.textAlignment = .left
+        self.thirdTitlesljdlab.textAlignment = .left
+        
         self.renzhenSylesk = inputStyle
         self.arrownsImswh.isHidden = inputStyle == .RZ_Text
         self.addSubview(self.titlesljdlab)
@@ -65,8 +68,8 @@ class ContactswkinfoItemViwks: UIView {
         self.bgViewsk.addSubview(self.arrownsImswh)
         self.addSubview(self.secondbgViewsk)
         self.secondbgViewsk.addSubview(self.thirdTitlesljdlab)
-        self.secondTitlesljdlab.addSubview(self.tesjwtextFiedwView1)
-        self.secondTitlesljdlab.addSubview(self.arrownsImswh1)
+        self.secondbgViewsk.addSubview(self.tesjwtextFiedwView1)
+        self.secondbgViewsk.addSubview(self.arrownsImswh1)
         
         self.tesjwtextFiedwView.delegate = self
         self.tesjwtextFiedwView1.delegate = self
@@ -78,19 +81,17 @@ class ContactswkinfoItemViwks: UIView {
         
         self.bgViewsk.snp.makeConstraints { make in
             make.horizontalEdges.equalToSuperview()
-            make.height.equalTo(54)
             make.top.equalTo(self.titlesljdlab.snp.bottom).offset(10)
-            make.bottom.equalToSuperview()
         }
         
-        self.secondbgViewsk.snp.makeConstraints { make in
-            make.left.equalToSuperview().offset(16)
+        self.secondTitlesljdlab.snp.makeConstraints { make in
+            make.horizontalEdges.equalToSuperview().inset(16)
             make.top.equalToSuperview().offset(14)
         }
         
         self.tesjwtextFiedwView.snp.makeConstraints { make in
-            make.top.equalTo(self.secondbgViewsk.snp.bottom).offset(8)
-            make.left.equalTo(self.secondbgViewsk)
+            make.top.equalTo(self.secondTitlesljdlab.snp.bottom).offset(8)
+            make.left.equalTo(self.secondTitlesljdlab)
             make.width.equalToSuperview().multipliedBy(0.8)
             make.height.equalTo(46)
             make.bottom.equalToSuperview()

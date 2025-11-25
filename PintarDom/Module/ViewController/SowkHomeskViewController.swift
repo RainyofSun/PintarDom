@@ -72,6 +72,10 @@ class SowkHomeskViewController: EsensiilsadwsiwViewController {
                     self?.topView.setPPimage(_url, ppname: _big.lifeless, serviceLosdkw: _modsl.conveying?.opportunity ?? "", serviweUrl: _modsl.conveying?.omit ?? "")
                 }
                 
+                if let _assuw = _modsl.assume {
+                    self?.bigSkwi.priswhUrl = _assuw.stopping
+                }
+                
                 self?.loadCadedsViews(isBig: true)
                 
                 self?.appslwkView.reloadSowksInfp(model: _big)

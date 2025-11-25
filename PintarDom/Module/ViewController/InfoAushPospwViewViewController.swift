@@ -69,7 +69,7 @@ class InfoAushPospwViewViewController: AuthExtensiwksViewController {
                 __sselfw.navigationController?.jk.popCurrentAndPush(vc: InfoAushPospwViewViewController(cerasauAutheTiel: _title, nexjsAujwTheielw: __sselfw._next_tilskw_map, authStyle: (__sselfw._next_type, ChanPinAuthElement.Certif_Contesdkcts)), animated: true)
             }
             
-            if __sselfw._type == ChanPinAuthElement.Certif_Contesdkcts, let _title = __sselfw._next_tilskw_map?[__sselfw._next_type]?["title"] {
+            if __sselfw._next_type == ChanPinAuthElement.Certif_Contesdkcts, let _title = __sselfw._next_tilskw_map?[__sselfw._next_type]?["title"] {
                 __sselfw.navigationController?.jk.popCurrentAndPush(vc: ContactswkVosruejdViewController(cerasauAutheTiel: _title, nexjsAujwTheielw: __sselfw._next_tilskw_map, authStyle: (__sselfw._next_type, ChanPinAuthElement.Certif_BankkskCard)), animated: true)
             }
             

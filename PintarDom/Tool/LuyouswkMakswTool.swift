@@ -38,6 +38,8 @@ class LuyouswkMakswTool: NSObject {
             } else if url.contains(APP_ORDER) {
                 _r_w_c.selectedIndex = 1
                 _t_skw_viewcon?.navigationController?.popToRootViewController(animated: true)
+            } else if url.contains(APP_CALCULATE) {
+                _t_skw_viewcon?.navigationController?.pushViewController(CalculateowlswViewController(), animated: true)
             } else {
                 if let _t = targetViewController {
                     _t_skw_viewcon?.navigationController?.pushViewController(_t, animated: true)

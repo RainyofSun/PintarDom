@@ -81,7 +81,7 @@ class AuthExtensiwksViewController: EsensiilsadwsiwViewController {
         if let _des = self._next_tilskw_map?[self._type]?["des"] {
             let sewAyyas: [String] = _des.components(separatedBy: "+")
             let paysaq: NSMutableParagraphStyle = NSMutableParagraphStyle()
-            paysaq.paragraphSpacing = 4
+            paysaq.paragraphSpacing = 8
             let titleSqqwi: NSMutableAttributedString = NSMutableAttributedString(string: String(format: "%@\n", sewAyyas.first ?? ""), attributes: [.font: UIFont.loadSpecialFont(size: 18, ftStyle: FontStyle.Arial_BoldMT), .foregroundColor: UIColor.white, .paragraphStyle: paysaq])
             titleSqqwi.append(NSAttributedString(string: sewAyyas.last ?? "", attributes: [.font: UIFont.systemFont(ofSize: 14, weight: UIFont.Weight.medium), .foregroundColor: UIColor.white]))
             self.topTilsLab.attributedText = titleSqqwi
