@@ -17,7 +17,7 @@ class InfoAuthItemView: UIView {
     private lazy var bgViewsk: UIView = {
         let view = UIView(frame: CGRectZero)
         view.backgroundColor = UIColor.hexStringColor(hexString: "#EBF9FF")
-        view.corner(16)
+        view.corner(10)
         return view
     }()
     
@@ -45,12 +45,12 @@ class InfoAuthItemView: UIView {
         self.tesjwtextFiedwView.delegate = self
         
         self.titlesljdlab.snp.makeConstraints { make in
-            make.left.equalToSuperview().offset(16)
+            make.left.equalToSuperview().offset(12)
             make.top.equalToSuperview()
         }
         
         self.bgViewsk.snp.makeConstraints { make in
-            make.horizontalEdges.equalToSuperview()
+            make.horizontalEdges.equalToSuperview().inset(12)
             make.height.equalTo(54)
             make.top.equalTo(self.titlesljdlab.snp.bottom).offset(10)
             make.bottom.equalToSuperview()

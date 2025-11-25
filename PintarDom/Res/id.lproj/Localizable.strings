@@ -77,6 +77,9 @@
 "calcular_tip2" = "Accurately calculate your funding interest rate";
 "calcular_tip3" = "Principal Amount（₹）";
 "calcular_tip3_place" = "Principal Amount";
+"calcular_tip3_place1" = "Interest\nPayabie";
+"calcular_tip3_place2" = "All\nPayment";
+"calcular_tip3_place3" = "Principal\nAmount";
 "calcular_tip4" = "Interest Rate（₹）";
 "calcular_tip4_place" = "Interest Rate";
 "calcular_tip5" = "Loan Term";
@@ -85,6 +88,11 @@
 "calcular_month" = "Months";
 "calcular_btn" = "Calculate";
 "calcular_reset" = "Reset";
+"calcular_reset1" = "Calculation results";
+"calcular_reset2" = "Repayment plan";
+"calcular_reset3" = "Loan amount";
+"calcular_reset4" = "Payment progress";
+"calcular_reset5" = "Payment time";
 
 "problems_nav" = "Masalah umum";
 "problems_title1" = "1.Bagaimana cara mengajukan pinjaman?";
