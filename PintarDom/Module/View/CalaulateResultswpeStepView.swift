@@ -11,8 +11,8 @@ class CalaulateResultswpeStepView: UIView {
 
     private lazy var tipLab1: UILabel = UILabel.normalTextLabel(APPLanguageInsTool.loadLanguage("calcular_reset3"), t_color: UIColor.hexStringColor(hexString: "#999999"), t_f: UIFont.systemFont(ofSize: 14, weight: UIFont.Weight.medium))
     private(set) lazy var valueLab1: UILabel = UILabel.normalTextLabel(APPLanguageInsTool.loadLanguage("calcular_reset4"), t_color: UIColor.ppBlack33, t_f: UIFont.systemFont(ofSize: 16, weight: UIFont.Weight.medium))
-    private lazy var tipLab2: UILabel = UILabel.normalTextLabel(APPLanguageInsTool.loadLanguage("calcular_reset4"), t_color: UIColor.ppBlack33, t_f: UIFont.systemFont(ofSize: 14, weight: UIFont.Weight.medium))
-    private(set) lazy var valueLab2: UILabel = UILabel.normalTextLabel(APPLanguageInsTool.loadLanguage("calcular_reset4"), t_color: UIColor.hexStringColor(hexString: "#0972A4"), t_f: UIFont.systemFont(ofSize: 16, weight: UIFont.Weight.medium))
+    private lazy var tipLab2: UILabel = UILabel.normalTextLabel(APPLanguageInsTool.loadLanguage("calcular_reset4"), t_color: UIColor.hexStringColor(hexString: "#999999"), t_f: UIFont.systemFont(ofSize: 14, weight: UIFont.Weight.medium))
+    private(set) lazy var valueLab2: UILabel = UILabel.normalTextLabel(APPLanguageInsTool.loadLanguage("calcular_reset4"), t_color: UIColor.ppBlack33, t_f: UIFont.systemFont(ofSize: 16, weight: UIFont.Weight.medium))
     private lazy var topBcosnView: GradientColorView = {
         let view = GradientColorView(frame: CGRectZero)
         view.buildGradientWithColors(gradientColors: [UIColor.hexStringColor(hexString: "#0DF5A2"), UIColor.hexStringColor(hexString: "#0DA2F5")], gradientStyle: GradientDirectionStyle.leftBottomToRightTop)
@@ -26,7 +26,7 @@ class CalaulateResultswpeStepView: UIView {
         return view
     }()
     
-    private lazy var tipLab3: UILabel = UILabel.normalTextLabel(APPLanguageInsTool.loadLanguage("calcular_reset4"), t_color: UIColor.ppBlack33, t_f: UIFont.systemFont(ofSize: 14, weight: UIFont.Weight.medium))
+    private lazy var tipLab3: UILabel = UILabel.normalTextLabel(APPLanguageInsTool.loadLanguage("calcular_reset5"), t_color: UIColor.ppBlack33, t_f: UIFont.systemFont(ofSize: 14, weight: UIFont.Weight.medium))
     private(set) lazy var valueLab3: UILabel = UILabel.normalTextLabel(APPLanguageInsTool.loadLanguage("calcular_reset4"), t_color: UIColor.hexStringColor(hexString: "#0972A4"), t_f: UIFont.systemFont(ofSize: 16, weight: UIFont.Weight.medium))
     private lazy var dotView: GradientColorView = {
         let view = GradientColorView(frame: CGRectZero)
@@ -36,7 +36,6 @@ class CalaulateResultswpeStepView: UIView {
     }()
     private lazy var dashLineView: UIView = {
         let view = UIView(frame: CGRectZero)
-        view.jk.drawDashLine(strokeColor: UIColor.hexStringColor(hexString: "#0972A4"), direction: JKDashLineDirection.vertical)
         return view
     }()
     
@@ -113,5 +112,16 @@ class CalaulateResultswpeStepView: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.dashLineView.jk.drawDashLine(strokeColor: UIColor.hexStringColor(hexString: "#0972A4"), direction: JKDashLineDirection.vertical)
+    }
+    
+    func reloadcCelskw(model: Exaggerations) {
+        self.valueLab1.text = model.justified
+        self.valueLab2.text = model.terrors
+        self.valueLab3.text = model.presented
     }
 }

@@ -28,7 +28,7 @@ class Exaggerations: BasicsmNetResModel {
     /// 还款日
     var presented: String?
     /// 序号
-    var terrors: Int?
+    var terrors: String?
     /// 本金
     var distinctly: String?
     /// 利息

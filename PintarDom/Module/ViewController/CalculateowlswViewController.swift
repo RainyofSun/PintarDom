@@ -29,11 +29,11 @@ class CalculateowlswViewController: EsensiilsadwsiwViewController {
     }()
     
     private lazy var amountView = InfoAuthItemView(frame: CGRectZero, inputStyle: RenZhengElemeent.RZ_Text)
-    private lazy var rateView = InfoAuthItemView(frame: CGRectZero, inputStyle: RenZhengElemeent.RZ_Enum)
+    private lazy var rateView = InfoAuthItemView(frame: CGRectZero, inputStyle: RenZhengElemeent.RZ_Text)
     private lazy var timeView = CalaulateRateVkskwItemView(frame: CGRectZero)
     
     private(set) lazy var appBtn: APPActivityButton = {
-        let view = APPActivityButton.buildLoadingAnimationButton(title: "calcular_btn")
+        let view = APPActivityButton.buildLoadingAnimationButton(title: APPLanguageInsTool.loadLanguage("calcular_btn"))
         view.corner(25)
         return view
     }()
@@ -50,6 +50,10 @@ class CalculateowlswViewController: EsensiilsadwsiwViewController {
     
     override func buildPageUI() {
         super.buildPageUI()
+        
+        self.amountView.tesjwtextFiedwView.keyboardType = .numberPad
+        self.rateView.tesjwtextFiedwView.keyboardType = .numberPad
+        self.timeView.tesjwtextFiedwView.keyboardType = .numberPad
         
         self.title = APPLanguageInsTool.loadLanguage("calcular_nav")
         self.gradientView.isHidden = false
@@ -78,7 +82,6 @@ class CalculateowlswViewController: EsensiilsadwsiwViewController {
         self.basicScrollContentView.addSubview(self.timeView)
         self.basicScrollContentView.addSubview(self.appBtn)
         self.basicScrollContentView.addSubview(self.resetBtn)
-        self.basicScrollContentView.addSubview(self.resultView)
     }
     
     override func layoutPageViews() {
@@ -129,11 +132,6 @@ class CalculateowlswViewController: EsensiilsadwsiwViewController {
         self.resetBtn.snp.makeConstraints { make in
             make.height.horizontalEdges.equalTo(self.appBtn)
             make.top.equalTo(self.appBtn.snp.bottom)
-        }
-        
-        self.resultView.snp.makeConstraints { make in
-            make.horizontalEdges.equalTo(self.timeView)
-            make.top.equalTo(self.resetBtn.snp.bottom).offset(12)
             make.bottom.equalToSuperview().offset(-12)
         }
     }
@@ -146,16 +144,69 @@ class CalculateowlswViewController: EsensiilsadwsiwViewController {
     
     override func pageNetRequest() {
         super.pageNetRequest()
+        guard let _amos = self.amountView.tesjwtextFiedwView.text, let _rate = self.rateView.tesjwtextFiedwView.text, let _time = self.timeView.tesjwtextFiedwView.text else {
+            return
+        }
         
+        var params: [String: String] = ["coolly": _amos, "bitterest": _rate, "plunged": self.timeView.isYear ? "1" : "2", "convince": _time]
+        
+        APPNetRequestManager.afnReqeustType(NetworkRequestConfig.defaultRequestConfig("qscgy/unaffected", requestParams: params)) { [weak self] (task: URLSessionDataTask, res: APPSuccessResponse) in
+            self?.appBtn.stopAnimation()
+            guard let _resw = res.jsonDict, let _mdwls = CalaulateLoaswModel.model(with: _resw) else {
+                return
+            }
+            
+            self?.showResult(isShow: true)
+        } failure: {[weak self] _, _ in
+            self?.appBtn.stopAnimation()
+        }
+    }
+    
+    func showResult(isShow: Bool, termodel: CalaulateLoaswModel? = nil) {
+        if isShow {
+            self.basicScrollContentView.addSubview(self.resultView)
+            if let _rre = termodel {
+                self.resultView.reloadkReswksuw(terModel: _rre)
+            }
+            
+            UIView.animate(withDuration: 0.3) {
+                
+                self.resetBtn.snp.remakeConstraints { make in
+                    make.height.horizontalEdges.equalTo(self.appBtn)
+                    make.top.equalTo(self.appBtn.snp.bottom)
+                }
+                
+                self.resultView.snp.remakeConstraints { make in
+                    make.horizontalEdges.equalTo(self.timeView)
+                    make.top.equalTo(self.resetBtn.snp.bottom).offset(12)
+                    make.bottom.equalToSuperview().offset(-12)
+                }
+                
+                self.basicScrollContentView.layoutIfNeeded()
+            }
+        } else {
+            UIView.animate(withDuration: 0.3) {
+                self.resultView.alpha = 0
+                
+                self.resetBtn.snp.remakeConstraints { make in
+                    make.height.horizontalEdges.equalTo(self.appBtn)
+                    make.top.equalTo(self.appBtn.snp.bottom)
+                    make.bottom.equalToSuperview().offset(-12)
+                }
+            } completion: { _ in
+                self.resultView.removeFromSuperview()
+            }
+        }
     }
 }
 
 @objc private extension CalculateowlswViewController {
     func clickCalslwBtn(sender: APPActivityButton) {
-        
+        sender.startAnimation()
+        self.pageNetRequest()
     }
     
     func clikcResetButtoen(sender: UIButton) {
-        
+        self.showResult(isShow: false)
     }
 }

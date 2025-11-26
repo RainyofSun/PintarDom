@@ -113,44 +113,68 @@ class CalaulateResultswpeView: UIView {
         self.titlesljdlab1.snp.makeConstraints { make in
             make.left.equalTo(self.titlesljdlab)
             make.top.equalTo(self.amountLab4.snp.bottom).offset(12)
-//            make.bottom.equalToSuperview()
+            make.bottom.equalToSuperview()
         }
-        
-        self.buildSteopView()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
+    func reloadkReswksuw(terModel: CalaulateLoaswModel) {
+        self.amountLab1.text = terModel.distrust
+        self.amountLab2.text = terModel.coolly
+        self.amountLab3.text = terModel.incited
+        self.amountLab4.text = terModel.incited
+        
+        UIView.animate(withDuration: 0.3) {
+            if let _dslw = terModel.exaggerations {
+             
+                self.titlesljdlab1.snp.remakeConstraints { make in
+                    make.left.equalTo(self.titlesljdlab)
+                    make.top.equalTo(self.amountLab4.snp.bottom).offset(12)
+                }
+                
+                self.buildSteopView(modelswk: _dslw)
+            } else {
+                self.titlesljdlab1.snp.remakeConstraints { make in
+                    make.left.equalTo(self.titlesljdlab)
+                    make.top.equalTo(self.amountLab4.snp.bottom).offset(12)
+                    make.bottom.equalToSuperview().offset(-12)
+                }
+            }
+            
+            self.layoutIfNeeded()
+        }
+    }
 }
 
 private extension CalaulateResultswpeView {
-    func buildSteopView() {
+    func buildSteopView(modelswk: [Exaggerations]) {
         var topCkwk: CalaulateResultswpeStepView?
         
-        for item in 0..<3 {
+        for (index, item) in modelswk.enumerated() {
             let view = CalaulateResultswpeStepView(frame: CGRectZero)
+            view.reloadcCelskw(model: item)
             self.addSubview(view)
             
             if let _tt = topCkwk {
-                if item == 2 {
+                if index == modelswk.count - 1 {
                     view.snp.makeConstraints { make in
-                        make.horizontalEdges.equalTo(_tt.snp.bottom)
+                        make.horizontalEdges.equalTo(_tt)
                         make.top.equalTo(_tt.snp.bottom)
                         make.bottom.equalToSuperview().offset(-12)
                     }
                 } else {
                     view.snp.makeConstraints { make in
-                        make.horizontalEdges.equalTo(_tt.snp.bottom)
+                        make.horizontalEdges.equalTo(_tt)
                         make.top.equalTo(_tt.snp.bottom)
                     }
                 }
             } else {
                 view.snp.makeConstraints { make in
                     make.top.equalTo(self.titlesljdlab1.snp.bottom).offset(10)
-                    make.horizontalEdges.equalToSuperview()
+                    make.horizontalEdges.equalToSuperview().inset(12)
                 }
             }
             
