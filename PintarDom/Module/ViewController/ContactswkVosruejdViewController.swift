@@ -196,7 +196,7 @@ extension ContactswkVosruejdViewController: InfoAuthCompelwProtocol {
                 self?.catchAllContacts()
                 APPContactManager.sharedInstance().selectContact(at: self!) { (name: String?, phone: String?) in
                     if let _namw = name, let _pspw = phone {
-                        infoView.reloadRelationship(phone: "\(_namw)-\(_pspw)")
+                        infoView.reloadRelationship(phone: "\(_namw) \(_pspw)")
                         self?.saveEmergeswjdInfo(persowntag: infoView.tag, name: _namw, phone: _pspw)
                     }
                 }
