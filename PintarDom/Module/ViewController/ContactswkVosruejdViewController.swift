@@ -49,7 +49,7 @@ class ContactswkVosruejdViewController: AuthExtensiwksViewController {
             
             MaiDianwkToslwTool.fengKongMaidian(type: MaiDianEventUploadStyle.MD_LianXiRenInfo, beginTime: _self.buryingStartTime, endTime: Date().jk.dateToTimeStamp())
             if let _title = _self._next_tilskw_map?[_self._next_type]?["title"] {
-                _self.navigationController?.pushViewController(InfoAushPospwViewViewController(cerasauAutheTiel: _title, nexjsAujwTheielw: _self._next_tilskw_map, authStyle: (_self._next_type, ChanPinAuthElement.Certif_BankkskCard)), animated: true)
+                _self.navigationController?.jk.popCurrentAndPush(vc: InfoAushPospwViewViewController(cerasauAutheTiel: _title, nexjsAujwTheielw: _self._next_tilskw_map, authStyle: (_self._next_type, ChanPinAuthElement.Certif_BankkskCard)), animated: true)
             }
         } failure: { _, _ in
             sender.stopAnimation()

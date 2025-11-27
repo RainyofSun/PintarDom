@@ -155,7 +155,7 @@ class LoaskwmDetasilwViewController: EsensiilsadwsiwViewController {
             
             // MARK: 处理 assume
             if let assume = models.assume,
-               let teach = assume.teach
+               let teach = assume.teach, !teach.isEmpty
             {
                 self.bowksiwView.showProtocolViews(psiwsw: teach)
                 self._p_uelws = assume.stopping
@@ -248,7 +248,7 @@ extension LoaskwmDetasilwViewController: UICollectionViewDelegate, UICollectionV
             return
         }
         
-        if !self.bowksiwView.protcoplView.isHidden && !self.bowksiwView.protcoplView.hasSelected {
+        if self.bowksiwView.protcoplView.superview != nil && !self.bowksiwView.protcoplView.hasSelected {
             self.view.makeToast(APPLanguageInsTool.loadLanguage("info_confirm_tip"))
             return
         }

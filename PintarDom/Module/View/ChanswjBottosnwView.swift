@@ -12,6 +12,7 @@ class ChanswjBottosnwView: UIView {
     private(set) lazy var protcoplView: ProtocolView = {
         let view = ProtocolView(frame: CGRectZero)
         view.setAgreeButton(UIImage(named: "login_unsel")!, selectedImg: UIImage(named: "login_sel")!)
+        view.isHidden = true
         return view
     }()
     
@@ -50,21 +51,36 @@ class ChanswjBottosnwView: UIView {
         
         self.protcoplView.setProtocol(NSAttributedString(string: psiwsw, attributes: [.font: UIFont.loadSpecialFont(size: 14, ftStyle: FontStyle.Inter_Medium),.foregroundColor: UIColor.hexStringColor(hexString: "#0972A4")]), protocolPrefix: NSAttributedString(string: APPLanguageInsTool.loadLanguage("details_agree"), attributes: [.font: UIFont.loadSpecialFont(size: 14, ftStyle: FontStyle.Inter_Medium), .foregroundColor: UIColor.ppBlack33]))
         
-        self.addSubview(self.protcoplView)
-        UIView.animate(withDuration: 0.3) {
-            self.protcoplView.snp.remakeConstraints { make in
-                make.top.equalToSuperview().offset(12)
-                make.left.equalTo(self.appBtn)
+        if self.protcoplView.superview == nil {
+            self.addSubview(self.protcoplView)
+            UIView.animate(withDuration: 0.3) {
+                self.protcoplView.snp.remakeConstraints { make in
+                    make.top.equalToSuperview().offset(12)
+                    make.left.equalTo(self.appBtn)
+                }
+                
+                self.appBtn.snp.remakeConstraints { make in
+                    make.top.equalTo(self.protcoplView.snp.bottom).offset(8)
+                    make.horizontalEdges.equalToSuperview().inset(35)
+                    make.height.equalTo(46)
+                    make.bottom.equalToSuperview().offset(-20 - (jk_isIPhoneNotch ? 20 : 0))
+                }
+                
+                self.layoutIfNeeded()
             }
-            
-            self.appBtn.snp.remakeConstraints { make in
-                make.top.equalTo(self.protcoplView.snp.bottom).offset(8)
-                make.horizontalEdges.equalToSuperview().inset(35)
-                make.height.equalTo(46)
-                make.bottom.equalToSuperview().offset(-20 - (jk_isIPhoneNotch ? 20 : 0))
+        } else {
+            self.protcoplView.removeFromSuperview()
+            UIView.animate(withDuration: 0.3) {
+
+                self.appBtn.snp.remakeConstraints { make in
+                    make.top.equalToSuperview().offset(12)
+                    make.horizontalEdges.equalToSuperview().inset(35)
+                    make.height.equalTo(46)
+                    make.bottom.equalToSuperview().offset(-20 - (jk_isIPhoneNotch ? 20 : 0))
+                }
+                
+                self.layoutIfNeeded()
             }
-            
-            self.layoutIfNeeded()
         }
     }
 }
