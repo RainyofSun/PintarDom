@@ -23,6 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardToolbarManager.shared.toolbarConfiguration.manageBehavior = .byTag
         IQKeyboardToolbarManager.shared.toolbarConfiguration.previousNextDisplayMode = .default
         IQKeyboardToolbarManager.shared.enabledToolbarClasses.append(PerswnsLogiswskViewController.self)
+        IQKeyboardToolbarManager.shared.enabledToolbarClasses.append(InfoAushPospwViewViewController.self)
         
         return true
     }

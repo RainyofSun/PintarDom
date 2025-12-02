@@ -88,6 +88,7 @@ class SmalslwkCarsswTableViewCell: UITableViewCell {
         self.checksBtn.snp.makeConstraints { make in
             make.right.equalToSuperview().offset(-16)
             make.centerY.equalTo(self.logiskwImfbsView)
+            make.width.greaterThanOrEqualTo(60)
             make.height.equalTo(32)
         }
         

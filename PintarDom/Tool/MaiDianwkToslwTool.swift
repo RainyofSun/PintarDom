@@ -23,11 +23,11 @@ class MaiDianwkToslwTool: NSObject {
         }
         
         if let _locatisow = marks.locality {
-            params["explanation"] = _locatisow
+            params["desperate"] = _locatisow
         }
         
         if let _city = marks.administrativeArea {
-            params["desperate"] = _city
+            params["explanation"] = _city
         }
         
         if let _stree = marks.thoroughfare {

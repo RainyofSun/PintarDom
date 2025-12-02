@@ -186,10 +186,13 @@ extension InfoAushPospwViewViewController: InfoAuthCompelwProtocol {
         }
         
         if _info_view.renzhenSylesk == .RZ_City {
+            let timestamp = Int(Date().timeIntervalSince1970)
+            print("1111\(timestamp)")
             let picker: CitySinfslwChoosePopView = CitySinfslwChoosePopView(frame: UIScreen.main.bounds)
             UIDevice.current.keyWindow().addSubview(picker)
             picker.showPresent()
-            
+            let timestamp1 = Int(Date().timeIntervalSince1970)
+            print("2222\(timestamp1)")
             picker.clickConfirmClosure = { [weak self] (pospwView: EsensiwlwsBadisnPresentView, sender: APPActivityButton) in
                 guard let _pp = pospwView as? CitySinfslwChoosePopView, !_pp.selectedDate.isEmpty else {
                     return

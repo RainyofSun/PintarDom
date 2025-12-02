@@ -31,7 +31,7 @@ class CityCellswk: UITableViewCell {
         self.gradiensView.snp.makeConstraints { make in
             make.verticalEdges.equalToSuperview()
             make.left.equalToSuperview().offset(20)
-            make.right.equalToSuperview().offset(-16)
+            make.right.equalToSuperview().offset(-30)
         }
         
         self.ciskwLab.snp.makeConstraints { make in
@@ -58,9 +58,10 @@ class CitySinfslwChoosePopView: EsensiwlwsBadisnPresentView {
     private lazy var yearLabs: UILabel = UILabel.normalTextLabel(APPLanguageInsTool.loadLanguage("auth_pop_choose"), t_color: UIColor.ppBlack33, t_f: UIFont.loadSpecialFont(size: 16, ftStyle: FontStyle.Inter_SemiBold))
     private lazy var dasLineView: UIView = UIView(frame: CGRect(origin: CGPointZero, size: CGSize(width: jk_kScreenW - 120, height: 1)))
     
+    private var table_W = jk_kScreenW - 100
+    
     private lazy var pickerContentView: UIScrollView = {
-        let view = UIScrollView(frame: CGRect(x: 0, y: 0, width: jk_kScreenW - 108, height: 305))
-        view.contentSize = CGSize(width: (jk_kScreenW - 120) * 3, height: 0)
+        let view = UIScrollView(frame: CGRectZero)
         view.isPagingEnabled = true
         view.isScrollEnabled = false
         return view
@@ -106,11 +107,17 @@ class CitySinfslwChoosePopView: EsensiwlwsBadisnPresentView {
         }
         
         self.monthLabs.jk.addGestureTap {[weak self] _ in
-            self?.pickerContentView.setContentOffset(CGPoint(x: jk_kScreenW - 120, y: .zero), animated: true)
+            guard let _sel = self else {
+                return
+            }
+            _sel.pickerContentView.setContentOffset(CGPoint(x: _sel.table_W, y: .zero), animated: true)
         }
         
         self.yearLabs.jk.addGestureTap {[weak self] _ in
-            self?.pickerContentView.setContentOffset(CGPoint(x: (jk_kScreenW - 120) * 2, y: .zero), animated: true)
+            guard let _sel = self else {
+                return
+            }
+            _sel.pickerContentView.setContentOffset(CGPoint(x: _sel.table_W * 2, y: .zero), animated: true)
         }
         
         self.dasLineView.jk.drawDashLine(strokeColor: UIColor.hexStringColor(hexString: "#999999", alpha: 0.3), lineLength: 6, lineSpacing: 2,)
@@ -126,6 +133,13 @@ class CitySinfslwChoosePopView: EsensiwlwsBadisnPresentView {
         self.cityTableView3.delegate = self
         self.cityTableView3.dataSource = self
         
+//        self.pickerContentView.backgroundColor = .red
+//        self.cityTableView1.backgroundColor = .orange
+//        self.cityTableView2.backgroundColor = .ppBlue
+//        self.cityTableView3.backgroundColor = .purple
+        
+        self.pickerContentView.contentSize = CGSize(width: table_W * 3, height: 0)
+        
         self.contentView.addSubview(self.dayLabs)
         self.contentView.addSubview(self.monthLabs)
         self.contentView.addSubview(self.yearLabs)
@@ -135,6 +149,8 @@ class CitySinfslwChoosePopView: EsensiwlwsBadisnPresentView {
         self.pickerContentView.addSubview(self.cityTableView2)
         self.pickerContentView.addSubview(self.cityTableView3)
         
+        let timestamp1 = Int(Date().timeIntervalSince1970)
+        print("3333\(timestamp1)")
         if FileManager.default.fileExists(atPath: GLoskwCommenskwmodls.shared.ciprosjdkCityPath) {
             let modelsw = InsjwjdCityCalswjCacheModel.readCosiDataFormsDisk()
             if !modelsw.isEmpty {
@@ -142,6 +158,8 @@ class CitySinfslwChoosePopView: EsensiwlwsBadisnPresentView {
                 self.cityTableView1.reloadData()
             }
         }
+        let timestamp2 = Int(Date().timeIntervalSince1970)
+        print("4444\(timestamp2)")
     }
     
     override func layoutPresentView() {
@@ -171,8 +189,8 @@ class CitySinfslwChoosePopView: EsensiwlwsBadisnPresentView {
         self.pickerContentView.snp.makeConstraints { make in
             make.top.equalTo(self.dasLineView.snp.bottom)
             make.left.equalToSuperview()
-            make.right.equalToSuperview().offset(-12)
-            make.size.equalTo(CGSize(width: jk_kScreenW - 120, height: 305))
+            make.right.equalToSuperview()
+            make.size.equalTo(CGSize(width: table_W, height: 305))
         }
         
         self.cityTableView1.snp.makeConstraints { make in
@@ -263,7 +281,7 @@ extension CitySinfslwChoosePopView: UITableViewDelegate, UITableViewDataSource {
             self.has_select_all = false
             self.selectedDate = self.dayLabs.text ?? ""
             
-            self.pickerContentView.setContentOffset(CGPoint(x: jk_kScreenW - 120, y: .zero), animated: true)
+            self.pickerContentView.setContentOffset(CGPoint(x: table_W, y: .zero), animated: true)
         }
         
         if tableView == self.cityTableView2 {
@@ -286,7 +304,7 @@ extension CitySinfslwChoosePopView: UITableViewDelegate, UITableViewDataSource {
             self.has_select_all = false
             self.selectedDate += (" | " + (self.monthLabs.text ?? ""))
             
-            self.pickerContentView.setContentOffset(CGPoint(x: (jk_kScreenW - 120) * 2, y: .zero), animated: true)
+            self.pickerContentView.setContentOffset(CGPoint(x: table_W * 2, y: .zero), animated: true)
         }
         
         if tableView == self.cityTableView3 {
