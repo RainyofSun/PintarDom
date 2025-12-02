@@ -49,7 +49,7 @@ class ContactswkVosruejdViewController: AuthExtensiwksViewController {
             
             MaiDianwkToslwTool.fengKongMaidian(type: MaiDianEventUploadStyle.MD_LianXiRenInfo, beginTime: _self.buryingStartTime, endTime: Date().jk.dateToTimeStamp())
             if let _title = _self._next_tilskw_map?[_self._next_type]?["title"] {
-                _self.navigationController?.pushViewController(InfoAushPospwViewViewController(cerasauAutheTiel: _title, nexjsAujwTheielw: _self._next_tilskw_map, authStyle: (_self._next_type, ChanPinAuthElement.Certif_BankkskCard)), animated: true)
+                _self.navigationController?.jk.popCurrentAndPush(vc: InfoAushPospwViewViewController(cerasauAutheTiel: _title, nexjsAujwTheielw: _self._next_tilskw_map, authStyle: (_self._next_type, ChanPinAuthElement.Certif_BankkskCard)), animated: true)
             }
         } failure: { _, _ in
             sender.stopAnimation()
@@ -196,7 +196,7 @@ extension ContactswkVosruejdViewController: InfoAuthCompelwProtocol {
                 self?.catchAllContacts()
                 APPContactManager.sharedInstance().selectContact(at: self!) { (name: String?, phone: String?) in
                     if let _namw = name, let _pspw = phone {
-                        infoView.reloadRelationship(phone: "\(_namw)-\(_pspw)")
+                        infoView.reloadRelationship(phone: "\(_namw) \(_pspw)")
                         self?.saveEmergeswjdInfo(persowntag: infoView.tag, name: _namw, phone: _pspw)
                     }
                 }

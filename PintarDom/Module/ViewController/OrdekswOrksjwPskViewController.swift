@@ -33,8 +33,6 @@ class OrdekswOrksjwPskViewController: EsensiilsadwsiwViewController {
         self.tableView.register(OrderskwksCelswkTableViewCell.self, forCellReuseIdentifier: OrderskwksCelswkTableViewCell.className())
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        self.tableView.emptyDataSetDelegate = self
-        self.tableView.emptyDataSetSource = self
         
         self.view.addSubview(self.sliderView)
         self.view.addSubview(self.tableView)
@@ -69,9 +67,19 @@ class OrdekswOrksjwPskViewController: EsensiilsadwsiwViewController {
                 return
             }
             
-            self?._orjdws_Sours.removeAll()
-            self?._orjdws_Sours.append(contentsOf: _chanskw)
-            self?.tableView.reloadEmptyDataSet()
+            guard let _selw = self else {
+                return
+            }
+            
+            if _chanskw.isEmpty {
+                _selw.tableView.emptyDataSetDelegate = _selw
+                _selw.tableView.emptyDataSetSource = _selw
+            } else {
+                _selw._orjdws_Sours.removeAll()
+                _selw._orjdws_Sours.append(contentsOf: _chanskw)
+            }
+            
+            _selw.tableView.reloadData()
         } failure: {[weak self] _, _ in
             self?.tableView.refresh(begin: false)
         }
