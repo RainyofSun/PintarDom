@@ -14,7 +14,6 @@ class TispwskCelsliwView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.corner(22)
         self.backgroundColor = UIColor.init(white: 1, alpha: 0.52)
         
         self.isUserInteractionEnabled = false
@@ -24,9 +23,9 @@ class TispwskCelsliwView: UIView {
         self.addSubview(self.isamwkduwImsView)
         
         self.skwkViwlslw.snp.makeConstraints { make in
-            make.centerY.equalToSuperview()
             make.left.equalToSuperview().offset(16)
             make.right.lessThanOrEqualTo(self.isamwkduwImsView.snp.left).offset(-8)
+            make.verticalEdges.equalToSuperview().inset(6)
         }
         
         self.isamwkduwImsView.snp.makeConstraints { make in
@@ -34,6 +33,11 @@ class TispwskCelsliwView: UIView {
             make.right.equalToSuperview().offset(-12)
             make.size.equalTo(24)
         }
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.corner(self.height * 0.5)
     }
     
     required init?(coder: NSCoder) {
@@ -66,13 +70,13 @@ class HosmwTBiswhTipSiwkView: UIControl {
             if let _eowk = tis_swk {
                 if i == 6 {
                     vieswk.snp.makeConstraints { make in
-                        make.height.horizontalEdges.equalTo(_eowk)
+                        make.horizontalEdges.equalTo(_eowk)
                         make.bottom.equalToSuperview().offset(-16)
                         make.top.equalTo(_eowk.snp.bottom).offset(8)
                     }
                 } else {
                     vieswk.snp.makeConstraints { make in
-                        make.height.horizontalEdges.equalTo(_eowk)
+                        make.horizontalEdges.equalTo(_eowk)
                         make.top.equalTo(_eowk.snp.bottom).offset(8)
                     }
                 }
@@ -80,7 +84,6 @@ class HosmwTBiswhTipSiwkView: UIControl {
                 vieswk.snp.makeConstraints { make in
                     make.horizontalEdges.equalToSuperview().inset(16)
                     make.top.equalTo(self.titleLab.snp.bottom).offset(10)
-                    make.height.equalTo(44)
                 }
             }
             

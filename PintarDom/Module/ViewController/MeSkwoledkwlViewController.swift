@@ -58,6 +58,9 @@ class MeSkwoledkwlViewController: EsensiilsadwsiwViewController {
         
         GLoskwCommenskwmodls.shared.addObserver(self, forKeyPath: LOGIN_OBERVER_KEY, context: nil)
         self.basicScrollContentView.refresh(begin: true)
+        if let _syws = GLoskwCommenskwmodls.shared.appLoginInfo?.next {
+            self.phoneLabsse.text = _syws.maskPhoneNumber()
+        }
     }
 
     override func layoutPageViews() {

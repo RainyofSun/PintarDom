@@ -12,8 +12,8 @@ class IDCardswAuthExtensiwksViewController: AuthExtensiwksViewController {
     private lazy var cardausjwView: CardLoaskwAuthView = CardLoaskwAuthView(frame: CGRectZero, isFace: false)
     private lazy var faceausjwView: CardLoaskwAuthView = CardLoaskwAuthView(frame: CGRectZero, isFace: true)
     private lazy var mediaTolle: APPMultimediaTool = APPMultimediaTool(presentViewController: self)
-    private var cardAuthComplete: Bool = false
-    private var faceAuthComplete: Bool = false
+    private var cardAuthComplete: Bool = true
+    private var faceAuthComplete: Bool = true
     
     override func buildPageUI() {
         super.buildPageUI()
@@ -49,8 +49,6 @@ class IDCardswAuthExtensiwksViewController: AuthExtensiwksViewController {
                 return
             }
             
-            self?.isCompleteAuth = _cas_model.unaffected?.attainable == 1
-            
             self?.cardausjwView.tipLasbw.text = _cas_model.unaffected?.brooded
             self?.faceausjwView.tipLasbw.text = _cas_model.unaffected?.suggestion
             
@@ -61,6 +59,8 @@ class IDCardswAuthExtensiwksViewController: AuthExtensiwksViewController {
                 if let _url = URL(string: _card_url) {
                     self?.cardausjwView.temslwImgView.setImageWith(_url, options: YYWebImageOptions.setImageWithFadeAnimation)
                 }
+            } else {
+                self?.cardAuthComplete = false
             }
             
             if let _face_url = _cas_model.unaffected?.conquest, !_face_url.isEmpty {
@@ -70,6 +70,8 @@ class IDCardswAuthExtensiwksViewController: AuthExtensiwksViewController {
                 if let _url = URL(string: _face_url) {
                     self?.faceausjwView.temslwImgView.setImageWith(_url, options: YYWebImageOptions.setImageWithFadeAnimation)
                 }
+            } else {
+                self?.faceAuthComplete = false
             }
         }
     }
@@ -84,6 +86,11 @@ class IDCardswAuthExtensiwksViewController: AuthExtensiwksViewController {
         
         if !self.faceAuthComplete {
             self.clickFaceAuth(sender: self.faceausjwView)
+            return
+        }
+        
+        if (GLoskwCommenskwmodls.shared.isCompleteAuth) {
+            self.navigationController?.popViewController(animated: true)
             return
         }
         

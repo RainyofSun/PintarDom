@@ -98,7 +98,7 @@ class WinsLanscusherViewController: EsensiilsadwsiwViewController {
             #if DEBUG
             #else
             if let _f = _initModel.calmed {
-                initialFB(_f)
+                self?.initialFB(_f)
             }
             #endif
         } failure: {[weak self] _, _ in
@@ -122,7 +122,6 @@ class WinsLanscusherViewController: EsensiilsadwsiwViewController {
         } else {
             if APPInfomationCache.applicationFirstInstall() {
                 self.pageNetRequest()
-                DeviceNetObserver.shared.StopNetworkObserverListener()
                 NotificationCenter.default.removeObserver(self)
             }
         }

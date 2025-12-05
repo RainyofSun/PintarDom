@@ -82,14 +82,10 @@ class HomBigskwCakswiView: UIView {
     }
     
     func clickskwRosmwCiws() {
-        if self.priswhUrl?.isEmpty == true {
-            return
-        }
-        
-        LuyouswkMakswTool.luYou.tiaoZhuanPage(luyouUrl: self.priswhUrl ?? "", targetViewController: ComskwkProslwViewController())
+        LuyouswkMakswTool.luYou.tiaoZhuanPage(luyouUrl: APP_COMMEN)
     }
     
     func clicksCaskwkVolows() {
-        LuyouswkMakswTool.luYou.tiaoZhuanPage(luyouUrl: APP_CALCULATE, targetViewController: ComskwkProslwViewController())
+        LuyouswkMakswTool.luYou.tiaoZhuanPage(luyouUrl: APP_CALCULATE)
     }
 }

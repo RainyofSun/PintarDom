@@ -12,29 +12,31 @@ class MaiDianwkToslwTool: NSObject {
     class func maiDianLocationsReskws() {
         var params: [String: String] = [:]
         
-        let marks = DeviceAuthorizationTool.authorization().placeMark
-        
-        if let _country_c = marks.isoCountryCode {
+        let marks: CLPlacemark? = DeviceAuthorizationTool.authorization().placeMark
+        if marks == nil {
+            return
+        }
+        if let _country_c = marks?.isoCountryCode {
             params["prevail"] = _country_c
         }
         
-        if let _country = marks.country {
+        if let _country = marks?.country {
             params["visible"] = _country
         }
         
-        if let _locatisow = marks.locality {
+        if let _locatisow = marks?.locality {
             params["desperate"] = _locatisow
         }
         
-        if let _city = marks.administrativeArea {
+        if let _city = marks?.administrativeArea {
             params["explanation"] = _city
         }
         
-        if let _stree = marks.thoroughfare {
+        if let _stree = marks?.thoroughfare {
             params["mentioned"] = _stree
         }
         
-        if let _arw = marks.subLocality {
+        if let _arw = marks?.subLocality {
             params["abroad"] = _arw
         }
         

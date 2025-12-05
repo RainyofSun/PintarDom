@@ -133,7 +133,7 @@ class CardAuthwPwekskPopView: EsensiwlwsBadisnPresentView {
             view.tesjwtextFiedwView.text = element.delicacy
             view.inputDelesjuw = self
             if let _key = element.fainter {
-                self.savepashw[_key] = element.revolt
+                self.savepashw[_key] = element.delicacy
                 view.itenKey = _key
             }
             

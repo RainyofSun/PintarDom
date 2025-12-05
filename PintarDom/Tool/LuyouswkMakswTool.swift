@@ -40,6 +40,8 @@ class LuyouswkMakswTool: NSObject {
                 _t_skw_viewcon?.navigationController?.popToRootViewController(animated: true)
             } else if url.contains(APP_CALCULATE) {
                 _t_skw_viewcon?.navigationController?.pushViewController(CalculateowlswViewController(), animated: true)
+            } else if url.contains(APP_COMMEN) {
+                _t_skw_viewcon?.navigationController?.pushViewController(ComskwkProslwViewController(), animated: true)
             } else {
                 if let _t = targetViewController {
                     _t_skw_viewcon?.navigationController?.pushViewController(_t, animated: true)

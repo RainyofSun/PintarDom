@@ -13,7 +13,12 @@ class LoaskwmDetasilwViewController: EsensiilsadwsiwViewController {
     private lazy var appslwkView: HomApslwlkControwlView = HomApslwlkControwlView(frame: CGRectZero)
     private lazy var authCollwsoView: UICollectionView = {
         let layosuw: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        layosuw.itemSize = CGSize(width: (jk_kScreenW - 70) * 0.5, height: 130)
+        let width = (jk_kScreenW - 70) * 0.5
+        var height = width * 0.85
+        if UIDevice.jk.isIpad() {
+            height = width * 0.97
+        }
+        layosuw.itemSize = CGSize(width: width, height: height)
         layosuw.minimumLineSpacing = 10
         layosuw.minimumInteritemSpacing = 10
         layosuw.sectionInset = UIEdgeInsets(top: 20, left: 14, bottom: 20, right: 14)
@@ -52,7 +57,6 @@ class LoaskwmDetasilwViewController: EsensiilsadwsiwViewController {
     override func buildPageUI() {
         super.buildPageUI()
         self.bgImgView.image = UIImage(named: "home_bg")
-        self.title = APPLanguageInsTool.loadLanguage("details_nav")
         
         self.bowksiwView.appBtn.addTarget(self, action: #selector(clsikwapslwButosnw(sender: )), for: UIControl.Event.touchUpInside)
         self.bowksiwView.protcoplView.protocolDelegate = self
@@ -77,13 +81,12 @@ class LoaskwmDetasilwViewController: EsensiilsadwsiwViewController {
         
         self.basicScrollContentView.snp.remakeConstraints { make in
             make.horizontalEdges.equalToSuperview()
-            make.top.equalToSuperview().offset(jk_kStatusBarFrameH)
+            make.top.equalToSuperview().offset(jk_kNavFrameH)
             make.bottom.equalTo(self.bowksiwView.snp.top).offset(-8)
         }
         
         self.appslwkView.snp.makeConstraints { make in
-            make.left.equalToSuperview().offset(12)
-            make.top.equalToSuperview().offset(jk_kStatusBarFrameH)
+            make.left.top.equalToSuperview().offset(12)
             make.width.equalTo(jk_kScreenW - 32)
         }
         
@@ -120,6 +123,7 @@ class LoaskwmDetasilwViewController: EsensiilsadwsiwViewController {
                 return
             }
             
+            self.title = models.idea?.lifeless
             // MARK: 处理 idea
             if let idea = models.idea {
                 self.appslwkView.reloadPswDetailsw(modls: idea)
@@ -146,11 +150,16 @@ class LoaskwmDetasilwViewController: EsensiilsadwsiwViewController {
                     }
                 }
                 
+                let width = (jk_kScreenW - 70) * 0.5
+                var height = width * 0.85
+                if UIDevice.jk.isIpad() {
+                    height = width * 0.97
+                }
                 let count = protector.count
                 let columns = (count + 1) / 2
                 let spacing = columns - 1
-                let height: CGFloat = 130 * CGFloat(columns) + 10.0 * CGFloat(spacing) + 40
-                self.reloadLayousjw(height: height)
+                let height1: CGFloat = height * CGFloat(columns) + 10.0 * CGFloat(spacing) + 40
+                self.reloadLayousjw(height: height1)
             }
             
             // MARK: 处理 assume
@@ -162,7 +171,8 @@ class LoaskwmDetasilwViewController: EsensiilsadwsiwViewController {
             }
             
             self._next_auth = models.clearest
-
+            GLoskwCommenskwmodls.shared.isCompleteAuth = self._next_auth == nil
+            
         } failure: { [weak self] _, _ in
             self?._isRefresh = false
             self?.basicScrollContentView.refresh(begin: false)
@@ -175,6 +185,7 @@ class LoaskwmDetasilwViewController: EsensiilsadwsiwViewController {
                 make.left.width.equalTo(self.appslwkView)
                 make.top.equalTo(self.appslwkView.snp.bottom).offset(12)
                 make.height.equalTo(height)
+                make.bottom.equalToSuperview().offset(-20)
             }
             
             self.basicScrollContentView.layoutIfNeeded()

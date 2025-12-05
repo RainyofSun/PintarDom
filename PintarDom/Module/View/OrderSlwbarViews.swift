@@ -64,6 +64,10 @@ class OrderSlwbarViews: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    func selectFirst() {
+        self.clickSlidekrBurrosnw(sender: self.repaMentswBtn)
+    }
 }
 
 // MARK: - UI Setup
@@ -94,7 +98,7 @@ private extension OrderSlwbarViews {
     func setupAdaptiveSpacing() {
         let screenWidth = UIScreen.main.bounds.width
         let minSpacing: CGFloat = 10
-        let maxSpacing: CGFloat = 35
+        let maxSpacing: CGFloat = 25
         let minWidth: CGFloat = 320
         let maxWidth: CGFloat = 428
         

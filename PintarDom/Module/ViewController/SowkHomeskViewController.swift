@@ -16,7 +16,7 @@ class SowkHomeskViewController: EsensiilsadwsiwViewController {
     
     override func viewIsAppearing(_ animated: Bool) {
         super.viewIsAppearing(animated)
-        self.pageNetRequest()
+        self.basicScrollContentView.refresh(begin: true)
     }
     
     override func buildPageUI() {
@@ -31,8 +31,12 @@ class SowkHomeskViewController: EsensiilsadwsiwViewController {
         self.basicScrollContentView.addSubview(self.topView)
         self.basicScrollContentView.addSubview(self.appslwkView)
         
+        self.basicScrollContentView.addMJRefresh {[weak self] _ in
+            self?.pageNetRequest()
+        }
         // 缓存城市列表
         self.cacheLoaskwlCitySiwjd()
+        NotificationCenter.default.addObserver(self, selector: #selector(phonesnWksChanges(sender: )), name: NSNotification.Name(APPLICATION_NET_CHANGE), object: nil)
     }
 
     override func layoutPageViews() {
@@ -61,6 +65,7 @@ class SowkHomeskViewController: EsensiilsadwsiwViewController {
         }
         
         APPNetRequestManager.afnReqeustType(NetworkRequestConfig.defaultRequestConfig("qscgy/bade", requestParams: [:])) {[weak self] (task: URLSessionDataTask, res: APPSuccessResponse) in
+            self?.basicScrollContentView.refresh(begin: false)
             guard let _diskw = res.jsonDict, let _modsl = HomeDatsskwMoslw.model(withJSON: _diskw) else {
                 return
             }
@@ -72,8 +77,8 @@ class SowkHomeskViewController: EsensiilsadwsiwViewController {
                     self?.topView.setPPimage(_url, ppname: _big.lifeless, serviceLosdkw: _modsl.conveying?.opportunity ?? "", serviweUrl: _modsl.conveying?.omit ?? "")
                 }
                 
-                if let _assuw = _modsl.assume {
-                    self?.bigSkwi.priswhUrl = _assuw.stopping
+                if let _assuw = _modsl.conveying {
+                    self?.bigSkwi.priswhUrl = _assuw.firmer
                 }
                 
                 self?.loadCadedsViews(isBig: true)
@@ -96,6 +101,8 @@ class SowkHomeskViewController: EsensiilsadwsiwViewController {
                     self?.smallSkws.reloadSamlwslSource(sourve: _dds)
                 }
             }
+        } failure: {[weak self] _, _ in
+            self?.basicScrollContentView.refresh(begin: false)
         }
     }
     
@@ -196,6 +203,16 @@ private extension SowkHomeskViewController {
     
     func reswoHomesUiStyle() {
         self.pageNetRequest()
+    }
+    
+    func phonesnWksChanges(sender: Notification) {
+        guard let _nsw_sta = sender.object as? DeviceNetObserver.NetworkStatus else {
+            return
+        }
+        
+        if _nsw_sta == .NetworkStatus_NoNet || _nsw_sta == .NetworkStatus_LTE {
+            self.view.makeToast(APPLanguageInsTool.loadLanguage("neiw_tswp"))
+        }
     }
 }
 

@@ -50,19 +50,19 @@ class AuthskwkCeolllslwCell: UICollectionViewCell {
         
         self.siwmsgBawlView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalToSuperview().offset(28)
             make.size.equalTo(35)
+            make.top.equalTo(self.swkNamskw.snp.top).offset(-2)
         }
         
         self.swkNamskw.snp.makeConstraints { make in
-            make.top.equalTo(self.siwmsgBawlView.snp.bottom).offset(2)
             make.horizontalEdges.equalToSuperview().inset(13)
+            make.bottom.equalTo(self.authsBnw.snp.top).offset(-8)
         }
         
         self.authsBnw.snp.makeConstraints { make in
-            make.top.equalTo(self.swkNamskw.snp.bottom).offset(8)
             make.horizontalEdges.equalToSuperview()
             make.height.equalTo(36)
+            make.bottom.equalToSuperview()
         }
     }
     

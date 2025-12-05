@@ -34,6 +34,8 @@ let LOGIN_OBERVER_KEY: String = "userHasLogin"
     open var showPositionAlert: Bool = false
     /// 外界监听登出/登录
     @objc private dynamic var userHasLogin: Bool = false
+    /// 所有的认证项是否已完成
+    open var isCompleteAuth: Bool = false
     
     /// 城市列表的json文件目录
     open var ciprosjdkCityPath: String {

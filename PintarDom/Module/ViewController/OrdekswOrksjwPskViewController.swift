@@ -21,6 +21,12 @@ class OrdekswOrksjwPskViewController: EsensiilsadwsiwViewController {
     private var _orjdws_Sours: [OrderItem] = []
     private var type: Int = 7
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.sliderView.selectFirst()
+        self.tableView.refresh(begin: true)
+    }
+    
     override func buildPageUI() {
         super.buildPageUI()
         self.title = APPLanguageInsTool.loadLanguage("order_nav")
@@ -40,8 +46,6 @@ class OrdekswOrksjwPskViewController: EsensiilsadwsiwViewController {
         self.tableView.addMJRefresh {[weak self] _ in
             self?.pageNetRequest()
         }
-        
-        self.tableView.refresh(begin: true)
     }
     
     override func layoutPageViews() {
@@ -63,7 +67,7 @@ class OrdekswOrksjwPskViewController: EsensiilsadwsiwViewController {
         super.pageNetRequest()
         APPNetRequestManager.afnReqeustType(NetworkRequestConfig.defaultRequestConfig("qscgy/question", requestParams: ["frequently": "\(self.type)"])) {[weak self] (task: URLSessionDataTask, res: APPSuccessResponse) in
             self?.tableView.refresh(begin: false)
-            guard let _jskw = res.jsonDict, let _skwl = OrdeswlListModwks.model(with: _jskw), let _chanskw = _skwl.slowly else {
+            guard let _jskw = res.jsonDict, let _skwl = OrdeswlListModwks.model(with: _jskw) else {
                 return
             }
             
@@ -71,12 +75,12 @@ class OrdekswOrksjwPskViewController: EsensiilsadwsiwViewController {
                 return
             }
             
-            if _chanskw.isEmpty {
+            _selw._orjdws_Sours.removeAll()
+            if _skwl.slowly == nil || _skwl.slowly?.isEmpty == true {
                 _selw.tableView.emptyDataSetDelegate = _selw
                 _selw.tableView.emptyDataSetSource = _selw
             } else {
-                _selw._orjdws_Sours.removeAll()
-                _selw._orjdws_Sours.append(contentsOf: _chanskw)
+                _selw._orjdws_Sours.append(contentsOf: _skwl.slowly ?? [])
             }
             
             _selw.tableView.reloadData()

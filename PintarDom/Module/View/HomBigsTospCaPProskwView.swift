@@ -41,12 +41,12 @@ class HomBigsTospCaPProskwView: UIView {
         self.textLasjwiLab.snp.makeConstraints { make in
             make.top.equalTo(self.productImsgwView).offset(5)
             make.left.equalTo(self.productImsgwView.snp.right).offset(12)
-            make.width.equalToSuperview().multipliedBy(0.7)
+            make.width.lessThanOrEqualToSuperview().multipliedBy(0.7)
         }
         
         self.srviewBrrns.snp.makeConstraints { make in
             make.centerY.equalTo(self.productImsgwView)
-            make.right.equalToSuperview().offset(32)
+            make.right.equalToSuperview().offset(-32)
         }
         
         self.srviewBrrns.addTarget(self, action: #selector(clickSewisbtns(sender: )), for: UIControl.Event.touchUpInside)
@@ -69,7 +69,7 @@ class HomBigsTospCaPProskwView: UIView {
         }
         
         if let _iwls = URL(string: serviceLosdkw) {
-            self.srviewBrrns.setImageWith(_iwls, for: UIControl.State.normal, options: [YYWebImageOptions.setImageWithFadeAnimation])
+            self.srviewBrrns.setBackgroundImageWith(_iwls, for: UIControl.State.normal, options: [YYWebImageOptions.setImageWithFadeAnimation])
         }
         
         let parasStywl: NSMutableParagraphStyle = NSMutableParagraphStyle()

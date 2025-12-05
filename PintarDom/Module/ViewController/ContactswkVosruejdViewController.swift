@@ -48,6 +48,11 @@ class ContactswkVosruejdViewController: AuthExtensiwksViewController {
             }
             
             MaiDianwkToslwTool.fengKongMaidian(type: MaiDianEventUploadStyle.MD_LianXiRenInfo, beginTime: _self.buryingStartTime, endTime: Date().jk.dateToTimeStamp())
+            if (GLoskwCommenskwmodls.shared.isCompleteAuth) {
+                _self.navigationController?.popViewController(animated: true)
+                return
+            }
+            
             if let _title = _self._next_tilskw_map?[_self._next_type]?["title"] {
                 _self.navigationController?.jk.popCurrentAndPush(vc: InfoAushPospwViewViewController(cerasauAutheTiel: _title, nexjsAujwTheielw: _self._next_tilskw_map, authStyle: (_self._next_type, ChanPinAuthElement.Certif_BankkskCard)), animated: true)
             }

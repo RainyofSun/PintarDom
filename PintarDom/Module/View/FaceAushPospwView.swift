@@ -9,7 +9,7 @@ import UIKit
 
 class FaceAushPospwView: EsensiwlwsBadisnPresentView {
 
-    private lazy var cardskwkImswb: UIImageView = UIImageView(image: UIImage(named: "auth_card"))
+    private lazy var cardskwkImswb: UIImageView = UIImageView(image: UIImage(named: "auth_face_pop"))
     private lazy var tiplasw: UILabel = UILabel.normalTextLabel(APPLanguageInsTool.loadLanguage("auth_card_pop_tip"), t_color: UIColor.hexStringColor(hexString: "#E84900"), t_f: UIFont.systemFont(ofSize: 14, weight: UIFont.Weight.medium))
     private lazy var leftBtn: UIButton = {
         let view = UIButton(type: UIButton.ButtonType.custom)

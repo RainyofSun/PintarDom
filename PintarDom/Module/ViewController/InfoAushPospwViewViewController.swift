@@ -65,6 +65,11 @@ class InfoAushPospwViewViewController: AuthExtensiwksViewController {
             }
             
             MaiDianwkToslwTool.fengKongMaidian(type: _tupw.style, beginTime: __sselfw.buryingStartTime, endTime: Date().jk.dateToTimeStamp())
+            if (GLoskwCommenskwmodls.shared.isCompleteAuth) {
+                __sselfw.navigationController?.popViewController(animated: true)
+                return
+            }
+            
             if __sselfw._next_type == ChanPinAuthElement.Certif_Job_Info, let _title = __sselfw._next_tilskw_map?[__sselfw._next_type]?["title"] {
                 __sselfw.navigationController?.jk.popCurrentAndPush(vc: InfoAushPospwViewViewController(cerasauAutheTiel: _title, nexjsAujwTheielw: __sselfw._next_tilskw_map, authStyle: (__sselfw._next_type, ChanPinAuthElement.Certif_Contesdkcts)), animated: true)
             }

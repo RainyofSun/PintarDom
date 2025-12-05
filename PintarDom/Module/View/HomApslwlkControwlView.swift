@@ -12,39 +12,27 @@ class HomApslwlkControwlView: UIControl {
     private lazy var topTip: UILabel = UILabel.normalTextLabel("", t_color: UIColor.ppGray8C, t_f: UIFont.systemFont(ofSize: 14))
     private lazy var amountLas: UILabel = UILabel.normalTextLabel("", t_color: UIColor.pp22115168, t_f: UIFont.loadSpecialFont(size: 40, ftStyle: FontStyle.Inter_ExtraBold))
     private lazy var rasteView: RastwAnsRasyDaysView = RastwAnsRasyDaysView(frame: CGRectZero)
-    private lazy var safeView: UIButton = {
-        let view = UIButton(type: UIButton.ButtonType.custom)
-        view.setImage(UIImage(named: "home_safe"), for: UIControl.State.normal)
-        view.setTitle(APPLanguageInsTool.loadLanguage("home_safe"), for: UIControl.State.normal)
-        view.titleLabel?.font = UIFont.loadSpecialFont(size: 14, ftStyle: FontStyle.Inter_Medium)
-        view.setTitleColor(UIColor.ppGray8C, for: UIControl.State.normal)
-        view.layoutImageUpTitleDown()
-        view.isUserInteractionEnabled = false
+    private lazy var safeView: TopImageAndBottomTextButton = {
+        let view = TopImageAndBottomTextButton(frame: CGRectZero)
+        view.set(image: UIImage(named: "home_safe"), title: APPLanguageInsTool.loadLanguage("home_safe"), titleFont: UIFont.loadSpecialFont(size: 14, ftStyle: FontStyle.Inter_Medium), textColor: UIColor.ppGray8C)
         view.isHidden = true
+        view.isUserInteractionEnabled = false
         return view
     }()
     
-    private lazy var fastView: UIButton = {
-        let view = UIButton(type: UIButton.ButtonType.custom)
-        view.setImage(UIImage(named: "home_fast"), for: UIControl.State.normal)
-        view.setTitle(APPLanguageInsTool.loadLanguage("home_fast"), for: UIControl.State.normal)
-        view.titleLabel?.font = UIFont.loadSpecialFont(size: 14, ftStyle: FontStyle.Inter_Medium)
-        view.setTitleColor(UIColor.ppGray8C, for: UIControl.State.normal)
-        view.layoutImageUpTitleDown()
-        view.isUserInteractionEnabled = false
+    private lazy var fastView: TopImageAndBottomTextButton = {
+        let view = TopImageAndBottomTextButton(frame: CGRectZero)
+        view.set(image: UIImage(named: "home_fast"), title: APPLanguageInsTool.loadLanguage("home_fast"), titleFont: UIFont.loadSpecialFont(size: 14, ftStyle: FontStyle.Inter_Medium), textColor: UIColor.ppGray8C)
         view.isHidden = true
+        view.isUserInteractionEnabled = false
         return view
     }()
     
-    private lazy var simpleView: UIButton = {
-        let view = UIButton(type: UIButton.ButtonType.custom)
-        view.setImage(UIImage(named: "home_rate"), for: UIControl.State.normal)
-        view.setTitle(APPLanguageInsTool.loadLanguage("home_rate"), for: UIControl.State.normal)
-        view.titleLabel?.font = UIFont.loadSpecialFont(size: 14, ftStyle: FontStyle.Inter_Medium)
-        view.setTitleColor(UIColor.ppGray8C, for: UIControl.State.normal)
-        view.layoutImageUpTitleDown()
-        view.isUserInteractionEnabled = false
+    private lazy var simpleView: TopImageAndBottomTextButton = {
+        let view = TopImageAndBottomTextButton(frame: CGRectZero)
+        view.set(image: UIImage(named: "home_rate"), title: APPLanguageInsTool.loadLanguage("home_simple"), titleFont: UIFont.loadSpecialFont(size: 14, ftStyle: FontStyle.Inter_Medium), textColor: UIColor.ppGray8C)
         view.isHidden = true
+        view.isUserInteractionEnabled = false
         return view
     }()
     

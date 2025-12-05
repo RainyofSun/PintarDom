@@ -29,6 +29,8 @@ class UsCancelsApslwkPopView: EsensiwlwsBadisnPresentView {
     override func buildPresentView() {
         super.buildPresentView()
 
+        self.titleLab.font = UIFont.loadSpecialFont(size: 18, ftStyle: FontStyle.Arial_BoldMT)
+        
         self.tipLasw.textAlignment = .left
         self.tipsw.textAlignment = .left
         self.siqkslas.textAlignment = .left

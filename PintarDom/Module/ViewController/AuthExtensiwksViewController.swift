@@ -56,7 +56,6 @@ class AuthExtensiwksViewController: EsensiilsadwsiwViewController {
     private(set) var _next_tilskw_map: [ChanPinAuthElement: [String: String]]?
     private(set) var _type: ChanPinAuthElement = ChanPinAuthElement.Certif_ID_Cosujward
     private(set) var _next_type: ChanPinAuthElement = ChanPinAuthElement.Certif_ID_Cosujward
-    open var isCompleteAuth: Bool = false
     
     init(cerasauAutheTiel title: String?, nexjsAujwTheielw next: [ChanPinAuthElement : [String: String]]? = nil, authStyle style: (current: ChanPinAuthElement, next: ChanPinAuthElement)) {
         super.init(nibName: nil, bundle: nil)
@@ -150,6 +149,6 @@ class AuthExtensiwksViewController: EsensiilsadwsiwViewController {
     }
     
     @objc func clickNextButtons(sender: APPActivityButton) {
-        
+        self.refreshMineLocations()
     }
 }
