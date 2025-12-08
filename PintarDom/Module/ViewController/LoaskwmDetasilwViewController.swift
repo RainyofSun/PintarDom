@@ -14,10 +14,7 @@ class LoaskwmDetasilwViewController: EsensiilsadwsiwViewController {
     private lazy var authCollwsoView: UICollectionView = {
         let layosuw: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         let width = (jk_kScreenW - 70) * 0.5
-        var height = width * 0.85
-        if UIDevice.jk.isIpad() {
-            height = width * 0.97
-        }
+        var height = width * 0.97
         layosuw.itemSize = CGSize(width: width, height: height)
         layosuw.minimumLineSpacing = 10
         layosuw.minimumInteritemSpacing = 10
@@ -151,10 +148,7 @@ class LoaskwmDetasilwViewController: EsensiilsadwsiwViewController {
                 }
                 
                 let width = (jk_kScreenW - 70) * 0.5
-                var height = width * 0.85
-                if UIDevice.jk.isIpad() {
-                    height = width * 0.97
-                }
+                let height = width * 0.97
                 let count = protector.count
                 let columns = (count + 1) / 2
                 let spacing = columns - 1

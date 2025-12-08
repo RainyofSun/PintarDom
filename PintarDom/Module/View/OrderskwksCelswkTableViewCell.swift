@@ -13,6 +13,7 @@ class OrderskwksCelswkTableViewCell: UITableViewCell {
         let view = GradientColorView(frame: CGRectZero)
         view.buildGradientWithColors(gradientColors: [UIColor.hexStringColor(hexString: "#0DA2F5"), UIColor.hexStringColor(hexString: "#0DF5A2")], gradientStyle: GradientDirectionStyle.leftTopToRightBottom)
         view.corner(16)
+        view.isUserInteractionEnabled = true
         return view
     }()
     
@@ -65,6 +66,7 @@ class OrderskwksCelswkTableViewCell: UITableViewCell {
 
         // 让左侧文字优先被压缩
         self.namswkPalsw.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
+        self.prosjwLab.addTarget(self, action: #selector(cliskwProskwPorksSender), for: UIControl.Event.touchUpInside)
         
         self.contentView.addSubview(self.topBcosnView)
         self.topBcosnView.addSubview(self.logiskwImfbsView)

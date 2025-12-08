@@ -45,14 +45,14 @@ class ChanswjBottosnwView: UIView {
     }
     
     func showProtocolViews(psiwsw: String) {
-        if psiwsw.isEmpty {
-            return
-        }
         
         self.protcoplView.setProtocol(NSAttributedString(string: psiwsw, attributes: [.font: UIFont.loadSpecialFont(size: 14, ftStyle: FontStyle.Inter_Medium),.foregroundColor: UIColor.hexStringColor(hexString: "#0972A4")]), protocolPrefix: NSAttributedString(string: APPLanguageInsTool.loadLanguage("details_agree"), attributes: [.font: UIFont.loadSpecialFont(size: 14, ftStyle: FontStyle.Inter_Medium), .foregroundColor: UIColor.ppBlack33]))
+        self.protcoplView.isHidden = false
         
-        if self.protcoplView.superview == nil {
-            self.addSubview(self.protcoplView)
+        if psiwsw.isEmpty == false {
+            if self.protcoplView.superview == nil {
+                self.addSubview(self.protcoplView)
+            }
             UIView.animate(withDuration: 0.3) {
                 self.protcoplView.snp.remakeConstraints { make in
                     make.top.equalToSuperview().offset(12)

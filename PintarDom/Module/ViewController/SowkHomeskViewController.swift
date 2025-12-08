@@ -17,6 +17,9 @@ class SowkHomeskViewController: EsensiilsadwsiwViewController {
     override func viewIsAppearing(_ animated: Bool) {
         super.viewIsAppearing(animated)
         self.basicScrollContentView.refresh(begin: true)
+        if !NetworkStatusMonitor.shared.isConnected {
+            self.view.makeToast(APPLanguageInsTool.loadLanguage("neiw_tswp"))
+        }
     }
     
     override func buildPageUI() {
@@ -42,9 +45,15 @@ class SowkHomeskViewController: EsensiilsadwsiwViewController {
     override func layoutPageViews() {
         super.layoutPageViews()
         
+        self.basicScrollContentView.snp.remakeConstraints { make in
+            make.horizontalEdges.equalToSuperview()
+            make.top.equalToSuperview().offset(jk_kStatusBarFrameH)
+            make.bottom.equalToSuperview().offset(-jk_kTabbarFrameH)
+        }
+        
         self.topView.snp.makeConstraints { make in
             make.left.width.equalToSuperview()
-            make.top.equalToSuperview().offset(jk_kStatusBarFrameH)
+            make.top.equalToSuperview()
         }
         
         self.appslwkView.snp.makeConstraints { make in
@@ -64,8 +73,10 @@ class SowkHomeskViewController: EsensiilsadwsiwViewController {
             MaiDianwkToslwTool.IDFAAndIDFV()
         }
         
+        self.view.makeToastActivity(CSToastPositionCenter)
         APPNetRequestManager.afnReqeustType(NetworkRequestConfig.defaultRequestConfig("qscgy/bade", requestParams: [:])) {[weak self] (task: URLSessionDataTask, res: APPSuccessResponse) in
             self?.basicScrollContentView.refresh(begin: false)
+            self?.view.hideToastActivity()
             guard let _diskw = res.jsonDict, let _modsl = HomeDatsskwMoslw.model(withJSON: _diskw) else {
                 return
             }
@@ -78,7 +89,7 @@ class SowkHomeskViewController: EsensiilsadwsiwViewController {
                 }
                 
                 if let _assuw = _modsl.conveying {
-                    self?.bigSkwi.priswhUrl = _assuw.firmer
+                    self?.bigSkwi.priswhUrl = _assuw.recovering
                 }
                 
                 self?.loadCadedsViews(isBig: true)
@@ -102,6 +113,7 @@ class SowkHomeskViewController: EsensiilsadwsiwViewController {
                 }
             }
         } failure: {[weak self] _, _ in
+            self?.view.hideToastActivity()
             self?.basicScrollContentView.refresh(begin: false)
         }
     }

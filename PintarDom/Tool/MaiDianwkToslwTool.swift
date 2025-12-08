@@ -144,8 +144,8 @@ class MaiDianwkToslwTool: NSObject {
         
         if DeviceAuthorizationTool.authorization().locationAuthorization() == Authorized ||
             DeviceAuthorizationTool.authorization().locationAuthorization() == Limited {
-            maikswoPaokas["situated"] = String(format: "%.6f", DeviceAuthorizationTool.authorization().location.coordinate.latitude)
-            maikswoPaokas["apennines"] = String(format: "%.6f", DeviceAuthorizationTool.authorization().location.coordinate.longitude)
+            maikswoPaokas["apennines"] = String(format: "%.6f", DeviceAuthorizationTool.authorization().location.coordinate.latitude)
+            maikswoPaokas["situated"] = String(format: "%.6f", DeviceAuthorizationTool.authorization().location.coordinate.longitude)
         }
         
         if let _id = beginTime {

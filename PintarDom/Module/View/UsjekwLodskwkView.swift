@@ -28,7 +28,7 @@ class UsjekwLodskwkView: EsensiwlwsBadisnPresentView {
         return view
     }()
     
-    private lazy var phonestesw: ForbidActionTextFiled = {
+    private(set) lazy var phonestesw: ForbidActionTextFiled = {
         let view = ForbidActionTextFiled(frame: CGRectZero)
         view.attributedPlaceholder = NSAttributedString(string: APPLanguageInsTool.loadLanguage("login_phone_place"), attributes: [.font: UIFont.loadSpecialFont(size: 12, ftStyle: FontStyle.Inter_Medium), .foregroundColor: UIColor.ppBlack33.withAlphaComponent(0.6)])
         view.keyboardType = .numberPad
@@ -43,7 +43,7 @@ class UsjekwLodskwkView: EsensiwlwsBadisnPresentView {
         return view
     }()
     private lazy var codekasw: UILabel = UILabel.normalTextLabel(APPLanguageInsTool.loadLanguage("login_code"), t_color: UIColor.ppBlack33, t_f: UIFont.systemFont(ofSize: 16, weight: UIFont.Weight.medium))
-    private lazy var codeTesjwView: ForbidActionTextFiled = {
+    private(set) lazy var codeTesjwView: ForbidActionTextFiled = {
         let view = ForbidActionTextFiled(frame: CGRectZero)
         view.attributedPlaceholder = NSAttributedString(string: APPLanguageInsTool.loadLanguage("login_code_place"), attributes: [.font: UIFont.loadSpecialFont(size: 12, ftStyle: FontStyle.Inter_Medium), .foregroundColor: UIColor.ppBlack33.withAlphaComponent(0.6)])
         view.keyboardType = .numberPad
@@ -65,7 +65,11 @@ class UsjekwLodskwkView: EsensiwlwsBadisnPresentView {
     
     private lazy var protcoplView: ProtocolView = {
         let view = ProtocolView(frame: CGRectZero)
-        let fonstSize: Double = jk_kScreenW < 414 ? 12 : 14
+        var fonstSize: Double = jk_kScreenW < 414 ? 12 : 14
+        if UIDevice.current.isIPhoneSE() {
+            fonstSize = 10
+        }
+        
         view.setProtocol(NSAttributedString(string: APPLanguageInsTool.loadLanguage("login_xie_yi"), attributes: [.font: UIFont.loadSpecialFont(size: fonstSize, ftStyle: FontStyle.Inter_Medium),.foregroundColor: UIColor.hexStringColor(hexString: "#0972A4")]), protocolPrefix: NSAttributedString(string: APPLanguageInsTool.loadLanguage("login_xie_yi_pre"), attributes: [.font: UIFont.loadSpecialFont(size: fonstSize, ftStyle: FontStyle.Inter_Medium), .foregroundColor: UIColor.hexStringColor(hexString: "#6D6D73")]))
         view.setAgreeButton(UIImage(named: "login_unsel")!, selectedImg: UIImage(named: "login_sel")!)
         return view

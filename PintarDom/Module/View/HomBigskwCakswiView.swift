@@ -76,7 +76,7 @@ class HomBigskwCakswiView: UIView {
 
 @objc private extension HomBigskwCakswiView {
     func cliskwiPrsjwjUrl() {
-        if let _url = GLoskwCommenskwmodls.shared.privacyURL {
+        if let _url = self.priswhUrl {
             LuyouswkMakswTool.luYou.tiaoZhuanPage(luyouUrl: _url, needBackRoot: true)
         }
     }

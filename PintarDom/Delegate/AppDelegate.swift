@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardToolbarManager.shared.toolbarConfiguration.doneBarButtonConfiguration = IQBarButtonItemConfiguration(title: "Done")
         IQKeyboardToolbarManager.shared.toolbarConfiguration.manageBehavior = .byTag
         IQKeyboardToolbarManager.shared.toolbarConfiguration.previousNextDisplayMode = .default
-        IQKeyboardToolbarManager.shared.enabledToolbarClasses.append(PerswnsLogiswskViewController.self)
+        IQKeyboardToolbarManager.shared.enabledToolbarClasses.append(DengluSkwkVndjsuViewController.self)
         IQKeyboardToolbarManager.shared.enabledToolbarClasses.append(InfoAushPospwViewViewController.self)
         
         return true

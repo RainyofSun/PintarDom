@@ -19,6 +19,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
+        CSToastManager.sharedStyle().activitySize = UIScreen.main.bounds.size
+        let _ = NetworkStatusMonitor.shared
         APPNetRequestURLConfig.setNetworkDebugRequestURL("http://149.129.233.8:5010/asutf/", releaseUrl: "http://149.129.233.8:5010/asutf/")
         APPNetResponseParsingConfig.setParsingConfig("fainter", service: "sounds", data: "bade")
         setServiwComskwCnsParams()

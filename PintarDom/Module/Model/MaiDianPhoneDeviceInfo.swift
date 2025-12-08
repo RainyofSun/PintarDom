@@ -18,7 +18,7 @@ class MaiDianPhoneDeviceInfo: BasicsmNetResModel, YYModel {
     
     static func modelContainerPropertyGenericClass() -> [String : Any]? {
         return ["another": StorageInfo.self, "imperfect": BatteryInfo.self, "appears": DeviceInfo.self,
-                "follows": DeviceStatus.self, "compliance": SystemInfo.self, "importance": WifiInfo.self]
+                "follows": DeviceStatus.self, "compliance": SystemInfo.self, "importance": WifiWrapper.self]
     }
 }
 
@@ -67,7 +67,7 @@ class WifiWrapper: BasicsmNetResModel, YYModel {
     }
 }
 
-class WifiInfo: Codable {
+class WifiInfo: BasicsmNetResModel {
     var hitherto: String?  // mac
     var able: String?      // name
 }

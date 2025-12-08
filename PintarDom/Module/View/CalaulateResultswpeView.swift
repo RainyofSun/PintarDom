@@ -48,7 +48,7 @@ class CalaulateResultswpeView: UIView {
         self.topBcosnView.addSubview(self.equalLab)
         self.topBcosnView.addSubview(self.tipLab3)
         self.topBcosnView.addSubview(self.amountLab3)
-        self.topBcosnView.addSubview(self.amountLab4)
+        self.addSubview(self.amountLab4)
         self.addSubview(self.titlesljdlab1)
         
         self.titlesljdlab.snp.makeConstraints { make in

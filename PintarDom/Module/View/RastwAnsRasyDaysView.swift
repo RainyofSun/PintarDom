@@ -39,10 +39,12 @@ class RastwAnsRasyDaysView: UIView {
         self.addSubview(self.termLab)
         self.addSubview(self.timeLab)
         
+        let topDis = UIDevice.current.isIPhoneSE() ? 4 : 24
+        
         self.centerLine.snp.makeConstraints { make in
             make.center.equalToSuperview()
             make.size.equalTo(CGSize(width: 1, height: 43))
-            make.verticalEdges.equalToSuperview().inset(24)
+            make.verticalEdges.equalToSuperview().inset(topDis)
         }
         
         self.termLab.snp.makeConstraints { make in

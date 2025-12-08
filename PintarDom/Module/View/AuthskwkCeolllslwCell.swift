@@ -51,7 +51,7 @@ class AuthskwkCeolllslwCell: UICollectionViewCell {
         self.siwmsgBawlView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.size.equalTo(35)
-            make.top.equalTo(self.swkNamskw.snp.top).offset(-2)
+            make.top.equalTo(self.stipLabs.snp.bottom).offset(8)
         }
         
         self.swkNamskw.snp.makeConstraints { make in

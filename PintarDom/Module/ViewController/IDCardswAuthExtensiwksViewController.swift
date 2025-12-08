@@ -212,6 +212,9 @@ private extension IDCardswAuthExtensiwksViewController {
                         MaiDianwkToslwTool.fengKongMaidian(type: MaiDianEventUploadStyle.MD_IDCardAlert, beginTime: _self_ss.buryingStartTime, endTime: Date().jk.dateToTimeStamp())
                         popi.dismissPop()
                         _self_ss.cardAuthComplete = true
+                    } failure: { _, _ in
+                        sender.stopAnimation()
+                        print("-----------")
                     }
                 }
             }

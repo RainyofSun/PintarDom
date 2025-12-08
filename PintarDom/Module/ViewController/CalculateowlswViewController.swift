@@ -52,7 +52,7 @@ class CalculateowlswViewController: EsensiilsadwsiwViewController {
         super.buildPageUI()
         
         self.amountView.tesjwtextFiedwView.keyboardType = .numberPad
-        self.rateView.tesjwtextFiedwView.keyboardType = .numberPad
+        self.rateView.tesjwtextFiedwView.keyboardType = .decimalPad
         self.timeView.tesjwtextFiedwView.keyboardType = .numberPad
         
         self.title = APPLanguageInsTool.loadLanguage("calcular_nav")
@@ -148,7 +148,7 @@ class CalculateowlswViewController: EsensiilsadwsiwViewController {
             return
         }
         
-        var params: [String: String] = ["coolly": _amos, "bitterest": _rate, "plunged": self.timeView.isYear ? "1" : "2", "convince": _time]
+        let params: [String: String] = ["coolly": _amos, "bitterest": _rate, "plunged": self.timeView.isYear ? "1" : "2", "convince": _time]
         
         APPNetRequestManager.afnReqeustType(NetworkRequestConfig.defaultRequestConfig("qscgy/unaffected", requestParams: params)) { [weak self] (task: URLSessionDataTask, res: APPSuccessResponse) in
             self?.appBtn.stopAnimation()
@@ -156,7 +156,7 @@ class CalculateowlswViewController: EsensiilsadwsiwViewController {
                 return
             }
             
-            self?.showResult(isShow: true)
+            self?.showResult(isShow: true, termodel: _mdwls)
         } failure: {[weak self] _, _ in
             self?.appBtn.stopAnimation()
         }
@@ -170,6 +170,8 @@ class CalculateowlswViewController: EsensiilsadwsiwViewController {
             }
             
             UIView.animate(withDuration: 0.3) {
+                
+                self.resultView.alpha = 1
                 
                 self.resetBtn.snp.remakeConstraints { make in
                     make.height.horizontalEdges.equalTo(self.appBtn)
@@ -202,11 +204,13 @@ class CalculateowlswViewController: EsensiilsadwsiwViewController {
 
 @objc private extension CalculateowlswViewController {
     func clickCalslwBtn(sender: APPActivityButton) {
+        self.view.endEditing(true)
         sender.startAnimation()
         self.pageNetRequest()
     }
     
     func clikcResetButtoen(sender: UIButton) {
+        self.view.endEditing(true)
         self.showResult(isShow: false)
     }
 }
