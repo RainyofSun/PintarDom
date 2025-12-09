@@ -17,7 +17,7 @@ class SowkHomeskViewController: EsensiilsadwsiwViewController {
     override func viewIsAppearing(_ animated: Bool) {
         super.viewIsAppearing(animated)
         self.basicScrollContentView.refresh(begin: true)
-        if !NetworkStatusMonitor.shared.isConnected {
+        if UIDevice.jk.isIpad() && !NetworkStatusMonitor.shared.isConnected {
             self.view.makeToast(APPLanguageInsTool.loadLanguage("neiw_tswp"))
         }
     }
